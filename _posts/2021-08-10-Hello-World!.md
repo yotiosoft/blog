@@ -9,6 +9,8 @@ Hello World!
 
 というわけで、唐突にYotioSoftの新しいブログの運用が始まりました。  
 当ブログはJekyllで運用しており、サーバはGithub Pagesを利用しています。  
+<!--more-->
+
 Jekyllのテーマは[Type on Strap](https://github.com/sylhare/Type-on-Strap)です。シンプルなデザインに惹かれこのテーマを選びました。  
 JelyllはMarkDownで記事を記述します。まだMarkDownは不慣れですが、むしろいい機会です。   
 これを機に、MarkDownでの記述に慣れていきたいなと思います。  
