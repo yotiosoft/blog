@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 Hello World!  
 
-というわけで、唐突にYotioSoftの新しいブログの運用が始まりました。  
+というわけで、ホームページの移転よりひと足早く、唐突にYotioSoftの新しいブログの運用が始まりました。  
 当ブログはJekyllで運用しており、サーバはGithub Pagesを利用しています。  
 <!--more-->
 
@@ -66,13 +66,22 @@ Nullは日本ではよく「ヌル」と読まれますが、英語では「ナ�
 
   
 
+# URLについて
+
+現在、このブログは仮のURLで公開しております。  
+本来は[https://blog.yotiosoft.com/](https://blog.yotiosoft.com/)で公開したいのですが、DNSの設定上の問題で現在のホームページ（[http://yotiosoft.com/](http://yotiosoft.com)）の移転が完了するまではこちらのURLが使えません。  
+いろいろ試行錯誤してますが、たぶんホームページの方の移転と同時に上記のURLに変更になると思います。  
+URL変更の際にはまたお知らせいたします。
+
+
 
 # 新しいホームページについて
 
 新しいホームページのテスト運用も今日から始めております。  
 [https://yotiosoft.github.io/](https://yotiosoft.github.io/){:target="_brank"}  
 
-新しいホームページについての記事は、また後ほどこちらで公開します。
+ホームページの移転は10月1日を予定しております。  
+新しいホームページについての記事は、後ほどこちらで公開します。
 
 [^1]: 
     {% include citation.html key="ref1" %}
