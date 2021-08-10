@@ -6,9 +6,17 @@ feature-img: "assets/img/pexels/travel.jpeg"
 tags: [About, Archive]
 ---
 
-Type on Strap is based on Type Theme, a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+# プロフィール
 
-Head over to the [theme's documentation](https://github.io/sylhare/Type-on-Strap) for much more information about Type on Strap or to install this theme on your own Jekyll site.
+プログラミングが好きな大学生。都内の無名な国立大に通ってます。  
+中学生の頃にホームページを立ち上げて以降、様々な~~ゴミ~~作品を作って公開してきました。  
+作ったものはゲーム、OSもどき、プレイヤーアプリなど。  
+最近は何かを自作することは減り、新しい技術を調べたり、触れたりしてみる機会が増えました。  
+このブログでは、日常的に出会った技術、開発日記、その他諸々をアウトプットしていきたいと思います。
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
- 
+# ホームページ
+
+[YotioSoft](http://yotiosoft.com/)  
+
+現在、[新しいホームページ](https://yotiosoft.github.io/)を作成中です。
+
