@@ -66,7 +66,7 @@ Nullは日本ではよく「ヌル」と読まれますが、英語では「ナ�
 
 # ロゴについて
 
-![blog_logo](/assets/img/blog/2021/2021-08-10-Hello-World!/blog_logo-8582189.png)![ブログロゴ]()
+![blog_logo](/assets/img/blog/2021/2021-08-10-Hello-World!/blog_logo-8582189.png)
 
 円形に「d0」と書かれたシンプルなロゴです。  
 「為せば」のdoと「null」の0を掛けたつもりです。
