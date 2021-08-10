@@ -53,7 +53,7 @@ JelyllはMarkdownで記事を記述します。まだMarkdownは不慣れです�
 ゲーム記事はやるかどうかわからない（そもそもあまりゲームやらない）ですが、Cities Boxを開発する上での知見を高めるという"大義名分"の下で、Cities: SkylinesやWorkers & Resources: Soviet Republicのプレイ記録を書くかもしれません。   
 
   
- 
+
 
 # ブログ名について
 
@@ -66,7 +66,7 @@ Nullは日本ではよく「ヌル」と読まれますが、英語では「ナ�
 
 # ロゴについて
 
-![blog_logo](../../../../assets/img/blog/2021/2021-08-10-Hello-World!/blog_logo-8582189.png)
+![blog_logo](../../../assets/img/blog/2021/2021-08-10-Hello-World!/blog_logo-8582189.png)
 
 円形に「d0」と書かれたシンプルなロゴです。  
 「為せば」のdoと「null」の0を掛けたつもりです。
