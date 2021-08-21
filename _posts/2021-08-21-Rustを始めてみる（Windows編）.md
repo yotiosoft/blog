@@ -36,7 +36,7 @@ Macと同じくVisual Studio Code（以下VS Code）を利用します。
 
 # 参考文献
 
-[Windows で Rust 用の開発環境を設定する | Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/dev-environment/rust/setup){:target="_blank"}
+[Windows で Rust 用の開発環境を設定する \| Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/dev-environment/rust/setup){:target="_blank"}
 
 # Windowsでの環境構築
 
