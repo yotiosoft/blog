@@ -46,7 +46,7 @@ Macと同じくVisual Studio Code（以下VS Code）を利用します。
 1. C++ビルドツールをインストールする
 2. rustupでRustをインストールする
 3. VS Codeに拡張機能「rust-analyzer」をインストールする
-4. デバッグのため、VS Codeに拡張機能「CodeLLDB」をインストールする
+4. VS Codeに拡張機能「CodeLLDB」をインストールする
 
 
 
@@ -77,10 +77,10 @@ VS Codeを開いて、rust-analyzerを検索しインストール。
 
 
 
-## 3. デバッグのため、VS Codeに拡張機能「CodeLLDB」をインストールする
+## 4. VS Codeに拡張機能「CodeLLDB」をインストールする
 
 同様にして、VS CodeにCodeLLDBをインストール。  
-今回は使いません。
+デバッグ用ですが、今回は使いません。
 
 
 
