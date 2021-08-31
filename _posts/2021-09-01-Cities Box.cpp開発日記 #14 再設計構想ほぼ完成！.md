@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Cities Box.cpp開発日記#14 再設計構想ほぼ完成！
-tags: [Cities Box.cpp,Cpp,OpenSiv3D,開発日記]
-feature-img: "/assets/img/post/0901.png”
-thumbnail: "/assets/img/post/0901.png”
+tags: [Cities Box.cpp,C++,OpenSiv3D,開発日記]
+feature-img: "../../../assets/img/post/0901.png”
+thumbnail: "../../../assets/img/post/0901.png”
 excerpt_separator: <!--more-->
 ---
 
@@ -40,6 +40,8 @@ excerpt_separator: <!--more-->
   
 
 という意味です。  
+  
+
 
 「タイル主体」というのは、ゲーム上でマップをタイル単位で管理することです。  
 例えば、マップ座標（10, 10）のタイル上にはサイズ(2, 2)のオブジェクトAの(1,1)マス目が存在していて…といった具合に、それぞれのタイルにどのオブジェクトの何マス目が存在しているか、という情報をマップデータとして記録していました。  
