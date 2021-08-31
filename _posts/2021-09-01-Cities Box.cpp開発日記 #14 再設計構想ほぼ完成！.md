@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 2021-09-01-Cities Box.cpp開発日記 #14 再設計構想ほぼ完成！
+title: 2021-09-01-Cities Box.cpp開発日記#14 再設計構想ほぼ完成！
 tags: [Cities Box.cpp,C++,OpenSiv3D,開発日記]
-thumbnail: "/assets/img/post/0901.png”
 feature-img: "/assets/img/post/0901.png”
+thumbnail: "/assets/img/post/0901.png”
 excerpt_separator: <!--more-->
 ---
 
