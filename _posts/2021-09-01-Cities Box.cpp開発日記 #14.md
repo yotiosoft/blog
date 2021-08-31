@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cities Box.cpp開発日記#14 再設計構想ほぼ完成！
+title: Cities Box.cpp開発日記#14
 tags: [Cities Box.cpp,C++,OpenSiv3D,開発日記]
 feature-img: "/assets/img/feature-img/0901.png"
 thumbnail: "/assets/img/thumbnails/feature-img/0901.png"
@@ -40,7 +40,7 @@ excerpt_separator: <!--more-->
   
 
 という意味です。  
-  
+
 
 
 「タイル主体」というのは、ゲーム上でマップをタイル単位で管理することです。  
