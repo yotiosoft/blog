@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cities Box.cpp開発日記#14 再設計構想ほぼ完成！
-tags: [CitiesBox.cpp,C++,OpenSiv3D,開発日記]
+tags: [Cities Box.cpp,Cpp,OpenSiv3D,開発日記]
 feature-img: "/assets/img/post/0901.png”
 thumbnail: "/assets/img/post/0901.png”
 excerpt_separator: <!--more-->
