@@ -1,9 +1,7 @@
 ---
 layout: post
 title: Cities Boxの妄想ロードマップ
-tags: [Cities Box.cpp]
-feature-img: "/assets/img/feature-img/0901.png"
-thumbnail: "/assets/img/thumbnails/feature-img/0901.png"
+tags: [Cities Box,Cities Box.cpp]
 excerpt_separator: <!--more-->
 ---
 
