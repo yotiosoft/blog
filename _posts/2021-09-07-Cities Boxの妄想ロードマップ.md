@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cities Boxの妄想ロードマップ
-tags: [Cities Box.cpp,C++,OpenSiv3D,開発日記]
+tags: [Cities Box.cpp]
 feature-img: "/assets/img/feature-img/0901.png"
 thumbnail: "/assets/img/thumbnails/feature-img/0901.png"
 excerpt_separator: <!--more-->
