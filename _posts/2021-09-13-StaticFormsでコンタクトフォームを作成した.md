@@ -1,6 +1,6 @@
 ---
 layout: post
-title: StaticFormsでコンタクトフォームを作成した
+title: Static Formsでコンタクトフォームを作成した
 tags: [お知らせ,ホームページ]
 excerpt_separator: <!--more-->
 ---
@@ -8,14 +8,14 @@ excerpt_separator: <!--more-->
 現在テスト運用中の[新しいホームページ](https://yotiosoft.github.io/support/){:target="_blank"}にコンタクトフォームを設置しました。  
 
 コンタクトフォームを含む送信フォームをhtmlで作成する場合、一般的には指定したメールアドレスに転送するためにphpを利用しますが、Github Pagesでは動的サイトを作成できないためphpをサポートしていません。  
-そこで今回はStaticFormと呼ばれる、phpが不要でhtml（とcss）だけで送信フォームの実装を可能にするAPIサービスを利用しました。  
+そこで今回はStatic Formsと呼ばれる、phpが不要でhtml（とcss）だけで送信フォームの実装を可能にするAPIサービスを利用しました。  
 JQueryで実現する方法もありますが、こっちのほうが手っ取り早いです。
 
 <!--more-->
 
 # 利用方法
 
-StaticFormsのホームページ（[https://www.staticforms.xyz/](https://www.staticforms.xyz/){:target="_blank"}）を見れば大体わかります。  
+Static Formsのホームページ（[https://www.staticforms.xyz/](https://www.staticforms.xyz/){:target="_blank"}）を見れば大体わかります。  
 一応まとめておくと、  
 
 1. メールアドレスを登録してAccess Keyを取得する。
@@ -91,6 +91,7 @@ StaticFormsのホームページ（[https://www.staticforms.xyz/](https://www.st
 
 入力内容としては名前、送信者のメールアドレス、タイトル、お問い合わせ内容です。  
 実装の際に置き換えるべき点はAccess Key、送信先メールアドレス、遷移先URLの3点です。  
+
 ここで気をつけなければならないのは、遷移先のURLは相対パス（./thanks.htmlなど）ではなく絶対パス（すなわち、http://やhttps://から始まるURL全体）で示さなければならないという点です。  
 一旦StaticFormsのAPIサーバーに遷移するので、相対パスで指定すると、ブラウザはStaticForms上のURLとして解釈してしまいます。  
 
@@ -101,7 +102,7 @@ StaticFormsのホームページ（[https://www.staticforms.xyz/](https://www.st
 
 ## 送信エラーの取得
 
-StaticFormsでは、送信ボタン（submit）を押した後、送信エラーがあった場合はjsonでその内容を知らせてくれます。  
+Static Formsでは、送信ボタン（submit）を押した後、送信エラーがあった場合はjsonでその内容を知らせてくれます。  
 そのjsonを取得し、パースしてくれるプログラムもホームページで公開されています。  
 「Examples on JSFiddle」の「JQuery Example」をご覧ください。
 
@@ -115,8 +116,10 @@ StaticFormsでは、送信ボタン（submit）を押した後、送信エラー
 送信ボタンを押すと、予め作成しておいたthanks.htmlに遷移します。  
 ![スクリーンショット 2021-09-13 16.02.07](../../../assets/img/post/スクリーンショット 2021-09-13 16.02.07.png)  
 
-するとStaticFormsを経由し、指定したメールアドレスにメールが送信されます。  
+するとStatic Formsのサーバーを経由し、指定したメールアドレスにメールが送信されます。  
 ![スクリーンショット 2021-09-13 15.55.50](../../../assets/img/post/スクリーンショット 2021-09-13 15.55.50.png)  
+送信元はStatic Formsになっていますので、Static Fromsのサーバーが転送しているようです。  
 ![スクリーンショット 2021-09-13 16.02.29](../../../assets/img/post/スクリーンショット 2021-09-13 16.02.29.png)  
 
 テスト成功です。どうやらうまく動いているようですね。
+
