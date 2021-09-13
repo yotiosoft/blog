@@ -67,7 +67,7 @@ Static Formsのホームページ（[https://www.staticforms.xyz/](https://www.s
 
 ```css
 .column.is-half {
-    width: 100%;
+    width: 50%;
 }
 
 .form-element {
@@ -76,11 +76,11 @@ Static Formsのホームページ（[https://www.staticforms.xyz/](https://www.s
 }
 
 .form-element input {
-    width: 25%;
+    width: 50%;
 }
 
 .form-element textarea {
-    width: 50%;
+    width: 100%;
     height: 100px;
 }
 
@@ -122,4 +122,3 @@ Static Formsでは、送信ボタン（submit）を押した後、送信エラ�
 ![スクリーンショット 2021-09-13 16.02.29](../../../assets/img/post/スクリーンショット 2021-09-13 16.02.29.png)  
 
 テスト成功です。どうやらうまく動いているようですね。
-
