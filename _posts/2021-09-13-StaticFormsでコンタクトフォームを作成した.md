@@ -29,8 +29,9 @@ StaticFormsのホームページ（[https://www.staticforms.xyz/](https://www.st
 # 実装例
 
 実装例というか、今回実装した例です。  
+**index.html**
 
-```html:index.html
+```html
 <!--コンタクトフォーム-->
 <div class="container">
   <div class="columns">
@@ -62,7 +63,9 @@ StaticFormsのホームページ（[https://www.staticforms.xyz/](https://www.st
 </div>
 ```
 
-```css:contact-form.css
+**contact-form.css**
+
+```css
 .column.is-half {
     width: 100%;
 }
@@ -84,10 +87,7 @@ StaticFormsのホームページ（[https://www.staticforms.xyz/](https://www.st
 .form-element label {
     display: flex;
 }
-  
 ```
-
-
 
 入力内容としては名前、送信者のメールアドレス、タイトル、お問い合わせ内容です。  
 実装の際に置き換えるべき点はAccess Key、送信先メールアドレス、遷移先URLの3点です。  
