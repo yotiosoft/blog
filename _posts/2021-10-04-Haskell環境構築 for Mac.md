@@ -11,8 +11,6 @@ excerpt_separator: <!--more-->
 
 # 使用環境
 
-## Mac機
-
 - MacBook Pro 2016 Late（13-inch / TouchBarなし）
 - OS: macOS Big Sur 11.5.2
 - RAM: 8GB
@@ -45,17 +43,17 @@ Homebrewを用います。
 $ brew install stack
 ```
 
-特に指定がなければ最新版がインストールされます。今回は2.7.3（52.6MB）がインストールされました。
+特に指定がなければ最新版がインストールされます。今回はhaskell-stack--2.7.3（52.6MB）がインストールされました。
 
 ## 2. Haskellコンパイラ＆基本パッケージのインストール
+
+stackのインストールに成功したらHaskellのコンパイラ等をインストールします。
 
 ```bash
 $ stack setup
 ```
 
-stackのインストールに成功したらHaskellのコンパイラ等をインストールします。
-
-今回はghc-8.10.7（261.34MB）がインストールされました。  
+を実行すればあとはHaskellのコンパイラなど勝手にインストールしてくれます。今回はghc-8.10.7（261.34MB）がインストールされました。  
 インストールにかかった時間はダウンロード時間も含めて5分ほど。  
 
 ```bash
@@ -82,15 +80,8 @@ $ stack new test
 ![スクリーンショット 2021-10-04 21.58.00](../../../assets/img/post/スクリーンショット 2021-10-04 21.58.00.png)   
 
 
-
-初期状態では``Setup.hs``で``defaultMain``という関数がメイン関数に設定されています。  
-
-```haskell
-import Distribution.Simple
-main = defaultMain
-```
-
-``defaultMain``は``app/Main.hs``に定義されており、someFuncを呼び出すよう記述されています。  
+初期状態では``someFunc``が呼び出されるよう記述されています。  
+App/Main.hs:
 
 ```haskell
 module Main where
@@ -102,6 +93,7 @@ main = someFunc
 ```
 
 ``someFunc``は``src/Lib.hs``に定義されており、"someFunc"と表示するよう記述されています。  
+src/Lib.hs:
 
 ```haskell
 module Lib
