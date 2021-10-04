@@ -55,10 +55,7 @@ $ stack setup
 
 stackのインストールに成功したらHaskellのコンパイラ等をインストールします。
 
-今回は以下の物がインストールされました。  
-
-- ghc-8.10.7（261.34MB）
-
+今回はghc-8.10.7（261.34MB）がインストールされました。  
 インストールにかかった時間はダウンロード時間も含めて5分ほど。  
 
 ```bash
@@ -69,7 +66,7 @@ To use this GHC and packages outside of a project, consider using:
 stack ghc, stack ghci, stack runghc, or stack exec
 ```
 
-上記の通り、``stack path``や``stack exec env``でパスが確認できます。
+``stack path``や``stack exec env``でパスが確認できます。
 
 # プロジェクト作成と実行
 
@@ -82,10 +79,11 @@ stackではコマンド一発でプロジェクトファイルを作成してく
 $ stack new test
 ```
 
-![スクリーンショット 2021-10-04 21.58.00](../../../assets/img/post/スクリーンショット 2021-10-04 21.58.00.png)  
+![スクリーンショット 2021-10-04 21.58.00](../../../assets/img/post/スクリーンショット 2021-10-04 21.58.00.png)   
 
 
-ちなみに、初期状態では``Setup.hs``で``defaultMain``という関数がメイン関数に設定されています。  
+
+初期状態では``Setup.hs``で``defaultMain``という関数がメイン関数に設定されています。  
 
 ```haskell
 import Distribution.Simple
@@ -115,6 +113,13 @@ someFunc = putStrLn "someFunc"
 ```
 
 
+ちなみに、プロジェクト名を``hello_world``にしようとしたら怒られました。プロジェクト名にアンダースコア``_``を使用してはいけないみたいです。  
+
+```bash
+Expected valid package name, but got: hello_world
+Package names consist of one or more alphanumeric words separated by hyphens.
+To avoid ambiguity with version numbers, each of these words must contain at least one letter.
+```
 
 ## ビルド
 
