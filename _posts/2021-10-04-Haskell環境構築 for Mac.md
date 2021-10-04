@@ -112,15 +112,6 @@ someFunc :: IO ()
 someFunc = putStrLn "someFunc"
 ```
 
-
-ちなみに、プロジェクト名を``hello_world``にしようとしたら怒られました。プロジェクト名にアンダースコア``_``を使用してはいけないみたいです。  
-
-```bash
-Expected valid package name, but got: hello_world
-Package names consist of one or more alphanumeric words separated by hyphens.
-To avoid ambiguity with version numbers, each of these words must contain at least one letter.
-```
-
 ## ビルド
 
 次にビルドしてみます。
