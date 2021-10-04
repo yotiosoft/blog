@@ -3,7 +3,6 @@ layout: page
 title: About
 permalink: /about/
 feature-img: "assets/img/pexels/travel.jpeg"
-tags: [About, Archive]
 ---
 
 # プロフィール
@@ -34,7 +33,5 @@ tags: [About, Archive]
 
 # ホームページ
 
-[YotioSoft](http://yotiosoft.com/)  
-
-現在、[新しいホームページ](https://yotiosoft.github.io/)を作成中です。（10月1日移転予定）
+[YotioSoft](https://yotiosoft.com/)  
 

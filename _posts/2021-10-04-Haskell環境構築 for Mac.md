@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Haskell環境構築 for Mac
-tags: [Haskell]
+tags: [Haskell, Mac]
 excerpt_separator: <!--more-->
 ---
 

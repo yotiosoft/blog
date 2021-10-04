@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rustを始めてみる（Windows編）
-tags: [Rust]
+tags: [Rust, Windows]
 excerpt_separator: <!--more-->
 ---
 

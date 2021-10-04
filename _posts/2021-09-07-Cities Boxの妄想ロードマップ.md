@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cities Boxの妄想ロードマップ
-tags: [Cities Box,Cities Box.cpp]
+tags: [Cities Box]
 excerpt_separator: <!--more-->
 ---
 
