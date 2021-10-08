@@ -11,7 +11,7 @@ feature-img: "assets/img/pexels/travel.jpeg"
 中学生の頃にホームページを立ち上げて以降、様々なソフトウェアを作って公開してきました。  
 作ったものはゲーム、OSもどき、プレイヤーアプリなど。  
 最近は何かを自作することは減り、新しい技術を調べたり、触れたりしてみる機会が増えました。  
-このブログでは、日常的に出会った技術、開発日記、その他諸々を記事にしていきたいと思います。
+このブログでは、日常的に出会った技術、開発日記、その他諸々を記事にしていきたいと思います。  
 
 # 好きなもの、興味のあるもの
 
@@ -29,9 +29,11 @@ feature-img: "assets/img/pexels/travel.jpeg"
 - ホームページ作成
 - 自作OS本の写経
 - 画像認識
-- Coming soon...
+- Coming soon...（近日公開予定）
 
 # ホームページ
 
-[YotioSoft](https://yotiosoft.com/)  
+[![ys_banner](../../../assets/img/post/about/ys_banner.png)](https://yotiosoft.com)
+
+自作したソフトウェアやライブラリの公開を行っています。
 
