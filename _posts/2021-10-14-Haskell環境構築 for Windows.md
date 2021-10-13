@@ -39,7 +39,7 @@ Haskellの環境導入にはstackというツールを用います（他の手�
 
 stackをダウンロードしインストールします。  
 [https://github.com/commercialhaskell/stack/releases](https://github.com/commercialhaskell/stack/releases){:target="_blank"}  
-  
+
 今回は``stack-2.7.3-windows-x86_64-installer.exe``をダウンロード。特に理由がなければ最新版を選びましょう。  
 インストーラに従って進めていけばすぐにインストールは終わります。パスも自動で通してくれました。
 
@@ -84,5 +84,5 @@ Prelude> (*) 167 2
 
 # おわりに
 
-今まさにHaskellを講義で習っていますが、Rustを独学したときによく分からなかった点（例えば束縛の概念）が理解できるようになりました。Rustは命令形言語ですが、部分的に関数型プログラミングの考え方も取り入れているんだなと分かりました。今後はHaskellとRustを並行して勉強していきたいと思います。
+今まさにHaskellを講義で習っていますが、Rustを独学したときによく分からなかった点（例えば束縛の概念）が理解できるようになりました。Rustは命令形言語ですが、部分的に関数型プログラミングの考え方も取り入れられていることがよく分かります。今後はHaskellとRustを並行して勉強していきます。
 
