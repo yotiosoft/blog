@@ -5,7 +5,7 @@ tags: [Haskell, Windows]
 excerpt_separator: <!--more-->
 ---
 
-10日間空いてしまいましたが、今回は[前々回](../04/Haskell環境構築 for Mac.md)のMacにHaskellをインストールした記事に引き続き、HaskellをWindowsにインストールしていきたいと思います。
+10日間空いてしまいましたが、今回は[前々回](../04/Haskell環境構築-for-Mac.html)のMacにHaskellをインストールした記事に引き続き、HaskellをWindowsにインストールしていきたいと思います。
 
 <!--more-->
 
@@ -39,8 +39,9 @@ Haskellの環境導入にはstackというツールを用います（他の手�
 
 stackをダウンロードしインストールします。  
 [https://github.com/commercialhaskell/stack/releases](https://github.com/commercialhaskell/stack/releases){:target="_blank"}  
+  
 今回は``stack-2.7.3-windows-x86_64-installer.exe``をダウンロード。特に理由がなければ最新版を選びましょう。  
-インストーラに従って進めていけばすぐにインストールは終わります。パスも通してくれました。
+インストーラに従って進めていけばすぐにインストールは終わります。パスも自動で通してくれました。
 
 ## 2. Haskellコンパイラ＆基本パッケージのインストール
 
@@ -57,7 +58,7 @@ stackのインストールに成功したらHaskellのコンパイラ等をイ�
 
 # プログラム実行
 
-プロジェクトを作成して、ビルドして…という動作は[前々回](../04/Haskell環境構築 for Mac.md)の記事でやったので、今回はghciを試してみます。ghciとはHaskellの対話形式のコンパイラで、1行ずつ（あるいは複数行）Haskellのコードを実行できます。  
+プロジェクトを作成して、ビルドして…という動作は[前々回](../04/Haskell環境構築-for-Mac.html)の記事でやったので、今回はghciを試してみます。ghciとはHaskellの対話形式のコンパイラで、1行ずつ（あるいは複数行）Haskellのコードを実行できます。  
 
 ```powershell
 > stack ghci
