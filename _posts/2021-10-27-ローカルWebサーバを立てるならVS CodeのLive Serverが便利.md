@@ -36,7 +36,8 @@ VS Codeの拡張機能なので当たり前といえば当たり前ですが、�
 
 特に気に入っている機能です。いちいちブラウザの更新ボタンを押さなくても、ファイルが更新されたら自動的にブラウザも更新してくれます。  
 しかもファイルを保存しなくても更新してくれます。  
-<video src="../../../assets/img/post/liveserver.mp4"></video>  
+
+<video src="../../../assets/img/post/liveserver.mp4" controls muted autoplay playsinline loop></video>  
 
 動画内ではhtmlしか書いていませんが、CSSやJavaScriptももちろん動きます。
 
