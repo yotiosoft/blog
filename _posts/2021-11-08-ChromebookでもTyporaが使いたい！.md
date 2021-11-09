@@ -2,6 +2,8 @@
 layout: post
 title: ChromebookでもTyporaが使いたい！
 tags: [Chrome OS, Typora]
+feature-img: "/assets/img/feature-img/1109.png"
+thumbnail: "/assets/img/thumbnails/feature-img/1109.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -265,7 +267,9 @@ $ typora
 
 すると、日本語が…入力できた！  
 ![](../../../assets/img/post/2021-11-10-ChromebookでもTyporaが使いたい！/Screenshot 2021-11-07 22.37.41.png)  
-これでChromebookでもTyporaで日本語が入力できるようになりました。予測変換も利用できます。「かな↔英数」キーで英語IMEと日本語IME(Mozc)との切り替えができます。ちなみにこの記事もChromebookでTyporaを使って書いていますが、動作はとても軽快です。
+これでChromebookでもTyporaで日本語が入力できるようになりました。予測変換も利用できます。「かな↔英数」キーで英語IMEと日本語IME(Mozc)との切り替えができます。ちなみにこの記事もChromebookでTyporaを使って書いていますが、動作はとても軽快です。  
+
+![](../../../assets/img/post/2021-11-08-ChromebookでもTyporaが使いたい！/Screenshot 2021-11-09 18.38.41.png)
 
 
 
