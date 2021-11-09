@@ -3,6 +3,7 @@ layout: post
 title: ChromebookでもTyporaが使いたい！
 tags: [Chrome OS, Typora]
 feature-img: "/assets/img/feature-img/1109.png"
+thumbnail: "/assets/img/thumbnails/feature-img/1109.png"
 excerpt_separator: <!--more-->
 ---
 
