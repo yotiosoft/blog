@@ -85,7 +85,7 @@ excerpt_separator: <!--more-->
 ※導入済みの場合は飛ばしてください。  
 
 Chrome OSにLinux仮想環境（Crostini）を導入します。導入は簡単で、設定画面から「Linux開発環境」をオンにするだけです。  
-![](../../../assets/img/post/2021-11-15-ChromebookでOpenSiv3D開発！/Screenshot 2021-11-07 22.07.26.png)  
+![](../../../assets/img/post/2021-11-15-ChromebookでOpenSiv3D開発！/Screenshot 2021-11-07 22.07.26-16369538565791.png)  
 Crostini導入についての詳細は↓の記事の冒頭に書いてあります。  
 [ChromebookでもTyporaが使いたい！ | 為せばnull](../08/ChromebookでもTyporaが使いたい.html)
 
