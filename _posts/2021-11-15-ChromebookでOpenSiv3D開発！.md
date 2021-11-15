@@ -38,7 +38,7 @@ excerpt_separator: <!--more-->
 - 画面解像度: 1920×1280ピクセル
 - RAM: 4GB
 
-普段WindowsやMacのPCを触っている自分からすれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookの中ではまあまあ標準的なスペックと言えるのではないでしょうか。  
+普段触れてるWindowsやMacのPCに比べれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookの中ではまあまあ標準的なスペックと言えるのではないでしょうか。開発に使うには厳しそうだけど。  
 
 
 インストールするものは以下の通り。  
@@ -58,7 +58,7 @@ excerpt_separator: <!--more-->
 # 方策
 
 さあ、早速ターミナルを起動して、OpenSiv3Dをビルドして…といきたいところですが、残念ながらそう簡単にはいきません。Ubuntuのような一般的なLinuxディストリビューションとは異なり、Chrome OSはライトユーザー層に向けて作られたブラウザが主役の軽量OSですので、わざわざこんな軽量OSでC++のコードをバリバリ書いてゲーム開発しようなんて考え出すような変態向けには作られておりません。  
-しかし近年、寛大なるGoogle先生はLinux仮想環境（Crostini）をChrome OSに与えてくださりました。マイナーな開発環境のため環境の導入にひと手間かかりますが、これでChrome OSでもLinux開発が可能になりました。Google先生に感謝し、そして祈りましょう。ビルドが成功しますように。  
+しかし近年、寛大なるGoogle先生はCrostiniと呼ばれるLinux仮想環境をChrome OSに与えてくださりました。CrostiniはDebian10が動くコンテナ環境です。スペックの関係上、開発環境としては非力ながらもChrome OSでのLinux開発が可能になりました。Google先生に感謝し、そして祈りましょう。ビルドが成功しますように。  
 
 全体的な流れとしては以下のように行います。
 
@@ -90,7 +90,7 @@ excerpt_separator: <!--more-->
 
 ※導入済みの場合は飛ばしてください。  
 
-Chrome OSにLinux仮想環境（Crostini）を導入します。導入は簡単で、設定画面から「Linux開発環境」をオンにするだけです。  
+Chrome OSにLinux仮想環境Crostiniを導入します。導入は簡単で、設定画面から「Linux開発環境」をオンにするだけです。  
 ![](../../../assets/img/post/2021-11-15-ChromebookでOpenSiv3D開発！/Screenshot 2021-11-07 22.07.26-16369538565791.png)  
 Crostini導入についての詳細は↓の記事の冒頭に書いてあります。  
 [ChromebookでもTyporaが使いたい！ | 為せばnull](../08/ChromebookでもTyporaが使いたい.html)
@@ -99,14 +99,14 @@ Crostini導入についての詳細は↓の記事の冒頭に書いてありま
 
 # 前準備
 
-なぜ前準備が必要かというと、OpenSiv3Dのリファレンス通りに進めてもOpenCV、Boost、gccの必要なバージョンがCrostiniに導入できないからです。CrostiniはDebianベースの仮想環境なので``apt install``でパッケージを導入できますが、``apt``で提供されているバージョンが古いのです。  
+なぜ前準備が必要かというと、OpenSiv3Dのリファレンス通りに進めてもOpenCV、Boost、gccの必要なバージョンがCrostiniに導入できないからです。Crostiniの中身はDebianなので``apt install``でパッケージを導入できますが、``apt``で提供されているバージョンが古いのです。  
 ではなぜUbuntuなら前準備無しで``apt install``で最新版が手に入るのかというと、``ubuntu-toolchain``が利用できるからです。Ubuntuであれば、最初に  
 
 ```bash
 $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 ```
 
-を実行してやれば、その後はOpenCV4もBoost 1.71.0もgcc 9.3.0も普通に``apt``コマンドで導入できます。ところがこの``ubuntu-toolchain``、UbuntuではないのでCrostiniでは利用できません。  
+を実行してやれば、その後はOpenCV4もBoost 1.71.0もgcc 9.3.0も普通に``apt``コマンドで導入できます。ところがこの``ubuntu-toolchain``、UbuntuではないためCrostiniでは利用できません。  
 ではどうするのかというと、これらのソースをダウンロードし、自前でビルドしてインストールします。面倒くさそうに思えるかもしれませんが、既に各パッケージをビルドからインストールまで自動で行ってくれるシェルスクリプトが用意されておりますので、今回はそれを利用します。必要なのはビルドにかかる時間のみです。  
 
 ここからはターミナル上で作業を進めます。
@@ -115,7 +115,7 @@ $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 
 ## OpenCV4の導入
 
-まずはOpenCV4を導入します。前述の通り、Crostiniでは``apt``コマンドではOpenCV4は手に入りません。``sudo apt install libopencv-dev``ではOpenCV 3.2.0がインストールされます。古すぎい！  
+まずはOpenCV4を導入します。前述の通り、Crostiniでは``apt``コマンドではOpenCV4は手に入りません。``sudo apt install libopencv-dev``ではOpenCV 3.2.0がインストールされます。古すぎ！  
 
 最初に``apt``をupdate & upgrade  
 
@@ -588,7 +588,7 @@ $ ./Siv3DTest
 おお！おなじみのサンプルプログラムが、ついにChrome OS上で動き始めました。カーソル操作もできるし、Simple GUIのボタンも使えます。  
 
 v0.6から実装された3Dも問題なく動きます。  
-<video src="../../../assets/img/post/chrome3d.webm" controls></video>    
+<video src="../../../assets/img/post/chrome3d.mp4" controls></video>    
 
 画面録画しながら実行しているので動画はカクカクしていますが、実際はもっとヌルヌル動いてくれます。
 
