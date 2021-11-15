@@ -36,7 +36,16 @@ excerpt_separator: <!--more-->
 - 画面解像度: 1920×1280ピクセル
 - RAM: 4GB
 
-普段WindowsやMacのPCを触っている自分からすれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookの中ではまあまあ標準的なスペックと言えるのではないでしょうか。
+普段WindowsやMacのPCを触っている自分からすれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookの中ではまあまあ標準的なスペックと言えるのではないでしょうか。  
+
+インストールするものは以下の通り。  
+
+- OpenSiv3D v0.6.3
+- OpenCV 4.5.1
+- Boost 1.71.0
+- gcc 9.3.0
+- その他、必要なライブラリなど
+- （エディタ：Emacs）
 
 <a id="plan"></a>
 
@@ -76,7 +85,7 @@ excerpt_separator: <!--more-->
 ※導入済みの場合は飛ばしてください。  
 
 Chrome OSにLinux仮想環境（Crostini）を導入します。導入は簡単で、設定画面から「Linux開発環境」をオンにするだけです。  
-![Screenshot 2021-11-07 22.07.26](../../../assets/img/post/2021-11-15-ChromebookでOpenSiv3D開発！/Screenshot 2021-11-07 22.07.26.png)  
+![](../../../assets/img/post/2021-11-15-ChromebookでOpenSiv3D開発！/Screenshot 2021-11-07 22.07.26.png)  
 Crostini導入についての詳細は↓の記事の冒頭に書いてあります。  
 [ChromebookでもTyporaが使いたい！ | 為せばnull](../08/ChromebookでもTyporaが使いたい.html)
 
@@ -439,7 +448,7 @@ $ cmake --build build -j 1
 それでは、早速サンプルプログラム（Hello Siv3D）をビルドしてみましょう。とその前に、サンプルプログラムの``OpenSiv3D/Linux/App/Main.cpp``を少し修正します。  
 実はLinux版のサンプルプログラムは、CIの動作確認のため初期状態では``main.cpp``は空のMain関数が記述されており、このままビルドして実行するとウィンドウが表示されることなくすぐに実行終了します。  
 
-```C++
+```c++
 /////////////////
 //
 //	Test code for CI
@@ -497,7 +506,10 @@ void Main()
 	}
 }
 (以下略)
+*/
 ```
+
+
 
 冒頭部分（Test code for CIの部分）を削除し、下のMain関数のコメントアウトを外して保存します。  
 
@@ -546,7 +558,6 @@ void Main()
 		}
 	}
 }
-
 ```
 
 これでOKです。サンプルプログラムをビルドしてみます。
@@ -565,7 +576,7 @@ $ ./Siv3DTest
 ```
 
 すると…  
-![](assets/img/post/2021-11-15-ChromebookでOpenSiv3D開発！/Screenshot 2021-11-15 12.00.00.png)  
+![](../../../assets/img/post/2021-11-15-ChromebookでOpenSiv3D開発！/Screenshot 2021-11-15 12.00.00.png)  
 おお！おなじみのサンプルプログラムが、ついにChrome OS上で動き始めました。カーソル操作もできるし、Simple GUIのボタンも使えます。  
 
 v0.6から実装された3Dも問題なく動きます。  
@@ -587,7 +598,7 @@ Chrome OSでもLinux仮想環境であるCrostiniを用いてOpenSiv3Dの導入�
 - OpenSiv3Dの導入
   - [Siv3D リファレンス v0.6.3](https://zenn.dev/reputeless/books/siv3d-documentation/viewer/setup#3.-linux-%E3%81%A7-siv3d-%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B){:target="_blank"}
 - OpenCV4の導入
-  - [Ubuntu 18.04へのOpenCV4.5.1の導入 | RYoMa_0923 | note](https://note.com/ryoma_0923/n/n381428d55b8f){:target="_blank"}
+  - [Ubuntu 18.04へのOpenCV4.5.1の導入 \| RYoMa_0923 \| note](https://note.com/ryoma_0923/n/n381428d55b8f){:target="_blank"}
 - Boostの導入
   - [ストレスフリーにUbuntuでc++20のために最新のg++, Cmake, Boostを導入する - Qiita](https://qiita.com/forno/items/11c4a0f8169d987f232b#boost%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB){:target="_blank"}
 - gcc 9.3.0の導入
