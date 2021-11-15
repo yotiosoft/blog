@@ -7,7 +7,7 @@ thumbnail: "/assets/img/thumbnails/feature-img/211115.png"
 excerpt_separator: <!--more-->
 ---
 
-[前々回](../08/ChromebookでもTyporaが使いたい.html)の記事ではChromebookでTyporaを使えるようにしました。でも、やっぱりそれだけじゃ物足りない。敢えて軽量重視なChrome OSでゲーム開発がしたいと思ったので、今回は環境の導入からOpenSiv3Dのビルド、そしてサンプルプログラムのコンパイルまで実践してみます。
+[前々回](../08/ChromebookでもTyporaが使いたい.html)の記事ではChromebookでTyporaを使えるようにしました。でも、それだけじゃ物足りないなと感じています。やっぱりChromebookでも普段のゲームやアプリの開発ができるようにしたいのです。そこで、今回は環境の導入からOpenSiv3Dのビルド、そしてサンプルプログラムのコンパイルまで実践してみます。
 
 <!--more-->
 
@@ -39,7 +39,7 @@ excerpt_separator: <!--more-->
 - RAM: 4GB
 
 普段触れてるWindowsやMacのPCに比べれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookとしては標準的なスペックと言えると思います。開発に使うには厳しそうだけど。  
-  
+
 
 
 インストールするものは以下の通り。  
