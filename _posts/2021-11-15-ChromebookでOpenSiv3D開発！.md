@@ -20,7 +20,7 @@ excerpt_separator: <!--more-->
    1. [OpenCV4の導入](#opencv4)
    2. [Boostの導入](#boost)
    3. [gcc 9.3.0の導入](#gcc9.3.0)
-5. [OpenSiv3Dのビルド](#opensiv3d)
+5. [OpenSiv3Dライブラリのビルド](#opensiv3d)
 6. [Siv3Dアプリのビルド](#compile)
 7. [まとめ](#sum)
 8. [参考文献](#cf)
@@ -38,7 +38,8 @@ excerpt_separator: <!--more-->
 - 画面解像度: 1920×1280ピクセル
 - RAM: 4GB
 
-普段触れてるWindowsやMacのPCに比べれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookの中ではまあまあ標準的なスペックと言えるのではないでしょうか。開発に使うには厳しそうだけど。  
+普段触れてるWindowsやMacのPCに比べれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookとしては標準的なスペックと言えると思います。開発に使うには厳しそうだけど。  
+  
 
 
 インストールするものは以下の通り。  
@@ -58,7 +59,7 @@ excerpt_separator: <!--more-->
 # 方策
 
 さあ、早速ターミナルを起動して、OpenSiv3Dをビルドして…といきたいところですが、残念ながらそう簡単にはいきません。Ubuntuのような一般的なLinuxディストリビューションとは異なり、Chrome OSはライトユーザー層に向けて作られたブラウザが主役の軽量OSですので、わざわざこんな軽量OSでC++のコードをバリバリ書いてゲーム開発しようなんて考え出すような変態向けには作られておりません。  
-しかし近年、寛大なるGoogle先生はCrostiniと呼ばれるLinux仮想環境をChrome OSに与えてくださりました。CrostiniはDebian10が動くコンテナ環境です。スペックの関係上、開発環境としては非力ながらもChrome OSでのLinux開発が可能になりました。Google先生に感謝し、そして祈りましょう。ビルドが成功しますように。  
+しかし近年、寛大なるGoogle先生はCrostiniと呼ばれるLinux仮想環境をChrome OSに与えてくださりました。CrostiniはDebian10が動くコンテナ環境です。スペックの関係上、開発環境としては非力ながらも、一応Chrome OSでもLinux開発が可能になりました。  
 
 全体的な流れとしては以下のように行います。
 
@@ -72,9 +73,9 @@ excerpt_separator: <!--more-->
 
    1. gcc 9.3.0の導入
 
-3. OpenSiv3Dのビルド
+3. OpenSiv3Dライブラリのビルド
 
-   1. ライブラリのインストール
+   1. 依存パッケージのインストール
 
    1. cmake
 
@@ -99,14 +100,16 @@ Crostini導入についての詳細は↓の記事の冒頭に書いてありま
 
 # 前準備
 
-なぜ前準備が必要かというと、OpenSiv3Dのリファレンス通りに進めてもOpenCV、Boost、gccの必要なバージョンがCrostiniに導入できないからです。Crostiniの中身はDebianなので``apt install``でパッケージを導入できますが、``apt``で提供されているバージョンが古いのです。  
+Crostiniでは、OpenSiv3Dを導入する前に前準備が必要になります。なぜ前準備が必要かというと、OpenSiv3Dのリファレンス通りに進めてもOpenCV、Boost、gccの必要なバージョンがCrostiniに導入できないからです。Crostiniの中身はDebianなので``apt install``でパッケージを導入できますが、``apt``で提供されているバージョンが古いのです。  
+
 ではなぜUbuntuなら前準備無しで``apt install``で最新版が手に入るのかというと、``ubuntu-toolchain``が利用できるからです。Ubuntuであれば、最初に  
 
 ```bash
 $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 ```
 
-を実行してやれば、その後はOpenCV4もBoost 1.71.0もgcc 9.3.0も普通に``apt``コマンドで導入できます。ところがこの``ubuntu-toolchain``、UbuntuではないためCrostiniでは利用できません。  
+を実行してやれば、その後はOpenCV4もBoost 1.71.0もgcc 9.3.0も普通に``apt``コマンドで導入できます。ところがこの``ubuntu-toolchain``、Ubuntuではないため（おそらく）Crostiniでは利用できません。いろいろ試行錯誤してみましたが、自分の環境では無理でした。  
+
 ではどうするのかというと、これらのソースをダウンロードし、自前でビルドしてインストールします。面倒くさそうに思えるかもしれませんが、既に各パッケージをビルドからインストールまで自動で行ってくれるシェルスクリプトが用意されておりますので、今回はそれを利用します。必要なのはビルドにかかる時間のみです。  
 
 ここからはターミナル上で作業を進めます。
@@ -197,8 +200,8 @@ $ pkg-config –libs opencv4
 
 ## Boostの導入
 
-Boostも``apt``では古いバージョン（1.67.0）しか手に入りませんでした。[OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdを見て、最新のLinux版が要求しているBoostのバージョンを確認します。今日時点（v0.6.3）では``Boost 1.71.0 - 1.73.0``となっておりましたので、今回はBoost 1.71.0を導入しました。  
-ここで注意点ですが、必ずREADME.mdに記載されたバージョンを導入しましょう。現在はもっと新しいバージョンが出ていますが、最新の1.78.0ではOpenSiv3Dのビルド途中でビルドエラーが発生しビルドを完了できませんでした。  
+Boostも``apt``では古いバージョン（1.67.0）しか手に入りません。[OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdを見て、最新のLinux版が要求しているBoostのバージョンを確認すると、v0.6.3では``Boost 1.71.0 - 1.73.0``が必須になっています。今回はBoost 1.71.0を導入しました。  
+ここで注意点ですが、必ずREADME.mdに記載されたバージョンを導入してください。現在はもっと新しいバージョンのBoostが出ていますが、最新の1.78.0ではOpenSiv3Dのビルド途中でビルドエラーが発生しビルドを完了できませんでした。  
 
 まずはホームディレクトリにBoost 1.71.0のソースをダウンロードし解凍。  
 
@@ -216,16 +219,17 @@ $ ./b2 toolset=gcc-8 --prefix=/usr/local -j5
 $ sudo ./b2 install toolset=gcc-8 --prefix=/usr/local -j5
 ```
 
-最後の2つでかなり時間がかかりますので要注意。これでBoostの導入は完了です。
+最後の2つでかなり時間がかかります。これでBoostの導入は完了です。
 
 <a id="gcc9.3.0"></a>
 
 ## gcc 9.3.0の導入
 
-実はC/C++コンパイラであるgccも自分でコンパイルして導入し直さなければなりません。  
+実はC/C++コンパイラであるgcc（とg++）も自分でコンパイルして導入し直さなければなりません。  
 [OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdによれば、v0.6.3のLinux版ではgcc 9.3.0が要求されていますが、例によって``apt``では古いバージョンであるgcc 8.3.0までしか手に入りません。  
-OpenSiv3DではC++20の機能が多く活用されていますのでgcc8では対応していない部分が多いです。例えば、gcc 8.3.0では``char8_t``などといったOpenSiv3Dで多用されている型が定義されていません。  
-既にgccは自動でインストールされていました。しかし、当然バージョンは古くgcc 8.3.0でした。  
+OpenSiv3DではC++20の機能が多く活用されていますのでgcc8では対応していない部分が多いです。例えば、gcc8では``char8_t``などといったOpenSiv3Dで多用されている型が定義されていません。  
+
+既にgccは自動でインストールされていましたが、やはりgcc 8.3.0でした。  
 
 ```bash
 $ gcc --version
@@ -345,7 +349,7 @@ $ sudo rm libstdc++.so.6
 $ sudo cp /usr/local/gcc-9.3.0/lib64/libstdc++.so.6 /usr/lib/x86_64-linux-gnu/
 ```
 
-確認してみると、  
+置き換え後にもう一度確認してみると、  
 
 ```bash
 $ strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
@@ -382,13 +386,13 @@ GLIBCXX_DEBUG_MESSAGE_LENGTH
 (以下略)
 ```
 
-``GLIBCXX_3.4.26``が追加されました。これでgcc 9.3.0の導入は完了です。
+``GLIBCXX_3.4.26``が追加されていました。これでgcc 9.3.0の導入は完了です。
 
 <a id="opensiv3d"></a>
 
-# OpenSiv3Dのビルド
+# OpenSiv3Dライブラリのビルド
 
-これでようやくOpenSiv3Dのビルド環境が整いました。ここからはOpenSiv3Dをビルドし、``libSiv3D.a``を生成します。ここからはほぼリファレンス通りです。  
+これでようやくOpenSiv3Dライブラリのビルド環境が整いました。ここからはOpenSiv3Dをビルドし、``libSiv3D.a``を生成します。ここからはほぼリファレンス通りです。  
 まずはOpenSiv3Dの最新コードをダウンロード。  
 
 ```bash
@@ -423,7 +427,7 @@ $ sudo apt install uuid-dev
 $ sudo apt install xorg-dev
 ```
 
-これを一つ一つ実行するのは面倒だという方は、依存パッケージを一括インストールするシェルスクリプトを用意しましたので、以下を実行して導入してください。  
+これを一つ一つ実行するのは面倒だったので、パッケージを一括インストールするシェルスクリプトを用意しました。以下を実行して導入できます。  
 
 ```bash
 $ wget https://yotiosoft.github.io/datacenter/sh/opensiv3d_packages_install.sh
@@ -440,7 +444,7 @@ $ cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 $ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 ```
 
-そしてOpenSiv3Dをビルド。  
+そして最後にOpenSiv3Dライブラリをビルド。  
 Chromebookで並列コンパイルをやらせるとすぐにメモリ不足になってしまいますので、``cmake``に``-j 1``オプションを付け加えておきました。自分の環境ではこれがないと``SivGeometory2D.cpp.o``をビルドするときにメモリ不足で強制終了されてしまいます。
 
 ```bash
@@ -448,14 +452,14 @@ $ cd ../
 $ cmake --build build -j 1
 ```
 
-ここでも数時間ほどかかりますので気長に待ちます。
+ここでも数時間ほどかかりますので気長に待ちます。buildディレクトリ内に``livSiv3D.a``が生成されたらビルド成功です。
 
 <a id="compile"></a>
 
 # Siv3Dアプリのビルド
 
-それでは、早速サンプルプログラム（Hello Siv3D）をビルドしてみましょう。とその前に、サンプルプログラムの``OpenSiv3D/Linux/App/Main.cpp``を少し修正します。  
-実はLinux版のサンプルプログラムは、CIの動作確認のため初期状態では``Main.cpp``は空のMain関数が記述されており、このままビルドして実行するとウィンドウが表示されることなくすぐに実行終了します。  
+OpenSiv3Dライブラリのビルドが完了したので、サンプルプログラム（Hello Siv3D）をビルドしてみましょう。とその前に、サンプルプログラムの``OpenSiv3D/Linux/App/Main.cpp``を少し修正します。  
+Linux版のサンプルプログラムは、CIの動作確認のため初期状態では``Main.cpp``は空のMain関数が記述されており、このままビルドして実行するとウィンドウが表示されることなくすぐに実行終了します。  
 
 ```c++
 /////////////////
@@ -597,7 +601,7 @@ v0.6から実装された3Dも問題なく動きます。
 
 # まとめ
 
-Chrome OSでもLinux仮想環境であるCrostiniを用いてOpenSiv3Dの導入からSiv3Dアプリのビルドまで実現できました。これでCities Boxやその他もろもろの開発がChromebookでもできます。CrostiniはDebianベースなので、Debianでも同様の手順で導入できるかと思います。  
+Chrome OSでもLinux仮想環境であるCrostiniを用いてOpenSiv3Dの導入からSiv3Dアプリのビルドまで実現できました。これでCities Boxやその他もろもろの開発がChromebookでもできます。前述の通りCrostiniの中身はDebianですので、Debianでも同様の手順で導入できるかと思います。  
 次は開発用のエディタとしてChrome OSにVS Codeでも入れてみようかなと思います。
 
 <a id="cf"></a>
