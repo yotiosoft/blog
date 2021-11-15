@@ -38,7 +38,7 @@ excerpt_separator: <!--more-->
 
 普段WindowsやMacのPCを触っている自分からすれば低スペックの部類に入ります。しかしこれはChromebookですので、Chromebookの中ではまあまあ標準的なスペックと言えるのではないでしょうか。  
 
-  
+
 インストールするものは以下の通り。  
 
 - OpenSiv3D v0.6.3
@@ -334,6 +334,7 @@ GLIBCXX_DEBUG_MESSAGE_LENGTH
 ご覧の通り、従来（gcc 8.3.0）の``libstdc++.so.6``には``GLIBCXX_3.4.25``までしか含まれていません。gcc 9.3.0の``libstdc++.so.6``には``GLIBCXX_3.4.26``が同梱されますので、先程gccビルド時に生成された``libstdc++.so.6``に置き換えます。  
 
 ```bash
+$ cd /usr/lib/x86_64-linux-gnu/
 $ sudo rm libstdc++.so.6
 $ sudo cp /usr/local/gcc-9.3.0/lib64/libstdc++.so.6 /usr/lib/x86_64-linux-gnu/
 ```
@@ -433,7 +434,7 @@ $ cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 $ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 ```
 
-そしてOpenSiv3Dをビルド。Crostiniで並列コンパイルをやらせるとすぐにメモリ不足になってしまいますので、''cmake''に``-j 1``オプションを付け加えておきました。自分の環境ではこれがないと``SivGeometory2D.cpp.o``をビルドするときにメモリ不足で強制終了されてしまいます。
+そしてOpenSiv3Dをビルド。Crostiniで並列コンパイルをやらせるとすぐにメモリ不足になってしまいますので、``cmake``に``-j 1``オプションを付け加えておきました。自分の環境ではこれがないと``SivGeometory2D.cpp.o``をビルドするときにメモリ不足で強制終了されてしまいます。
 
 ```bash
 $ cd ../
