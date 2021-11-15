@@ -2,6 +2,8 @@
 layout: post
 title: ChromebookでOpenSiv3D開発！
 tags: [Chrome OS, OpenSiv3D, C++]
+feature-img: "/assets/img/feature-img/211115.png"
+thumbnail: "/assets/img/thumbnails/feature-img/211115.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -41,12 +43,15 @@ excerpt_separator: <!--more-->
 
 インストールするものは以下の通り。  
 
+- Linux開発環境（Crostini）
 - OpenSiv3D v0.6.3
 - OpenCV 4.5.1
 - Boost 1.71.0
 - gcc 9.3.0
 - その他、必要なライブラリなど
 - （エディタ：Emacs）
+
+今日（2021年11月15日）時点で最新のOpenSiv3D v0.6.3を導入します。バージョンが更新されると要求されるライブラリのバージョンなども変わってきますので、必ず[OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdを確認してください。
 
 <a id="plan"></a>
 
@@ -77,7 +82,7 @@ excerpt_separator: <!--more-->
 
 4. アプリのコンパイル
 
-後半の「3. OpenSiv3Dのビルド」「4. アプリのコンパイル」は、ほぼリファレンス通りに進めればOKです。一方で前準備はかなり時間がかかります。
+前準備ではOpenCV、Boost、gccをソースコードからビルドしてインストールするのでかなり時間がかかります。後半の「3. OpenSiv3Dのビルド」「4. アプリのコンパイル」では、ほぼリファレンス通りに進めればOKです。
 
 <a id="crostini"></a>
 
@@ -101,7 +106,7 @@ Crostini導入についての詳細は↓の記事の冒頭に書いてありま
 $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 ```
 
-を実行してやれば、その後はOpenCV4もBoost 1.71.0もgcc 9.3.0も普通に``apt``コマンドで導入できます。ところがこの``ubuntu-toolchain``、Crostiniでは利用できないのです。Ubuntuじゃないからね。  
+を実行してやれば、その後はOpenCV4もBoost 1.71.0もgcc 9.3.0も普通に``apt``コマンドで導入できます。ところがこの``ubuntu-toolchain``、UbuntuではないのでCrostiniでは利用できません。  
 ではどうするのかというと、これらのソースをダウンロードし、自前でビルドしてインストールします。面倒くさそうに思えるかもしれませんが、既に各パッケージをビルドからインストールまで自動で行ってくれるシェルスクリプトが用意されておりますので、今回はそれを利用します。必要なのはビルドにかかる時間のみです。  
 
 ここからはターミナル上で作業を進めます。
@@ -191,7 +196,7 @@ $ pkg-config –libs opencv4
 
 ## Boostの導入
 
-[OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdを見て、最新のLinux版が要求しているBoostのバージョンを確認します。今日時点（v0.6.3）では``Boost 1.71.0 - 1.73.0``となっておりましたので、今回はBoost 1.71.0を導入しました。  
+Boostも``apt``では古いバージョン（1.67.0）しか手に入りませんでした。[OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdを見て、最新のLinux版が要求しているBoostのバージョンを確認します。今日時点（v0.6.3）では``Boost 1.71.0 - 1.73.0``となっておりましたので、今回はBoost 1.71.0を導入しました。  
 ここで注意点ですが、必ずREADME.mdに記載されたバージョンを導入しましょう。現在はもっと新しいバージョンが出ていますが、最新の1.78.0ではOpenSiv3Dのビルド途中でビルドエラーが発生しビルドを完了できませんでした。  
 
 まずはホームディレクトリにBoost 1.71.0のソースをダウンロードし解凍。  
@@ -217,9 +222,9 @@ $ sudo ./b2 install toolset=gcc-8 --prefix=/usr/local -j5
 ## gcc 9.3.0の導入
 
 実はC/C++コンパイラであるgccも自分でコンパイルして導入し直さなければなりません。  
-[OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdによれば、v0.6.3のLinux版ではgcc 9.3.0が要求されていますが、例によってCrostiniの``apt install``では、古いバージョンであるgcc 8.3.0までしか手に入りません。  
+[OpenSiv3Dのリポジトリ](https://github.com/Siv3D/OpenSiv3D){:target="_blank"}のREADME.mdによれば、v0.6.3のLinux版ではgcc 9.3.0が要求されていますが、例によって``apt``では古いバージョンであるgcc 8.3.0までしか手に入りません。  
 OpenSiv3DではC++20の機能が多く活用されていますのでgcc8では対応していない部分が多いです。例えば、gcc 8.3.0では``char8_t``などといったOpenSiv3Dで多用されている型が定義されていません。  
-実は既にgccは自動でインストールされています。しかし、当然バージョンは古くgcc 8.3.0でした。  
+既にgccは自動でインストールされていました。しかし、当然バージョンは古くgcc 8.3.0でした。  
 
 ```bash
 $ gcc --version
@@ -434,14 +439,15 @@ $ cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 $ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 ```
 
-そしてOpenSiv3Dをビルド。Crostiniで並列コンパイルをやらせるとすぐにメモリ不足になってしまいますので、``cmake``に``-j 1``オプションを付け加えておきました。自分の環境ではこれがないと``SivGeometory2D.cpp.o``をビルドするときにメモリ不足で強制終了されてしまいます。
+そしてOpenSiv3Dをビルド。  
+Chromebookで並列コンパイルをやらせるとすぐにメモリ不足になってしまいますので、``cmake``に``-j 1``オプションを付け加えておきました。自分の環境ではこれがないと``SivGeometory2D.cpp.o``をビルドするときにメモリ不足で強制終了されてしまいます。
 
 ```bash
 $ cd ../
 $ cmake --build build -j 1
 ```
 
-ここでも数時間ほどかかりますので気長に待ちましょう。
+ここでも数時間ほどかかりますので気長に待ちます。
 
 <a id="compile"></a>
 
