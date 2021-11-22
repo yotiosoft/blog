@@ -1,9 +1,7 @@
 ---
 layout: post
-title: Firefoxにおけるbreak-inside: column-avoidの挙動について
+title: "Firefoxにおけるbreak-inside: column-avoidの挙動について"
 tags: [HTML, CSS]
-feature-img: "/assets/img/feature-img/211115.png"
-thumbnail: "/assets/img/thumbnails/feature-img/211115.png"
 excerpt_separator: <!--more-->
 ---
 
