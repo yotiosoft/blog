@@ -10,6 +10,14 @@ HTMLで複数のカラムに分割すると、要素の途中で折り返され�
 
 <!--more-->
 
+# ブラウザ環境
+
+- Google Chrome 96.0.4664.45
+- Microsoft Edge 96.0.1054.29
+- Firefox 94.0.1
+
+いずれもWindows10（64bit）
+
 # Firefoxにおける対応状況
 
 [break-inside - CSS: カスケーディングスタイルシート \| MDN](https://developer.mozilla.org/ja/docs/Web/CSS/break-inside){:target="_blank"}  
