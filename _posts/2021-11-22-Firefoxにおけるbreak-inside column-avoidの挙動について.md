@@ -12,7 +12,7 @@ HTMLで複数のカラムに分割すると、要素の途中で折り返され�
 
 # Firefoxにおける対応状況
 
-[break-inside - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/break-inside){:target="_blank"}  
+[break-inside - CSS: カスケーディングスタイルシート \| MDN](https://developer.mozilla.org/ja/docs/Web/CSS/break-inside){:target="_blank"}  
 
 一応、Firefoxでも対応してる…っぽいけど、Chromeと異なる挙動をする。詳細は下記。
 
@@ -52,7 +52,10 @@ HTMLで複数のカラムに分割すると、要素の途中で折り返され�
             </div>
 
             <div id="column2">
-                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+                Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
 
             <div id="column3">
@@ -117,7 +120,10 @@ Firefoxからアクセスされたときだけ、各カラムを``inline-block``
             </div>
 
             <div id="column2">
-                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+                Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
 
             <div id="column3">
@@ -129,4 +135,4 @@ Firefoxからアクセスされたときだけ、各カラムを``inline-block``
 ```
 
 ![SnapCrab_Mozilla Firefox_2021-11-22_17-58-22_No-00](../../../assets/img/post/2021-11-22-Firefoxでpage-break-inside avoidが使えない/SnapCrab_Mozilla Firefox_2021-11-22_17-58-22_No-00.png)  
-Firefox以外からのアクセスにも``inline-block``を適用してしまうと、表示がズレてしまうので要注意。
+Firefox以外からのアクセスにも``inline-block``を適用してしまうと表示がズレてしまうので要注意。
