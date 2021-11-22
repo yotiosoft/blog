@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Firefoxにおけるbreak-inside: column-avoidの挙動について"
+title: "Firefoxでのbreak-inside: column-avoidの挙動について"
 tags: [HTML, CSS]
 excerpt_separator: <!--more-->
 ---
