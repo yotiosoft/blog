@@ -44,7 +44,7 @@ accept: Invalid argument
 
 #include <pthread.h>
 
-#define	PORT	6000
+#define	PORT	50000
 #define BUFSIZE	2048
 
 // 子スレッドの処理（受信＆表示）
@@ -127,7 +127,7 @@ int main() {
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#define PORT 6000 
+#define PORT 50000
 
 int main(int argc, char **argv) {
   struct sockaddr_in saddr;
@@ -228,7 +228,7 @@ fd2 = accept(fd1, (struct sockaddr*)&caddr, &len);
 
 #include <pthread.h>
 
-#define	PORT	6000
+#define	PORT	50000
 #define BUFSIZE	2048
 
 // 子スレッドの処理（受信＆表示）
