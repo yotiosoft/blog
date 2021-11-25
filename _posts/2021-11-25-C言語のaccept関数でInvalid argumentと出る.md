@@ -164,14 +164,14 @@ int main(int argc, char **argv) {
 
 クライアントはメッセージ「Hello!」を送信したら終了します。サーバ側はプロセスを中断させるまでクライアントからの接続を無限に待機し続けます。  
 
-ビルド方法は以下の通り。  
+gccでのコンパイル用のコマンドは以下の通り。  
 
 ```bash
 $ gcc tcp_multi_server.c -o tcp_multi_server -lpthread
 $ gcc tcp_client.c -o tcp_client
 ```
 
-サーバ側を先に立ち上げ、クライアント側を後に立ち上げるとメッセージ「Hello!」が自動的に送信されます。
+サーバ側を先に起動し、クライアント側を後に起動するとメッセージ「Hello!」が自動的にクライアントからサーバへ送信されます。
 
 # 問題点
 
@@ -182,9 +182,7 @@ $ ./tcp_multi_server
 accept: Invalid argument
 ```
 
-acceptに無効な引数が指定されているとのこと。
-
-# 原因
+acceptに無効な引数が指定されているとのこと。  
 
 [man page](https://linuxjm.osdn.jp/html/LDP_man-pages/man2/accept.2.html){:target="_blank"}によると、accept関数の引数
 
@@ -203,7 +201,7 @@ fd2 = accept(fd1, (struct sockaddr*)&caddr, &len);
 
 # 解決策
 
-accept文を呼び出す直前に、``caddr``のサイズを``len``に代入しておけばOK。  
+accept文を呼び出す直前に、``caddr``のサイズを``len``に代入しておけばOK。sizeof関数でサイズを取得しています。  
 
 
 ```c
@@ -303,5 +301,5 @@ int main() {
 # おわりに
 
 このacceptのエラー、出るときもあれば出ないときもあって最初は無視していたんですが、後になって頻発したので、時と場合によると思われます。  
-今回はUbuntuで検証しましたが、Cygwinでも``accept: Bad address``とエラー出て、同様の方法で解決したそうです。一方で、Gentoo Linuxではエラーの再現ができなかったとか…何故だろう？  
+今回はUbuntuで検証しましたが、他の方もCygwinで``accept: Bad address``とエラーが出て、同様の方法で解決したそうです。一方で、Gentoo Linuxではエラーの再現ができなかったとか…何故だろう？  
 ともかく、man pageに``addrlen``を初期化するよう明記されているので、環境依存のエラーを回避するためにも、前もって``addrlen``を初期化させたほうが良いかと思います。
