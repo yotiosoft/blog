@@ -49,65 +49,65 @@ accept: Invalid argument
 
 // 子スレッドの処理（受信＆表示）
 void *child_process(int *fd_socket) {
-	int fd, recv_len;
-	char buf[BUFSIZE];
-	fd = (int)*fd_socket;
+  int fd, recv_len;
+  char buf[BUFSIZE];
+  fd = (int)*fd_socket;
 
-	recv_len = recv(fd, buf, BUFSIZE, 0);
-	if (recv_len > 0) {gcc ./tcp_threads_2.c -o tcp_threads_2 -lpthread
-		// 標準出力に受信内容を書き込み
-		write(1, buf, recv_len);
-	}
-	close(fd);
+  recv_len = recv(fd, buf, BUFSIZE, 0);
+  if (recv_len > 0) {gcc ./tcp_threads_2.c -o tcp_threads_2 -lpthread
+    // 標準出力に受信内容を書き込み
+    write(1, buf, recv_len);
+  }
+  close(fd);
 }
 
 int main() {
-	struct sockaddr_in saddr, caddr;
-	int fd1, fd2, len;
-	pthread_t pt;
+  struct sockaddr_in saddr, caddr;
+  int fd1, fd2, len;
+  pthread_t pt;
 
-	// サーバーのソケットを生成
-	fd1 = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-	if (fd1 < 0) {
-		perror("socket");
-		return -1;
-	}
+  // サーバーのソケットを生成
+  fd1 = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+  if (fd1 < 0) {
+    perror("socket");
+    return -1;
+  }
 
-	// ソケットの設定
-	memset(&saddr, 0, sizeof(saddr));
-	saddr.sin_family = AF_INET;
-	saddr.sin_port = htons(PORT);
-	saddr.sin_addr.s_addr = htonl(INADDR_ANY);
+  // ソケットの設定
+  memset(&saddr, 0, sizeof(saddr));
+  saddr.sin_family = AF_INET;
+  saddr.sin_port = htons(PORT);
+  saddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
-	// 設定をbind
-	if (bind(fd1, (struct sockaddr*)&saddr, sizeof(saddr))) {
-		perror("bind");
-		return -1;
-	}
+  // 設定をbind
+  if (bind(fd1, (struct sockaddr*)&saddr, sizeof(saddr))) {
+    perror("bind");
+    return -1;
+  }
 
-	// 接続待機
-	if (listen(fd1, 5)) {
-		perror("listen");
-		return -1;
-	}
+  // 接続待機
+  if (listen(fd1, 5)) {
+    perror("listen");
+    return -1;
+  }
 
-	// 接続し次第子スレッドを生成
-	// 続きは子スレッドが行う -> child_process
-	while (1) {
-		fd2 = accept(fd1, (struct sockaddr*)&caddr, &len);
-		if (fd2 < 0) {
-			perror("accept");
-			exit(1);
-		}
+  // 接続し次第子スレッドを生成
+  // 続きは子スレッドが行う -> child_process
+  while (1) {
+    fd2 = accept(fd1, (struct sockaddr*)&caddr, &len);
+    if (fd2 < 0) {
+      perror("accept");
+      exit(1);
+    }
 
-		if (pthread_create(&pt, NULL, (void*)(child_process), (void*)&fd2) < 0) {
-			perror("pthread_create");
-			return -1;
-		}
-		pthread_detach(pt);
-	}
+    if (pthread_create(&pt, NULL, (void*)(child_process), (void*)&fd2) < 0) {
+      perror("pthread_create");
+      return -1;
+    }
+    pthread_detach(pt);
+  }
 
-	return 0;
+  return 0;
 }
 ```
 
@@ -130,35 +130,35 @@ int main() {
 #define PORT 6000 
 
 int main(int argc, char **argv) {
-	struct sockaddr_in saddr;
-	int fd;
-	char *buf="Hello!\n";
+  struct sockaddr_in saddr;
+  int fd;
+  char *buf="Hello!\n";
 
-	// ソケットを生成
-	fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (fd < 0) {
-		perror("socket");
-		return -1;
-	}
+  // ソケットを生成
+  fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+  if (fd < 0) {
+    perror("socket");
+    return -1;
+  }
 
-    // ソケットの設定
-	memset(&saddr, 0, sizeof(saddr));
-	saddr.sin_family      = AF_INET;
-	saddr.sin_port        = htons(PORT);
-	saddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+  // ソケットの設定
+  memset(&saddr, 0, sizeof(saddr));
+  saddr.sin_family      = AF_INET;
+  saddr.sin_port        = htons(PORT);
+  saddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 	
-    // サーバに接続
-	if (connect(fd, (struct sockaddr*)&saddr, sizeof(saddr)) < 0) {
-		perror("connect");
-		exit(-1);
-	}
+  // サーバに接続
+  if (connect(fd, (struct sockaddr*)&saddr, sizeof(saddr)) < 0) {
+    perror("connect");
+    exit(-1);
+  }
 
-    // メッセージbufを送信
-	send(fd, buf, strlen(buf), 0);
+  // メッセージbufを送信
+  send(fd, buf, strlen(buf), 0);
 
-	close(fd);
+  close(fd);
 
-	return 0;
+  return 0;
 }
 ```
 
@@ -186,7 +186,7 @@ acceptに無効な引数が指定されているとのこと。
 
 # 原因
 
-[manページ](https://linuxjm.osdn.jp/html/LDP_man-pages/man2/accept.2.html){:target="_blank"}によると、accept関数の引数
+[man page](https://linuxjm.osdn.jp/html/LDP_man-pages/man2/accept.2.html){:target="_blank"}によると、accept関数の引数
 
 ```c
 int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
@@ -237,73 +237,73 @@ fd2 = accept(fd1, (struct sockaddr*)&caddr, &len);
 
 // 子スレッドの処理（受信＆表示）
 void *child_process(int *fd_socket) {
-	int fd, recv_len;
-	char buf[BUFSIZE];
-	fd = (int)*fd_socket;
+  int fd, recv_len;
+  char buf[BUFSIZE];
+  fd = (int)*fd_socket;
 
-	recv_len = recv(fd, buf, BUFSIZE, 0);
-	if (recv_len > 0) {gcc ./tcp_threads_2.c -o tcp_threads_2 -lpthread
-		// 標準出力に受信内容を書き込み
-		write(1, buf, recv_len);
-	}
-	close(fd);
+  recv_len = recv(fd, buf, BUFSIZE, 0);
+  if (recv_len > 0) {gcc ./tcp_threads_2.c -o tcp_threads_2 -lpthread
+    // 標準出力に受信内容を書き込み
+    write(1, buf, recv_len);
+  }
+  close(fd);
 }
 
 int main() {
-	struct sockaddr_in saddr, caddr;
-	int fd1, fd2, len;
-	pthread_t pt;
+  struct sockaddr_in saddr, caddr;
+  int fd1, fd2, len;
+  pthread_t pt;
 
-	// サーバーのソケットを生成
-	fd1 = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-	if (fd1 < 0) {
-		perror("socket");
-		return -1;
-	}
+  // サーバーのソケットを生成
+  fd1 = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+  if (fd1 < 0) {
+    perror("socket");
+    return -1;
+  }
 
-	// ソケットの設定
-	memset(&saddr, 0, sizeof(saddr));
-	saddr.sin_family = AF_INET;
-	saddr.sin_port = htons(PORT);
-	saddr.sin_addr.s_addr = htonl(INADDR_ANY);
+  // ソケットの設定
+  memset(&saddr, 0, sizeof(saddr));
+  saddr.sin_family = AF_INET;
+  saddr.sin_port = htons(PORT);
+  saddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
-	// 設定をbind
-	if (bind(fd1, (struct sockaddr*)&saddr, sizeof(saddr))) {
-		perror("bind");
-		return -1;
-	}
+  // 設定をbind
+  if (bind(fd1, (struct sockaddr*)&saddr, sizeof(saddr))) {
+    perror("bind");
+    return -1;
+  }
 
-	// 接続待機
-	if (listen(fd1, 5)) {
-		perror("listen");
-		return -1;
-	}
+  // 接続待機
+  if (listen(fd1, 5)) {
+    perror("listen");
+    return -1;
+  }
 
-	// 接続し次第子スレッドを生成
-	// 続きは子スレッドが行う -> child_process
-	while (1) {
-        len = sizeof(caddr);  // 追加
-		fd2 = accept(fd1, (struct sockaddr*)&caddr, &len);
-		if (fd2 < 0) {
-			perror("accept");
-			exit(1);
-		}
+  // 接続し次第子スレッドを生成
+  // 続きは子スレッドが行う -> child_process
+  while (1) {
+    len = sizeof(caddr);  // 追加
+    fd2 = accept(fd1, (struct sockaddr*)&caddr, &len);
+    if (fd2 < 0) {
+      perror("accept");
+      exit(1);
+    }
 
-		if (pthread_create(&pt, NULL, (void*)(child_process), (void*)&fd2) < 0) {
-			perror("pthread_create");
-			return -1;
-		}
-		pthread_detach(pt);
-	}
+    if (pthread_create(&pt, NULL, (void*)(child_process), (void*)&fd2) < 0) {
+      perror("pthread_create");
+      return -1;
+    }
+    pthread_detach(pt);
+  }
 
-	return 0;
+  return 0;
 }
 ```
 
-結果、上記の1行を追加するだけでこのエラーが出なくなりました。
+結果、上記1行の追加でこのエラーが出なくなりました。
 
 # おわりに
 
-このacceptのエラー、出るときもあれば出ないときもあって最初は無視していたんですが、後になって頻発したので「時と場合による」現象だと思われます。  
-今回はgccで検証しましたが、Cygwinでも``accept: Bad address``と出て、同様の方法で解決したそうです。一方で、Gentoo Linuxではエラーの再現ができなかったとか…うーん謎だ。  
-ともかく、manページに初期化するよう明記されているので、環境依存のエラーを回避するためにも``addrlen``はきちんと初期化したほうが良いかと思います。
+このacceptのエラー、出るときもあれば出ないときもあって最初は無視していたんですが、後になって頻発したので「時と場合による」と思われます。  
+今回はUbuntuで検証しましたが、Cygwinでも``accept: Bad address``とエラー出て、同様の方法で解決したそうです。一方で、Gentoo Linuxではエラーの再現ができなかったとか…うーん謎だ。  
+ともかく、man pageに``addrlen``を初期化するよう明記されているので、環境依存のエラーを回避するためにも前もって初期化させたほうが良いかと思います。
