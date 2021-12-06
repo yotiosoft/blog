@@ -4,7 +4,6 @@ title: Gallery
 subtitle: From the pexels folder
 permalink: /gallery/
 gallery_path: "assets/img/pexels"
-tags: [Gallery, Photo]
 ---
 
 ここには今までに撮った写真などを載せていく予定です。  
