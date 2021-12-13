@@ -2,9 +2,11 @@
 layout: post
 title: "Win32APIのRestart Managerでファイルをロックしているプロセスを特定する"
 tags: [C/C++, Win32API, Windows]
+thumbnail: "/assets/img/thumbnails/feature-img/1213.png"
 excerpt_separator: <!--more-->
 ---
 
+![SnapCrab_使用中のフォルダー_2021-12-13_22-11-4_No-00](../../../assets/img/post/2021-12-07-Win32ApiのRestart Managerでファイルをロックしているプロセスを特定する/SnapCrab_使用中のフォルダー_2021-12-13_22-11-4_No-00.png)  
 ふと、「このファイルは他のプログラムによって使用されています」とWindowsで表示された時に、どのプロセスがファイルをロックしているのかささっと特定できるツールがあれば便利だなと思い、その実現方法を調査しました。  
 
 わざわざ作らなくてもWindows標準付属のリソースモニターを使えば確認できますが、いちいちリソースモニターを開いてファイル名を入力するのが面倒だったのでツールも自作しました。
@@ -41,7 +43,7 @@ Restart Managerでは比較的簡単にファイルをロックしているプ�
 ![SnapCrab_使用中のフォルダー_2021-12-13_22-11-4_No-00](../../../assets/img/post/2021-12-07-Win32ApiのRestart Managerでファイルをロックしているプロセスを特定する/SnapCrab_使用中のフォルダー_2021-12-13_22-11-4_No-00.png)  
 これではどのプロセスが原因なのかわかりません。本当はこっちを特定できるようにしたかったのですが、Win32APIのドキュメント化されていない関数を使わなければならず難しいというのが正直なところです。これに関しては色々試しているところで、実現できたらまた記事に書きます。  
 
-というわけで、今回実現できるのは「ファイルがロックされている」場合のみです。
+というわけで、今回実現できるのは前者の「ファイルがロックされている」場合のみです。
 
 # CUIで動かす
 
@@ -92,9 +94,6 @@ void Main()
 			}
 
 			// ファイルをセッションに登録
-			//wchar_t* buf;
-			//file_path.toWstr().assign(buf);
-
 			std::wstring wstr = file.path.toWstr();
 			PCWSTR pcwstr = wstr.c_str();
 			Print << Unicode::FromWstring(pcwstr);
