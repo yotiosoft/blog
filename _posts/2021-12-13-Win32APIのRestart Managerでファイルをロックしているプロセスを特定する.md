@@ -14,7 +14,9 @@ excerpt_separator: <!--more-->
 # 実現方法
 
 Win32APIの``Restart Manager``というAPIで実現できます。  
-[[Restart Manager について - Win32 apps | Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/win32/rstmgr/about-restart-manager)]{:target="_blank"}  
+
+[Restart Manager について - Win32 apps \| Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/win32/rstmgr/about-restart-manager){:target="_blank"}  
+
 手順としては、こう。  
 
 1. Restart Managerセッションを開始する（RmStartSession）
@@ -22,7 +24,8 @@ Win32APIの``Restart Manager``というAPIで実現できます。
 3. そのファイルをロックしているプロセスの一覧を取得する（RmGetList）
 4. 用が済んだらセッションを終了する（RmEndSession）
 
-``Restart Manager``は、更新プログラムを実行する際に更新しなければならないファイルを開いているプロセスを特定し、そのプロセスを再起動させるためのAPIですが、再起動はさせなくともファイルをロックしているプロセスを特定するだけの目的でも利用できます。ちなみに同様の機能を提供する``IFileIsInUse``というAPIも存在しますが、こちらはまだ試していません。使い勝手はどちらもほぼ同じだと思います。
+``Restart Manager``は、更新プログラムを実行する際に更新しなければならないファイルを開いているプロセスを特定し、そのプロセスを再起動させるためのAPIですが、再起動はさせなくともファイルをロックしているプロセスを特定するだけの目的でも利用できます。  
+ちなみに同様の機能を提供する``IFileIsInUse``というAPIも存在しますが、こちらはまだ試していません。使い勝手はどちらもほぼ同じだと思います。
 
 # 注意点
 
