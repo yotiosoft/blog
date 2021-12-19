@@ -38,7 +38,7 @@ feature-img: "assets/img/pexels/travel.jpeg"
 - 応用情報技術者試験（R03春）
 - 基本情報技術者試験（R01秋）
 - CGエンジニア検定 エキスパート
-- TOEIC L$R 720
+- TOEIC L&R 720
 - 普通自動車運転免許
 
 # ホームページ
