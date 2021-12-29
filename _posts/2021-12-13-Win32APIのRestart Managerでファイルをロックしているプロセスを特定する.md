@@ -249,3 +249,8 @@ void Main()
 ただし、前述の通りTerapadのようにファイルをロックしないプロセスは特定できません。  
 ![SnapCrab_NoName_2021-12-13_23-56-5_No-00](../../../assets/img/post/2021-12-07-Win32ApiのRestart Managerでファイルをロックしているプロセスを特定する/SnapCrab_NoName_2021-12-13_23-56-5_No-00.png)  
 次はファイルをロックしないプロセスも特定できるようにしたいなぁ。
+
+# リポジトリ
+
+以上のコードが置いてあるGitHubリポジトリはこちら。  
+[https://github.com/YotioSoft/RmWhichProcessLocking](https://github.com/YotioSoft/RmWhichProcessLocking){:target="_blank"}
