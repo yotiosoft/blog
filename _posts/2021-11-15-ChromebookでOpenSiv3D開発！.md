@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ChromebookでOpenSiv3D開発！
-tags: [Chrome OS, OpenSiv3D, C++]
+tags: [Chrome OS, OpenSiv3D, C/C++]
 feature-img: "/assets/img/feature-img/211115.png"
 thumbnail: "/assets/img/thumbnails/feature-img/211115.png"
 excerpt_separator: <!--more-->
