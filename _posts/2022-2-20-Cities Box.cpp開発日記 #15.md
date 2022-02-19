@@ -2,7 +2,7 @@
 layout: post
 title: "Cities Box.cpp開発日記 #15"
 tags: [Cities Box,C/C++,OpenSiv3D,開発日記]
-thumbnail: "/assets/img/thumbnails/feature-img/220214.png"
+thumbnail: "/assets/img/thumbnails/feature-img/220219.png"
 excerpt_separator: <!--more-->
 ---
 
