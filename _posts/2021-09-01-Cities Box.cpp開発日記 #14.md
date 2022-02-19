@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cities Box.cpp開発日記#14
+title: Cities Box.cpp開発日記 #14
 tags: [Cities Box,C/C++,OpenSiv3D,開発日記]
 feature-img: "/assets/img/feature-img/0901.png"
 thumbnail: "/assets/img/thumbnails/feature-img/0901.png"
