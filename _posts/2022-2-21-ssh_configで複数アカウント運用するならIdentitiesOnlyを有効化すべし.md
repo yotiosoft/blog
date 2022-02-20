@@ -21,9 +21,9 @@ gitのconfigファイルに接続先を正しく設定していても、なぜ�
 
 ```bash
 $ ssh -T GitHub-YotioSoft
-Hi YotioSoft! You\'ve successfully authenticated, but GitHub does not provide shell access.
+Hi YotioSoft! You’ve successfully authenticated, but GitHub does not provide shell access.
 $ ssh -T GitHub-Labo
-Hi YotioSoft! You\'ve successfully authenticated, but GitHub does not provide shell access.
+Hi YotioSoft! You’ve successfully authenticated, but GitHub does not provide shell access.
 ```
 
 上記の例では、ホスト名を``GitHub-YotioSoft``として設定したGitHubのYotioSoft（個人用）のアカウントにsshで接続した後に、ホスト名を``GitHub-Labo``として設定したGitHubの研究室用のアカウントにssh接続しようとしています。  
@@ -34,9 +34,9 @@ Hi YotioSoft! You\'ve successfully authenticated, but GitHub does not provide sh
 
 ```bash
 $ ssh -T GitHub-YotioSoft
-Hi YotioSoft! You\'ve successfully authenticated, but GitHub does not provide shell access.
+Hi YotioSoft! You’ve successfully authenticated, but GitHub does not provide shell access.
 $ ssh -T GitHub-Labo
-Hi [研究室用のアカウント名]! You\'ve successfully authenticated, but GitHub does not provide shell access.
+Hi [研究室用のアカウント名]! You’ve successfully authenticated, but GitHub does not provide shell access.
 ```
 
 このようになってほしいのですが、なぜかアカウントを切り替えようとしてもYotioSoftにログインしたままになっています。秘密鍵も正しく設定できているのに、なぜだろう？
