@@ -42,3 +42,5 @@ jobs:
         on:
           tags: true
           repo: sylhare/Type-on-Strap
+env:
+  TZ: 'Asia/Tokyo'
