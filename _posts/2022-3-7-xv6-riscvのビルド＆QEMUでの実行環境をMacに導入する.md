@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "xv6-riscvのコンパイル＆QEMUでの実行環境をMacに導入する"
+title: "xv6-riscvのビルド＆QEMUでの実行環境をMacに導入する"
 tags: [Jekyll]
 excerpt_separator: <!--more-->
 ---
 
-今回はxv6をMacでビルド＆実行する環境を導入したいと思います。具体的には、xv6-riscvをRISC-Vクロスコンパイラでコンパイルし、QEMU上で動作させます。  
+今回はxv6をMacでビルド＆実行する環境を導入したいと思います。具体的には、xv6-riscvをRISC-Vクロスコンパイラでビルドし、QEMU上で動作させます。  
 Linuxでも導入可能ですが、クロスコンパイラのビルドが必要になるようです。その反面、Macではビルド済みのクロスコンパイラがHomebrew上に用意されています。
 
 <!--more-->  
@@ -26,7 +26,7 @@ Linuxでも導入可能ですが、クロスコンパイラのビルドが必要
 ## 注：RISC-Vのクロスコンパイラについて
 
 今回は、xv6をビルドするために必要なクロスコンパイラriscv-toolsをインストールします。  
-brewでインストール可能ですが、[riscv-software-src/homebrew-riscv](https://github.com/riscv-software-src/homebrew-riscv)のREADMEによると、macOS Monterey（macOS 12）ではビルド済みのものがインストールできるのに対し、それ以外のバージョンではビルドしてからインストールする作業が必要のようです（``brew install``で自動でビルドが実行されます）。  
+brewでインストール可能ですが、[riscv-software-src/homebrew-riscv](https://github.com/riscv-software-src/homebrew-riscv)のREADMEによると、macOS Monterey（macOS 12）ではビルド済みのriscv-toolsがインストールできるのに対し、それ以外のバージョンではビルドしてからインストールする作業が必要のようです。riscv-toolsには膨大な数のsubmoduleが含まれているので、結構時間を要するかと思われます。  
 よって、Monteryではビルド済みのものが公開されていますので、事前にMacをMonteryにアップグレードしておくことをおすすめします。
 
 
