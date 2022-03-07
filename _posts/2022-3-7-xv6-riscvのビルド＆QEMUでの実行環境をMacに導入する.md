@@ -90,6 +90,6 @@ $ make qemu
 
 # 参考資料
 
-- [GitHub : mit-pdos/xv6-riscv](https://github.com/mit-pdos/xv6-riscv){:target="_blank"} : xv6-riscvのリポジトリ（READMEに導入方法記載）
+- [GitHub : mit-pdos/xv6-riscv](https://github.com/mit-pdos/xv6-riscv){:target="_blank"} : xv6-riscvのリポジトリ
 
 - [GitHub : riscv-software-src/homebrew-riscv](https://github.com/riscv-software-src/homebrew-riscv){:target="_blank"} : macOS（Homebrew）向けRISC-V Toolchain（READMEに導入方法記載）
