@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "xv6-riscvのビルド＆QEMUでの実行環境をMacに導入する"
+title: "xv6-riscvのコンパイル＆QEMUでの実行環境をMacに導入する"
 tags: [Jekyll]
 excerpt_separator: <!--more-->
 ---
@@ -12,7 +12,7 @@ Linuxでも導入可能ですが、クロスコンパイラのビルドが必要
 
 # xv6とは
 
-天下のMIT様が開発したUNIXライクな教育用OS。Version 6 UNIXをx86環境で動作するようにしたもので、OSの仕組みの学習用にシンプルに作られています。RISC-VというCPU上で動作し、C言語で記述されています。
+天下のMIT様が開発したUNIXライクな教育用OS。Version 6 UNIXをx86環境で動作するようにしたもので、OSの仕組みの学習用にシンプルに作られています。C言語で記述され、RISC-Vで動作します。
 
 # 実行環境
 
