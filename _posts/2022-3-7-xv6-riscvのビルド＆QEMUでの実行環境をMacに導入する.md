@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "xv6-riscvのビルド＆QEMUでの実行環境をMacに導入する"
-tags: [Jekyll]
+tags: [Mac, xv6]
 excerpt_separator: <!--more-->
 ---
 
