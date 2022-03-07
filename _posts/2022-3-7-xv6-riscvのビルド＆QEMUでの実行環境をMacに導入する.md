@@ -76,7 +76,7 @@ $ git clone https://github.com/mit-pdos/xv6-riscv.git
 
 # ビルド&実行
 
-ビルド環境が整ったら、
+ビルド環境が整ったら、xv6-riscvのリポジトリをcloneした場所で
 
 ```bash
 $ make qemu
@@ -84,7 +84,7 @@ $ make qemu
 
 でxv6のビルドと実行が可能です。  
 
-ターミナル上でxv6が実行されます。  
+完了すると、ターミナル上でxv6が実行されます。  
 ![スクリーンショット 2022-03-04 23.20.22](../../../assets/img/post/スクリーンショット 2022-03-04 23.20.22.png)
 
 上記はxv6上でlsコマンドを実行している様子。``xv6 kernel is booting``から下がQEMUでxv6を実行している際のコンソールです。終了時は``C-A x``（``controlキー + A同時押し``→``x``）でQEMUを終了します。
