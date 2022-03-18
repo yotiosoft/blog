@@ -207,5 +207,6 @@ Crostini上でも快適に動作します。
 
 # おわりに
 
-HSP3 for LinuxがChrome OSのCrostini上でも動作することが確認できました。HSP for Linuxは従来のHSP3に比べると若干機能に制約がありますが、HSP3Dish向けにプログラムを作ればWindows、AndroidやiOS、Respberry Piと同様のソースコードでChromebook上でも動作できるのは素晴らしいことです。今回はトラブルも少なく、すんなり動いてくれました。手軽に実現できるので、Chrome OS環境をお持ちの方はぜひ試してみてください。
+HSP3 for LinuxがChrome OSのCrostini上でも動作することが確認できました。HSP for Linuxは従来のHSP3に比べると若干機能に制約がありますが、HSP3Dish向けにプログラムを作ればWindows、AndroidやiOS、ブラウザ、Respberry Piと同様のソースコードでChromebook上でも動作できるのは素晴らしいことです。今回はトラブルも少なく、すんなり動いてくれました。手軽に実現できるので、Chrome OS環境をお持ちの方はぜひ試してみてください。  
+wineを使ってWindows版のHSP3を動かす方法もあるので、気が向いたらそれも後日試してみます。
 
