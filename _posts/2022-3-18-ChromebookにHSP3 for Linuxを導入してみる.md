@@ -37,8 +37,8 @@ excerpt_separator: <!--more-->
 
 # 1. Crostiniのインストール
 
-以前別の記事に書いたのでこちらを参照。  
-[ChromebookでもTyporaが使いたい！](https://blog.yotiosoft.com/2021/11/08/Chromebook%E3%81%A7%E3%82%82Typora%E3%81%8C%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84.html){:target="_blank"}
+以前別の記事に書いたのでこちらをご参照ください。  
+[ChromebookでもTyporaが使いたい！](https://blog.yotiosoft.com/2021/11/08/Chromebook%E3%81%A7%E3%82%82Typora%E3%81%8C%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84.html)
 
 
 
@@ -179,7 +179,7 @@ Init:HGIOScreen(360,640)
 
 ![image-20220318151001990](../../../assets/img/post/2022-2-14-ChromebookにHSP3 for Linuxを導入してみる　/image-20220318151001990.png)  
 キター！  
-無事、Crostini上でHSP3のブロック崩しが起動しました。  
+無事、縦長の画面サイズでHSP3のブロック崩しが起動しました。  
 
 <video src="../../../assets/img/post/2022-2-14-ChromebookにHSP3 for Linuxを導入してみる　/Screen recording 2022-03-18 15.11.45.webm" controls></video>
 
@@ -200,9 +200,10 @@ Crostini上でも快適に動作します。
 ![image-20220318160343121](../../../assets/img/post/2022-3-18-ChromebookにHSP3 for Linuxを導入してみる/image-20220318160343121.png)  
 すると、  
 ![image-20220318160625827](../../../assets/img/post/2022-3-18-ChromebookにHSP3 for Linuxを導入してみる/image-20220318160625827.png)  
-こちらも実行できました。ボタンやダイアログも利用できます。URLは開けないみたいだけど。
+こちらも実行できました。
 
-![image-20220318160550357](../../../assets/img/post/2022-3-18-ChromebookにHSP3 for Linuxを導入してみる/image-20220318160550357.png)
+![image-20220318160550357](../../../assets/img/post/2022-3-18-ChromebookにHSP3 for Linuxを導入してみる/image-20220318160550357.png)  
+ボタンやダイアログも利用できます。URLは開けないみたいだけど。
 
 # おわりに
 
