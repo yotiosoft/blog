@@ -61,7 +61,7 @@ excerpt_separator: <!--more-->
 ~/openhsp/$ git clone http://github.com/onitama/OpenHSP
 ```
 
-これでOK。
+
 
 # 3. 環境の導入
 
@@ -181,7 +181,7 @@ Init:HGIOScreen(360,640)
 キター！  
 無事、縦長の画面サイズでHSP3のブロック崩しが起動しました。  
 
-<video src="../../../assets/img/post/2022-2-14-ChromebookにHSP3 for Linuxを導入してみる　/Screen recording 2022-03-18 15.11.45.webm" controls></video>
+<video src="../../../assets/img/post/2022-2-14-ChromebookにHSP3 for Linuxを導入してみる　/Screen-recording-2022-03-18-15.11.45.mp4" controls></video>
 
 Crostini上でも快適に動作します。
 
@@ -203,7 +203,7 @@ Crostini上でも快適に動作します。
 こちらも実行できました。
 
 ![image-20220318160550357](../../../assets/img/post/2022-3-18-ChromebookにHSP3 for Linuxを導入してみる/image-20220318160550357.png)  
-ボタンやダイアログも利用できます。URLは開けないみたいだけど。
+ボタンやダイアログも利用できます。URLは開けませんでした。
 
 # おわりに
 
