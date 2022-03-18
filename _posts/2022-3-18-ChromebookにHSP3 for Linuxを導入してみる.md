@@ -2,6 +2,8 @@
 layout: post
 title: "ChromebookにHSP3 for Linuxを導入してみる"
 tags: [Chrome OS, HSP3]
+feature-img: "/assets/img/feature-img/220318.png"
+thumbnail: "/assets/img/thumbnails/feature-img/220318.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -168,7 +170,7 @@ autoscale=0
 ```
 
 
-これでもう一度ランタイムを実行。すると、  
+これでもう一度``hsp3dish``でランタイムを実行。すると、  
 
 ```bash
 ~/openhsp/OpenHSP$ ./hsp3dish ./block3.ax
@@ -177,7 +179,7 @@ Init:HGIOScreen(360,640)
 
 ![image-20220318151001990](../../../assets/img/post/2022-2-14-ChromebookにHSP3 for Linuxを導入してみる　/image-20220318151001990.png)  
 キター！  
-無事、Crostini上で例のHSP3のブロック崩しが起動しました。  
+無事、Crostini上でHSP3のブロック崩しが起動しました。  
 
 <video src="../../../assets/img/post/2022-2-14-ChromebookにHSP3 for Linuxを導入してみる　/Screen recording 2022-03-18 15.11.45.webm" controls></video>
 
@@ -185,7 +187,7 @@ Crostini上でも快適に動作します。
 
 # エディタを起動
 
-``./hsed``がスクリプトエディタです。これを起動してみます。
+せっかくなのでスクリプトエディタも起動してみます。OpenHSPディレクトリにある``./hsed``がスクリプトエディタです。
 
 ```bash
 ~/openhsp/OpenHSP$ ./hsed
