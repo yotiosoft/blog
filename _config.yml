@@ -9,7 +9,7 @@ favicon: assets/favicon.ico                             # Icon displayed in the 
 
 # Header and footer text
 header_text: "YotioSoft's Diary"				# Change Blog header text
-header_feature_image: assets/img/pexels/river-6175173_1920.jpg
+header_feature_image: assets/img/pexels/japan-4524260_1920.jpeg
 footer_text: >
   © 2021-2022 YotioSoft | Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
