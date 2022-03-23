@@ -31,7 +31,7 @@ feature-img: "assets/img/pexels/travel.jpeg"
 - ホームページ作成
 - 自作OS本の写経
 - 画像認識
-- Coming soon...（近日公開予定）
+- プレイヤーアプリ「Albus Box」作成
 
 # 保有資格
 
