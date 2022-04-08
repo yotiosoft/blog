@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DockerでMacにUbuntu環境をドカッと入れる"
+title: "DockerでMacにUbuntu仮想環境をドカッと入れる"
 tags: [Mac, Ubuntu]
 excerpt_separator: <!--more-->
 ---
