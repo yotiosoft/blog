@@ -13,7 +13,7 @@ excerpt_separator: <!--more-->
 
 - MacBook Pro 2016
 - OS: macOS Monterey 12.2.1
-- CPU: intel i5 2GHz
+- CPU: intel i5 6360U
 - RAM: 8GB
 
 # 手順
@@ -85,7 +85,7 @@ $ docker exec -it ubuntu /bin/bash
 
 以降、bashがUbuntuに入り、入力がUbuntuコンテナ上で実行されます。  
 
-```sh
+```bash
 root@97f851a88bc0:/# ls
 bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 root@97f851a88bc0:/# pwd
@@ -96,8 +96,8 @@ root@97f851a88bc0:/# pwd
 
 まずはコンテナから出て、
 
-```sh
-# exit
+```bash
+root@97f851a88bc0:/# exit
 ```
 
 コンテナを停止させます。  
