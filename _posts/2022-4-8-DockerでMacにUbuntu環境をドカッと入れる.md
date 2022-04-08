@@ -20,7 +20,7 @@ excerpt_separator: <!--more-->
 
 ## 1. Dockerをインストール
 
-[Install Docker Desktop on Mac | Docker Documentation](https://docs.docker.com/desktop/mac/install/){:target="_blank"}  
+[Install Docker Desktop on Mac \| Docker Documentation](https://docs.docker.com/desktop/mac/install/){:target="_blank"}  
 
 上記のダウンロードページに行き、使用機種のCPUに応じて「Mac with Intel chip」または「Mac with Apple chip」のいずれかを選んでダウンロードします。今回はIntel機に導入するのでIntel chipを選びました。ダウンロードに要する時間は5分ほど。  
 
@@ -85,7 +85,7 @@ $ docker exec -it ubuntu /bin/bash
 
 以降、bashがUbuntuに入り、入力がUbuntuコンテナ上で実行されます。  
 
-```bash
+```sh
 root@97f851a88bc0:/# ls
 bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 root@97f851a88bc0:/# pwd
@@ -96,7 +96,7 @@ root@97f851a88bc0:/# pwd
 
 まずはコンテナから出て、
 
-```bash
+```sh
 # exit
 ```
 
