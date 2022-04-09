@@ -1,0 +1,177 @@
+---
+layout: post
+title: "C++のstd::coutで簡易プログレスバーを作る"
+tags: [C++]
+feature-img: "/assets/img/feature-img/220410.png"
+thumbnail: "/assets/img/thumbnails/feature-img/220410.png"
+excerpt_separator: <!--more-->
+---
+
+今、C++でとあるCLIツールを作っていて、処理の進度を示すプログレスバーを実装しています。例えば、こんなやつ。  
+
+```
+|========> | 80%
+```
+
+<!--more-->  
+
+プログレスバーは処理の進度に合わせて更新されるべきで、こんな感じ↓で進度が変わるたびに一行ずつ標準出力に追記していくのは見ずらいしダサい。
+
+```
+|          | 0%
+|>         | 10%
+|=>        | 20%
+|==>       | 30%
+...
+```
+
+理想としては、こんな感じ↓で進度が変化したらプログレスバー部分を上書きするという動作が望ましいです。  
+
+```
+|          | 0%
+```
+
+↓ 進度が変化
+
+```
+|>         | 10%
+```
+
+↓ 進度が変化  
+...
+
+# 解決方法
+
+``\\r``をstd::coutで出力してやればOK。  
+``\\r``は行の先頭に移動することを示すコードで、これを指定してやれば出力位置が行の先頭に戻ります。つまり、出力の上書きが可能です。  
+ここで注意すべきなのは、``\\r``を使う前に``\\n``や``std::endl``で改行しないこと。改行してしまうと制御対象が次の行に移ってしまい、上書きできなくなります。  
+
+使用例）
+
+```c++
+#include <stdio.h>
+#include <unistd.h>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  cout << "Waiting.." << flush;               // 上書き前の文字列
+
+  sleep(3);                                   // 3秒間待つ
+
+  cout << "\r";                               // 先頭へ移動
+  cout << "Hello World!" << endl;             // 上書き後の文字列を出力
+}
+```
+
+上記の例では「Waiting..」と表示した後に3秒間待機し、「Hello World!」と上書きします。  
+
+```
+Waiting..
+```
+
+↓ 3秒後
+
+```
+Hello World!
+```
+
+上書き前の出力（Waiting..）は``std::flush``を用いてバッファをフラッシュすることで即座に出力させています。これを用いないと、上書き前の出力がバッファに溜め込まれてしまいsleep前に表示されなくなってしまいます。  
+
+ここで気をつけなければならないのは、上書き前の出力文字列のほうが長い場合です。``\\r``は単に標準出力のフォーカスを行の先頭に移すだけなので、上書き後の文字列が上書き前の文字列よりも短い場合、上書き前の文字列が残ってしまいます。  
+そこで、上書き時に上書き前の文字数だけ予め空白文字で埋めることでこれを回避します。  
+
+例）
+
+```c++
+#include <stdio.h>
+#include <unistd.h>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  cout << "Waiting for 3 seconds.." << flush; // 上書き前の文字列（23文字）
+
+  sleep(3);                                   // 3秒間待つ
+
+  cout << "\r" << string(23, ' ');            // 23文字分空白で埋める
+  cout << "\r";                               // 先頭へ移動
+  cout << "Hello World!" << endl;             // 上書き後の文字列を出力
+} 
+```
+
+```
+Waiting for 3 seconds..
+```
+
+↓ 3秒後
+
+```
+Hello World!
+```
+
+
+
+# 実装
+
+上記の例を応用すれば簡単です。今回は特に何も処理はしませんが、とりあえず1秒毎に5％ずつプログレスバーが伸びるプログラムを作成。
+
+```c++
+#include <stdio.h>
+#include <unistd.h>
+#include <iostream>
+
+#define INCREMENTS  10
+
+using namespace std;
+
+void progress_bar(unsigned int progress) {
+  // 100を超えていたら100%に
+  if (progress > 100)
+      progress = 100;
+    
+  // 進度をINCREMENTS%刻みに（100%の場合はそのまま）
+  if (progress < 100)
+      progress = (progress / INCREMENTS) * INCREMENTS;
+
+  // 上書きの準備
+  cout << "\r" << string(16, ' ');            // 空白で埋める
+  cout << "\r";                               // 先頭へ移動
+
+  // プログレスバーを上書き
+  cout << "|";
+  cout << string(progress/INCREMENTS, '=');   // (progress/INCREMENTS)文字分をバー(=)で埋める
+  if (progress < 100) {
+      cout << ">";                                                // バーの先端部分
+      cout << string(100/INCREMENTS-1-progress/INCREMENTS, ' ');  // 残りを空白で埋める
+  }
+    
+  cout << "|";
+}
+
+int main() {
+  // 1秒おきに5％ずつ増加
+  for (int p=0; p<=100; p+=5) {
+      progress_bar(p);
+      cout << " " << p << "%" << flush;
+      sleep(1);   // 1秒間待つ
+  }
+  cout << endl;
+}
+```
+
+progress_bar(unsinged int)でプログレスバーを描画します。  
+バーの長さは10％刻みで更新されます。定数INCREMENTSによって何％刻みで更新するかを指定します。
+
+## 実行
+
+<video src="../../../assets/img/post/easy_progress_bar.mp4" control></video>
+
+うん。いい感じですね。
+
+## リポジトリ
+
+[https://github.com/YotioSoft/Cpp-Easy-ProgressBar](https://github.com/YotioSoft/Cpp-Easy-ProgressBar){:target="_blank"}
+
