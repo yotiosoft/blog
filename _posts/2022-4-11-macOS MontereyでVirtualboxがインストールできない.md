@@ -2,7 +2,6 @@
 layout: post
 title: "macOS MontereyでVirtualBoxがインストールできない"
 tags: [Mac]
-thumbnail: "/assets/img/thumbnails/feature-img/220410.png"
 excerpt_separator: <!--more-->
 ---
 
