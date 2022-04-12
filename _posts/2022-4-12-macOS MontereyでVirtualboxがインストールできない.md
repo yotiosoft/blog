@@ -29,6 +29,7 @@ MacにVirtualBoxをインストールしようとしたら、なぜかインス�
 # 原因はMacのセキュリティ
 
 どうやらMacの設定の「セキュリティとプライバシー」にて、Oracle製ソフトウェアのアップデートの実行を許可しないとインストールが成功しないようです。  
+  
 インストール時、「セキュリティとプライバシー」に「開発元"Oracle America, Inc."のシステムソフトウェアがアップデートされました」という表示が現れ、「許可」ボタンが表示されるはずなんですが…  
 あれ？  
 ![スクリーンショット 2022-04-12 2.54.20](../../../assets/img/post/スクリーンショット 2022-04-12 2.54.20.png)  
@@ -62,7 +63,6 @@ MacにVirtualBoxをインストールしようとしたら、なぜかインス�
 
 # おわりに
 
-VirtualBoxをダウンロードするときは[VirtualBoxのUSサイト](https://www.virtualbox.org/wiki/Downloads){:target="_blank"}から最新版をダウンロードしましょう。  
-[日本語のOracleのページ](https://www.oracle.com/jp/virtualization/technologies/vm/downloads/virtualbox-downloads.html){:target="_blank"}は更新されておらず、未だにバージョン6.1.14（2年前のリリース）が最新版として扱われています。  
+VirtualBoxをダウンロードするときは[VirtualBoxのUSサイト](https://www.virtualbox.org/wiki/Downloads){:target="_blank"}から最新版をダウンロードしましょう。[日本語のOracleのページ](https://www.oracle.com/jp/virtualization/technologies/vm/downloads/virtualbox-downloads.html){:target="_blank"}は更新されておらず、未だにバージョン6.1.14（2年前のリリース）が最新版として扱われています。  
 
-「virtualbox ダウンロード」とかでググるとこっちが先に出てきてしまうので要注意。確かに、[別のページ]("https://www.oracle.com/jp/virtualization/technologies/virtualbox/downloads.html"){:target="_blank"}には「Oracle VM Virtualboxの最新版は、こちら（USサイト）からダウンロードをお願いします。」と書いてあった。しかし、肝心のダウンロードページには記載なし。こういうの、結構困るよなぁ…
+「virtualbox ダウンロード」とかでググると日本語のOracleのページが先に出てきてしまうので要注意。確かに、[別のページ]("https://www.oracle.com/jp/virtualization/technologies/virtualbox/downloads.html"){:target="_blank"}には「Oracle VM Virtualboxの最新版は、こちら（USサイト）からダウンロードをお願いします。」と書いてあった。しかし、肝心のダウンロードページには記載なし。こういうの、結構困るよなぁ…
