@@ -2,7 +2,8 @@
 layout: post
 title: "ChromebookでVivaldiは使えるか？"
 tags: [Chrome OS]
-thumbnail: "/assets/img/thumbnails/feature-img/220410.png"
+feature-img: "/assets/img/feature-img/220419.png"
+thumbnail: "/assets/img/thumbnails/feature-img/220419.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -11,9 +12,14 @@ excerpt_separator: <!--more-->
 
 <!--more-->
 
-**目次：**
+# 目次
 
-[TOC]
+- [実験環境](#env)
+- [方法1: Android版をインストールする](#android)
+- [方法2: Linux版をインストールする](#linux)
+- [おわりに](#conclusion)
+
+<a id="env"></a>
 
 # 実験環境
 
@@ -25,6 +31,8 @@ excerpt_separator: <!--more-->
   - RAM: 4GB
   - SSD: 64GB
   - Crostiniのディスクサイズ: 20GB
+
+<a id="android"></a>
 
 # 方法1: Android版をインストールする
 
@@ -80,6 +88,8 @@ Playストアを開き、Vivaidiを検索。
 
 たまにチラつくのが少し気になりました。タブバーあたりが一瞬暗くなることが多いです。基本的には快適に利用できます。
 
+<a id="linux"></a>
+
 # 方法2: Linux版をインストールする
 
 ## 前提条件
@@ -103,10 +113,11 @@ Linux開発環境と日本語入力環境の導入手順については↓の記
 インストール完了後、Vivaidiを開いてみます。  
 ![image-20220410121512593](../../../assets/img/post/2022-4-10-ChromebookでVivaldiは使えるか？/image-20220410121512593.png)  
 
-
 起動したら、まずは初期設定。  
-
-設定完了後にブラウジング。YouTubeも普通に開けました。動画も再生できます。  
+![](../../../assets/img/post/2022-4-19-ChromebookでVivaldiは使えるか？/Screenshot 2022-04-10 12.15.53.png)  
+設定完了後にブラウジング。  
+![image-20220419213500417](../../../assets/img/post/2022-4-19-ChromebookでVivaldiは使えるか？/image-20220419213500417.png)  
+YouTubeも普通に開けました。動画も再生できます。  
 ![image-20220410121932076](../../../assets/img/post/2022-4-10-ChromebookでVivaldiは使えるか？/image-20220410121932076.png)  
 
 ## タブスタックは使える？
@@ -135,6 +146,8 @@ Ubuntuで試したときも同様だったので、Linux版自体がこのよう
 - 重い。結構重い（多分Crostini上で動かしているのが原因）
 - 導入が難しい
 - Chrome OSのIMEは使えない（Linux仮想環境上に別途、日本語入力環境の導入が必須）
+
+<a id="conclusion"></a>
 
 # おわりに
 
