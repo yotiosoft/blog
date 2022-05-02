@@ -2,7 +2,7 @@
 layout: post
 title: "M1 MacBook Airが来た"
 tags: [Mac, 雑談]
-thumbnail: "/assets/img/thumbnails/feature-img/220502.png"
+thumbnail: "/assets/img/thumbnails/feature-img/220502.JPG"
 excerpt_separator: <!--more-->
 ---
 
