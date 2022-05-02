@@ -6,9 +6,8 @@ thumbnail: "/assets/img/thumbnails/feature-img/220502.JPG"
 excerpt_separator: <!--more-->
 ---
 
-![IMG_9516](../../../assets/img/post/IMG_9516.JPG)  
 ついに購入しました。MacBook Air 2020年モデルです。  
-
+![IMG_9516](../../../assets/img/post/IMG_9516.JPG)  
 ![IMG_9526](../../../assets/img/post/IMG_9526.JPG)  
 色はスペースグレイ、ストレージは256GB、RAMは8GBと最小構成です。  
 
