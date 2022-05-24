@@ -27,10 +27,10 @@ excerpt_separator: <!--more-->
 ウィンドウの最大化も可能で、Macでは全画面表示もできます。  
 ![SnapCrab_NoName_2022-5-24_1-26-44_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_NoName_2022-5-24_1-26-44_No-00.png)  
 ![IMG_0031](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/IMG_0031.JPG)  
-全画面表示については、Windowsは別途対応が必要なので、今後実装してく予定です。  
+全画面表示についてはWindows版では別途対応が必要なので、今後実装してく予定です。  
 
 ウィンドウ縮小時はメニューのボタンの配置をウィンドウサイズに合わせるなど別途の処理が必要で、まだ対応できていません。  
-![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00.png)
+![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  45 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_20-28-56_No-00](../../../assets/img/post/2022-5-24-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  45 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_20-28-56_No-00.png)
 
 # 孤立した道路の自動除去機能
 
@@ -58,3 +58,7 @@ Cities BoxはOpenSiv3Dというライブラリを利用しており、先日Open
 
 まずは今残っているバグ修正を一通り進めて、完了したら次のアルファ版ver.0.2.0 (build 142)をリリースしたいと思います。その後ももちろん開発は継続し、まずはHSP3版のCities Boxにあった区画設定機能をC++版にも実装したいと思っています。  
 開発期間が空きがちですが、まだまだ開発を続ける気は存分にありますので、どうか今後もお付き合いください。
+
+# リポジトリ（開発版）
+
+[https://github.com/YotioSoft/Cities-Box.cpp/tree/develop](https://github.com/YotioSoft/Cities-Box.cpp/tree/develop)
