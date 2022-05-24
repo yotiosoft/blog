@@ -14,28 +14,35 @@ excerpt_separator: <!--more-->
 
 あれ、前からなかったっけ？と思われるかもしれませんが、それは再設計前（[#11](https://yotiosoftarchive.wordpress.com/2021/03/23/cities-box-cpp%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%9811/)より前）のお話です。去年から始めた再設計後はまだ対応しておらず、しばらくの間は踏切や端によって道路と線路、水路を交差させることができませんでした。  
 この度、ようやく踏切と橋の対応できました。結構難航するのではないかと思っていましたが、再設計のおかげで割と簡単に実現できました。  
-![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-25-6_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記 #16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-25-6_No-00.png)  
+![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-25-6_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-25-6_No-00.png)  
 再設計後はオブジェクト指向でマップ上の道路や水路、建物などの設置が成立しているので、例えば水路と道路を交差させたいときは、水路オブジェクトはそのまま、水路の上に道路オブジェクトを設置することで交差を実現しています。これにより、異なる種類のオブジェクト同士の交差で一方の変更が他方に影響する必要がなくなりました。
 
 # 画面サイズの変更に対応
 
 こちらも再設計後は対応していませんでした。というより、画面サイズの変更自体は可能でしたが、画面サイズの変化に対応させる処理を作っていませんでした。  
 とりあえずウィンドウの拡大には対応しており、拡大時はメニューは画面中央寄せに表示される仕様にしております。  
-![SnapCrab_NoName_2022-5-24_1-26-30_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記 #16/SnapCrab_NoName_2022-5-24_1-26-30_No-00.png)  
+![SnapCrab_NoName_2022-5-24_1-26-30_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_NoName_2022-5-24_1-26-30_No-00.png)  
 
 ウィンドウの最大化も可能で、Macでは全画面表示もできます。  
-![SnapCrab_NoName_2022-5-24_1-26-44_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記 #16/SnapCrab_NoName_2022-5-24_1-26-44_No-00.png)  
-![IMG_0031](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記 #16/IMG_0031.JPG)  
+![SnapCrab_NoName_2022-5-24_1-26-44_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_NoName_2022-5-24_1-26-44_No-00.png)  
+![IMG_0031](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/IMG_0031.JPG)  
 全画面表示については、Windowsは別途対応が必要なので、今後実装してく予定です。  
 
 ウィンドウ縮小時はメニューのボタンの配置をウィンドウサイズに合わせるなど別途の処理が必要で、まだ対応できていません。  
-![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記 #16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00.png)
+![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00.png)
+
+# 孤立した道路の自動除去機能
+
+道路を引くときに、マウスカーソルの動きに沿って道路の接続などの処理を行っていますが、他のどのマスとも接続していない孤立した状態の道路や線路については、道路敷設メニューを閉じたときに自動で除去するようにしました。  
+![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  45 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_20-28-56_No-00](../assets/img/post/2022-5-24-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  45 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_20-28-56_No-00.png)  
+このような孤立した状態の道路は、ゲーム上「工事中」という扱いになるのですが、工事中の状態のままにしておくことは設計上は想定していません。よって、想定外の状態の道路を除去することで、その後起こりうるバグの防止を実現しています。  
+これ以外にも、道路関係で想定していない操作が行われた際に、それらの操作を取り消すような仕組みを今後も作っていきたいと思っています。
 
 # 共通オブジェクトの作成
 
 メモリ使用量が増大してしまったので、メモリ使用量を削るべく、メモリ上には一致するオブジェクトの効率化を図りました。  
 具体的には、多数のタイルに共通して存在する芝生のタイルオブジェクトを各タイルに対してセーブデータに明示的に記述するのは無駄of無駄なので、これらは省略するようにし、1つのオブジェクトを共用する（「共通オブジェクト」と呼んでいる）ようにしました。  
-![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  44 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-34-27_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記 #16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  44 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-34-27_No-00.png)  
+![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  44 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-34-27_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  44 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_1-34-27_No-00.png)  
 共通オブジェクトでは、オブジェクトに対する変更や削除はプログラム上で禁止することで、一部のタイルの変化が他方に影響しないようにしています。そのためタイルオブジェクトなど、タイルごとの変化が必要ない特殊なアドオンにのみ共通オブジェクトが適用されます。
 
 # OpenSiv3D v0.6.4への対応
