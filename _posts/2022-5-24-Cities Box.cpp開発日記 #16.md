@@ -30,7 +30,7 @@ excerpt_separator: <!--more-->
 全画面表示についてはWindows版では別途対応が必要なので、今後実装してく予定です。  
 
 ウィンドウ縮小時はメニューのボタンの配置をウィンドウサイズに合わせるなど別途の処理が必要で、まだ対応できていません。  
-![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  45 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_20-28-56_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  45 FPS  F 800x600  V 800x600  S 800x600_2022-5-24_20-28-56_No-00.png)
+![SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00](../../../assets/img/post/2022-5-20-Cities Box.cpp開発日記16/SnapCrab_Cities Boxcpp (Debug Build)  D3D11  46 FPS  F 588x403  V 588x403  S 588x403_2022-5-24_1-27-29_No-00.png)
 
 # 孤立した道路の自動除去機能
 
