@@ -2,6 +2,7 @@
 layout: post
 title: "Cities Box.cpp開発日記 #16"
 tags: [C/C++, Cities Box, OpenSiv3D, 開発日記]
+feature-img: "/assets/img/feature-img/220524.png"
 thumbnail: "/assets/img/thumbnails/feature-img/220524.png"
 excerpt_separator: <!--more-->
 ---
