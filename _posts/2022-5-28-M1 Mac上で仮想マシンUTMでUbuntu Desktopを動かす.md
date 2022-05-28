@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 
 最近、M1 Macで仮想マシンを動かして遊んでいるのですが、Apple Chipを利用する上での悩みの一つとして「VirtualBoxが使えない」という点があります。  
-基本的にはRosetta2があるのでintel Mac向けのアプリも動作するのですが、VirtualBoxはどうもRosetta2では動かないらしく、最新版ではそもそもM1 Macではインストールもできない仕様になっています。
+基本的にはRosetta2があるのでintel Mac向けのアプリも動作するのですが、VirtualBoxはどうもRosetta2では動かないらしく、最新版ではそもそもM1 Macではインストールもできない仕様になっています。というわけで、VirtualBoxの代わりとなる仮想マシンを導入しました。
 
 <!--more-->  
 
@@ -29,11 +29,11 @@ QEMUとVirtualization.frameworkの2種類の仮想化機能をサポートして
 ただUbuntu Desktopは、現状Arm64向けの正式版はまだリリースされていません。Ubuntu Serverであれば既にArm64版も正式にリリースされているのですが。  
 検索してみるとServer版を入れてから手動でDesktop環境をインストールする手法がいくつかヒットしますが、GUIを別途インストールするのも面倒だし、もっと手軽な方法でUbuntu Desktopをインストールできないものか…  
 
-と、Ubuntu Releasesを探してみると、なんとUbuntu Desktop 20.04のArm64版のDaily Buildが置いてあるではないですか。とりあえず今回は下記の配布場所よりDaily BuildのArm64版をダウンロードしました。  
+と、Ubuntu Releasesを探してみると、なんとUbuntu Desktop 20.04のArm64版のDaily Buildが置いてありました。とりあえず今回は下記の配布場所よりDaily BuildのArm64版をダウンロードしました。  
 [Ubuntu 20.04.4 LTS (Focal Fossa) Daily Build](https://cdimage.ubuntu.com/focal/daily-live/current/){:target="_blank"}   
 上記のリンクで「64-bit ARM (ARMv8/AArch64) desktop image」をクリック。
 
-※以下は、2022年5月27日時点でのDaily Buildで行っているため最新のDaily Buildと若干異なる場合があります。ご了承ください。
+※以下は、2022年5月28日時点でのDaily Buildで行っているため最新のDaily Buildと若干異なる場合があります。ご了承ください。
 
 # 実験環境
 
@@ -135,10 +135,10 @@ intel Core i5-6500のほうが微妙に良い結果に。ただ、ネイティ�
 | FPU Raytracing | **1.65**               | 2.01                            | seconds(低いほど良い)    |
 | GPU Drawing    | **16951.83**           | 15978.50                        | HIMarks(高いほど良い)    |
 
-1つを除いたすべての項目において、M1 + UTMのほうが良いスコアでした。  
+CPU Blowfishを除いたすべての項目において、M1 + UTMのほうが良いスコアでした。  
 ただCore i5-6500はもう6年前のCPUなので、最新の世代ではi3にすら性能は及びません。本当はもう少し新しいCPUと比較したかったんですが、手元にこれしかないので許してください。  
 いずれにせよ、仮想マシンで6年前のミドルスペックPCよりも快適に動くと考えれば、個人的には性能としては十分です。
 
 # おわりに
 
-arm64版のUbuntuであればかなり快適に動作します。他にもFedoraのarm64版もインストールしていますが、こちらも快適。M1の能力はまだまだ未知数です。
+arm64版のUbuntuであればかなり快適に動作します。今後もまた何かM1で検証してみます。
