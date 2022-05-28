@@ -20,17 +20,14 @@ feature-img: "assets/img/pexels/travel.jpeg"
 - HSP3
 - OpenSiv3D
 - 人工知能分野（とりわけ画像認識）
-- OS自作
-- ブラウザエンジン自作
+- OS分野
 - CG技術
-- GUIの実装
 - 都市開発ゲーム
 
 # 取り組んでいること
 - 都市開発ゲーム「Cities Box」作成
 - ホームページ作成
-- 自作OS本の写経
-- 画像認識
+- OSに関する学習、輪講、カーネルハックなど
 - プレイヤーアプリ「Albus Box」作成
 
 # 保有資格
@@ -38,7 +35,7 @@ feature-img: "assets/img/pexels/travel.jpeg"
 - 応用情報技術者試験（R03春）
 - 基本情報技術者試験（R01秋）
 - CGエンジニア検定 エキスパート
-- TOEIC L&R 720
+- TOEIC L&R 830
 - 普通自動車運転免許
 
 # ホームページ
