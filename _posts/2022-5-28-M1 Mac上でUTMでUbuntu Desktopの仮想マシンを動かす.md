@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "M1 Mac上で仮想マシンUTMでUbuntu Desktopを動かす"
+title: "M1 Mac上でUTMでUbuntu Desktopの仮想マシンを動かす"
 tags: [Mac, Ubuntu]
 excerpt_separator: <!--more-->
 ---
