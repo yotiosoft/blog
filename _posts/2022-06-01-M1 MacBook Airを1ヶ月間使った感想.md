@@ -64,12 +64,6 @@ M1に限らず最近のMacBookにはTouch IDがついていますが、これが
 
 [MacBook Air (M1, 2020) - 技術仕様](https://support.apple.com/kb/SP825?locale=ja_JP){:target="_blank"}
 
-## 3. VirtualBox未対応
-
-はい。Rosetta2があるとはいえ、VirtualBoxはM1では動きません。公式にも未対応扱いです。  
-Rosetta2はx86アーキテクチャのうち、仮想化関連の命令はサポートしていないらしく、それ故にx86ベースの仮想マシンは動かないようです。  
-QEMUなどはArm64にも対応しているのでM1で動作可能ですが、VirtualBoxは独自ですからね。代わりにM1で動作する仮想マシンとして、UTMやParalles Desktopなどがあります。
-
 # 人によっては後悔するかもしれない点
 
 ## 1. Bootcamp非対応
