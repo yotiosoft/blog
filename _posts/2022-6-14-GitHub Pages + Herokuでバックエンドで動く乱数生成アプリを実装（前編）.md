@@ -10,7 +10,7 @@ GitHub Pagesではサーバ側の処理を伴うバックエンドの実装は�
 
 <!--more-->  
 
-今回は少し長くなりそうなので、前編と後編に分けて書きます。前編ではバックエンド側の処理を実装していきます。
+今回は少し長くなりそうなので、前編と後編に分けて書きます。前編（今回）ではバックエンド側の処理をHerokuに構築し、後編ではGitHub Pages上で動かすフロントエンド側の処理を書きます。
 
 # 目的
 
@@ -55,7 +55,7 @@ Herokuでは無料版ではアクセス数の上限はあるもののサーバ�
 例）
 
 ```
-xxx.herokuapp.com/random/normal?mu=0&sigma=1 							// μ=0、σ=1で正規分布で乱数生成（整数）
+xxx.herokuapp.com/random/normal?mu=0&sigma=1		// μ=0、σ=1で正規分布で乱数生成（整数）
 xxx.herokuapp.com/random/uniform?min=0&max=100&type=int		// 0〜100の間で一様分布で乱数生成（浮動小数点数）
 ```
 
