@@ -237,7 +237,7 @@ class query_class:
                     if req_mode is None:
                         self.mode = (self.min+self.max)/2
                     else:
-                        self.mode = int(req_mode)
+                        self.mode = float(req_mode)
                         
                 return
 
@@ -408,7 +408,7 @@ def triangular_index():
         for i in range(query.trials):
             rand_temp = random.triangular(query.min, query.max, query.mode)
             if query.type == "int":
-                rand = int(rand_temp)
+                rand_temp = int(rand_temp)
             rand.append(rand_temp)
     except ValueError:
         # パラメータが間違っていることによりエラーが発生した場合はエラーを返す
@@ -438,7 +438,7 @@ def lambda_index():
         for i in range(query.trials):
             rand_temp = random.expovariate(query.lambd)
             if query.type == "int":
-                rand = int(rand_temp)
+                rand_temp = int(rand_temp)
             rand.append(rand_temp)
     except ValueError:
         # パラメータが間違っていることによりエラーが発生した場合はエラーを返す
@@ -468,7 +468,7 @@ def gamma_index():
         for i in range(query.trials):
             rand_temp = random.gammavariate(query.alpha, query.beta)
             if query.type == "int":
-                rand = int(rand_temp)
+                rand_temp = int(rand_temp)
             rand.append(rand_temp)
     except ValueError:
         # パラメータが間違っていることによりエラーが発生した場合はエラーを返す
@@ -561,7 +561,7 @@ class query_class:
                     if req_mode is None:
                         self.mode = (self.min+self.max)/2
                     else:
-                        self.mode = int(req_mode)
+                        self.mode = float(req_mode)
                         
                 return
 
@@ -726,7 +726,7 @@ def triangular_index():
         for i in range(query.trials):
             rand_temp = random.triangular(query.min, query.max, query.mode)
             if query.type == "int":
-                rand = int(rand_temp)
+                rand_temp = int(rand_temp)
             rand.append(rand_temp)
     except ValueError:
         # パラメータが間違っていることによりエラーが発生した場合はエラーを返す
@@ -756,7 +756,7 @@ def lambda_index():
         for i in range(query.trials):
             rand_temp = random.expovariate(query.lambd)
             if query.type == "int":
-                rand = int(rand_temp)
+                rand_temp = int(rand_temp)
             rand.append(rand_temp)
     except ValueError:
         # パラメータが間違っていることによりエラーが発生した場合はエラーを返す
@@ -786,7 +786,7 @@ def gamma_index():
         for i in range(query.trials):
             rand_temp = random.gammavariate(query.alpha, query.beta)
             if query.type == "int":
-                rand = int(rand_temp)
+                rand_temp = int(rand_temp)
             rand.append(rand_temp)
     except ValueError:
         # パラメータが間違っていることによりエラーが発生した場合はエラーを返す
