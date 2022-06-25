@@ -5,7 +5,7 @@ tags: [GitHub, Heroku, Python]
 excerpt_separator: <!--more-->
 ---
 
-前回：[GitHub Pages + Herokuでバックエンドで動く乱数生成アプリを実装（前編）](../../14/GitHub-Pages-+-Herokuでバックエンドで動く乱数生成アプリを実装-前編.html)  
+前回：[GitHub Pages + Herokuでバックエンドで動く乱数生成アプリを実装（前編）](../14/GitHub-Pages-+-Herokuでバックエンドで動く乱数生成アプリを実装-前編.html)  
 
 前編では、Herokuで動くバックグラウンド側をPython（Flask）で作成しました。今回は後編ということで、GitHub Pagesで動くフロントエンド側を作っていきます。
 
