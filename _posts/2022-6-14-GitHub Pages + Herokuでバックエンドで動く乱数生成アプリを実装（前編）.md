@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHub Pages + Herokuでバックエンドで動く乱数生成アプリを実装（前編）"
-tags: [GitHub, Heroku, Python]
+tags: [GitHub, Heroku, Python, Yapps, 開発日記]
 excerpt_separator: <!--more-->
 ---
 
