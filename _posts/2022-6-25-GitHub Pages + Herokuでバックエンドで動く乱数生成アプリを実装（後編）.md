@@ -13,7 +13,8 @@ excerpt_separator: <!--more-->
 
 # 今回つくるもの
 
-自作Webツール集Yappsに、新しいツールとして「乱数生成」というものを作成しており、今回はそのフロントエンド部分、すなわちユーザ側が操作する部分を作ります。  
+「Yapps」という自作Webツール集のWebサイトに、新しいツールとして「乱数生成」というものを作成しており、今回はそのフロントエンド部分、すなわちユーザ側が操作する部分を作ります。  
+
 APIとのデータのやり取りはJavaScriptで実装します。いくつか手法がありますが、今回はFetch APIを利用します。  
 [Fetch API - Web API \| MDN](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API){:target="_blank"}  
 Internet Explorerが全面非対応となっていますが、今やそんなことを気にする必要はありません。
@@ -96,10 +97,10 @@ table上にプルダウンメニューやinputボックスなどを配置して�
 
 ```css
 .random_options {
-    display: none;
+    display: none;      /* 隠しておく（デフォルト） */
 }
 .random_options.is_show {
-    display: block;
+    display: block;     /* 可視化 */
 }
 ```
 
