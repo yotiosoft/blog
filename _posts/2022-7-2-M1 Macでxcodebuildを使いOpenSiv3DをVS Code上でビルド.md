@@ -2,8 +2,6 @@
 layout: post
 title: "M1 Macでxcodebuildを使いOpenSiv3DをVS Code上でビルド"
 tags: [Mac, OpenSiv3D]
-th
-mbnail: "/assets/img/thumbnails/feature-img/220502.JPG"
 excerpt_separator: <!--more-->
 ---
 
