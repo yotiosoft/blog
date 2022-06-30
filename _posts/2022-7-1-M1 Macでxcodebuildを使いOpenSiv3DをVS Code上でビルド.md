@@ -14,7 +14,8 @@ excerpt_separator: <!--more-->
 
 # 注意
 
-書き終わってから気付いたのですが、既に先に実現していた方がいらっしゃいました。実現方法は異なりますが、こちら↓のほうが明らかに実用的です。  
+書き終わってから気付いたのですが、既に先に実現していた方がいらっしゃいました。  
+実現方法は異なりますが、こちら↓のほうが実用的です。  
 [Xcodeを開かずにOpenSiv3Dを使いたい - Qiita](https://qiita.com/makia/items/3188b08670f178104f6d){:target="_blank"}  
 
 既に先人がいらっしゃったのか〜。まあいっか。せっかく書いたので投稿させていただきます。
@@ -23,11 +24,11 @@ excerpt_separator: <!--more-->
 
 ## 動作確認環境
 
-- Apple Silicon搭載機
-  - model: MacBook Air 2020 (13-inch)
+- MacBook Air 2020 (13-inch)
   - chip: Apple M1
   - RAM: 8GB
   - VS Code、Xcode、Xcode CommandLineTools、Rosetta2 インストール済み
+- OpenSiv3D v0.6.4
 
 # 前準備
 
