@@ -33,7 +33,7 @@ excerpt_separator: <!--more-->
 
 ``xcodebuild``コマンドを使う前に、Command Line Toolsの選択が必要です。Xcodeを開き、メニューバーの[Xcode] > [Preferences]を開いて、[Locations]タブを開きます。  
 ここで、[Command Line Tools:]が空欄になっている場合は、プルダウンメニューをクリックし、Xcodeのバージョンを指定します。  
-![スクリーンショット 2022-06-30 22.19.32](../../../assets/img/post/2022-7-1-XcodebuildでOpenSiv3DをVS Code上でビルド/スクリーンショット 2022-06-30 22.19.32.png)
+![スクリーンショット 2022-06-30 22.19.32](../../../assets/img/post/2022-7-1/スクリーンショット 2022-06-30 22.19.32.png)
 
 ## xcodebuildコマンドについて
 
@@ -134,7 +134,7 @@ OpenSiv3Dのデフォルトの実行ファイル名（``App/empty.app``）に合
 
 ## 実行
 
-<video src="../../../assets/img/post/2022-7-1-XcodebuildでOpenSiv3DをVS Code上でビルド/画面収録-2022-06-30-23.02.02.mp4" controls></video>
+<video src="../../../assets/img/post/2022-7-1/画面収録-2022-06-30-23.02.02.mp4" controls></video>
 
 とりあえずビルドと実行が自動でできました。  
 ただ、ライブラリのパスが通ってないのと補完できないのが気になります。
@@ -168,6 +168,6 @@ ${workspaceFolder}/../../include/ThirdParty/**
 
 最後に、GitHub Copilotが動くか見てみます。  
 
-<video src="../../../assets/img/post/2022-7-2-M1 Macでxcodebuildを使いOpenSiv3DをVS Code上でビルド/画面収録-2022-07-01-0.49.13.mp4" controls></video>
+<video src="../../../assets/img/post/2022-7-2/画面収録-2022-07-01-0.49.13.mp4" controls></video>
 
-動きました。OpenSiv3Dのメソッドも提案してくれます。ときどきOpenSiv3Dに存在しないメソッドを提案してきたりしますが、思った以上に正確です。
+動きました。OpenSiv3Dのメソッドも提案してくれます。ときどきOpenSiv3Dに存在しないメソッドを提案してきたりしますが、思った以上に精度は良さげです。
