@@ -5,7 +5,7 @@ tags: [Mac, OpenSiv3D, VS Code]
 excerpt_separator: <!--more-->
 ---
 
-最近、主にHTMLやJavaScriptを扱うプロジェクトでVS Codeを使うようになりました。WindowsでもMacでも同等のUIと機能が利用可能という長所は大きく、両刀使いの自分にはぴったりです。拡張機能も豊富で、最近何かと話題のGitHub Copilotも利用可能です。  
+最近、主にHTMLやJavaScriptを扱うプロジェクトでVS Codeを使うようになりました。拡張機能が豊富でGitHub Copilotも利用可能、マルチプラットフォーム対応で同等のUIと機能が利用可能と長所が多く、WindowsとMacの両刀使いの自分にはぴったりです。  
 
 OpenSiv3Dアプリもこれで開発したい。しかしMac版のOpenSiv3DはXcodeでのビルドが前提条件です。  
 
@@ -19,11 +19,13 @@ OpenSiv3Dアプリもこれで開発したい。しかしMac版のOpenSiv3DはXc
   - chip: Apple M1
   - RAM: 8GB
   - VS Code、Xcode、Xcode CommandLineTools、Rosetta2 インストール済み
+
   
-  
-  
+
+
 - OpenSiv3D v0.6.4
 
+  
 
 
 - Visual Studio Code ver.1.68.1
@@ -33,7 +35,7 @@ OpenSiv3Dアプリもこれで開発したい。しかしMac版のOpenSiv3DはXc
 # 実現方法
 
 Macには``xcodebuild``コマンドがあり、このコマンドを用いてXcodeのプロジェクトをビルドできます。これを実行するタスクをVS Codeに登録しておき、さらに、ビルドしたアプリを自動で開くタスクを実行させれば、VS Codeでビルドからタスクまでの一通りの処理がVS Code上でも可能なはずです。  
-VS Codeはinclude pathを登録することで補完もできますので、include pathの設定もしておきます。最後に、GitHub Copilotを試用してみます。
+include pathにOpenSiv3Dのヘッダファイルを登録し、補完もできるようにしておきます。また、デバッグ用として実行中のコマンドライン出力もVS Code上に表示させます。
 
 # 前準備
 
