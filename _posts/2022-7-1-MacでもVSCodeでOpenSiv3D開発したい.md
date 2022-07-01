@@ -168,7 +168,8 @@ tasks.jsonの内容はこんな感じにしておきます。
 
 Debugビルド用とReleaseビルド用にそれぞれbuildタスクとbuild-runタスクを作成しました。buildタスクは``xcodebuild``を呼び出し、build-runタスクはbuildタスクに加え、ビルドしたバイナリを開き実行します。  
 
-appファイル名は変数APP_NAMEとしてsettings.jsonに設定しています。先程作ったtasks.jsonがあるディレクトリ``.vscode``にsettings.jsonを作成し、変数APP_NAMEにappファイルの名前を記述します。  
+appファイル名は変数APP_NAMEとしてsettings.jsonに設定しています。先程作ったtasks.jsonがあるディレクトリにsettings.jsonを作成し、変数APP_NAMEにappファイルの名前を記述します。  
+
 例）「empty.app」の場合  
 
 ```
@@ -179,7 +180,7 @@ appファイル名は変数APP_NAMEとしてsettings.jsonに設定していま�
 
   
 
-``build-run``をビルドのショートカット（Cmd + shift + B）が押された際に実行するようにしています。  
+Cmd + shift + Bが押された際にbuild-runを実行するようにしています。  
 このとき、debug用（debug-run）とrelease用（release-run）からいずれかを選んでビルドします。  
 ![スクリーンショット 2022-07-01 18.56.25](../../../assets/img/post/2022-7-1/スクリーンショット 2022-07-01 18.56.25.png)
 
