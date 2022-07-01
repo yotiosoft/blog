@@ -95,6 +95,7 @@ appファイルの実態はディレクトリなので、Xcodeでビルドした
 # VS Codeでのビルドタスクの設定
 
 ここからが本題です。先に示したコマンドを活用して、VS Code上に一発でビルドできるためのタスクを登録します。  
+**※以下、Xcodeプロジェクトファイル(*.xcodeproj)があるディレクトリをVS Codeで開いた上で作業するものとします。**
 
 まずはVS CodeでXcodeプロジェクトファイル（empty.xcodeproj）がある場所を開きます。  
 そしてCmd + shift + Pで[Tasks: Run Tasks]を選択。  
