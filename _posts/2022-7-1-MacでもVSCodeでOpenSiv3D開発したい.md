@@ -118,18 +118,15 @@ tasks.jsonの内容はこんな感じにしておきます。
             ],
         },
         {
-            "label": "debug-run",
+            "label": "debug-build-run",
             "type": "shell",
-            "command": "open",
+            "command": "./App/${config:APP_NAME}.app/Contents/MacOS/${config:APP_NAME}",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "dependsOn": [
                 "debug-build"
-            ],
-            "args": [
-                "App/empty.app"
             ]
         },
         {
@@ -143,18 +140,15 @@ tasks.jsonの内容はこんな感じにしておきます。
             ],
         },
         {
-            "label": "release-run",
+            "label": "release-build-run",
             "type": "shell",
-            "command": "open",
+            "command": "./App/${config:APP_NAME}.app/Contents/MacOS/${config:APP_NAME}",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "dependsOn": [
                 "release-build"
-            ],
-            "args": [
-                "App/empty.app"
             ]
         }
     ]
@@ -162,6 +156,17 @@ tasks.jsonの内容はこんな感じにしておきます。
 ```
 
 Debugビルド用とReleaseビルド用にそれぞれbuildタスクとbuild-runタスクを作成しました。buildタスクは``xcodebuild``を呼び出し、build-runタスクはbuildタスクに加え、ビルドしたバイナリを開き実行します。  
+
+appファイル名は変数APP_NAMEとしてsettings.jsonに設定しています。tasks.jsonがあるディレクトリ(``.vscode/``)にsettings.jsonを作成し、APP_NAMEにappファイルの名前を記述します。  
+例）「empty.app」の場合  
+
+```
+{
+    "APP_NAME": "empty"
+}
+```
+
+  
 
 ``build-run``をビルドのショートカット（Cmd + shift + B）が押された際に実行するようにしています。  
 このとき、debug用（debug-run）とrelease用（release-run）の2つの選択肢から選んでビルドします。  
