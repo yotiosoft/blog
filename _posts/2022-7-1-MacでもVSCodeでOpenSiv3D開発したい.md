@@ -164,7 +164,7 @@ tasks.jsonの内容はこんな感じにしておきます。
 
 Debugビルド用とReleaseビルド用にそれぞれbuildタスクとbuild-runタスクを作成しました。buildタスクは``xcodebuild``を呼び出し、build-runタスクはbuildタスクに加え、ビルドしたバイナリを開き実行します。  
 
-appファイル名は変数APP_NAMEとしてsettings.jsonに設定しています。先程作ったtasks.jsonがあるディレクトリ``.vscode``にsettings.jsonを作成し、APP_NAMEにappファイルの名前を記述します。  
+appファイル名は変数APP_NAMEとしてsettings.jsonに設定しています。先程作ったtasks.jsonがあるディレクトリ``.vscode``にsettings.jsonを作成し、変数APP_NAMEにappファイルの名前を記述します。  
 例）「empty.app」の場合  
 
 ```
@@ -227,16 +227,17 @@ Ctrl+shift+Bを押してdebug-build-runを選択すると、ビルドが始ま�
 # おわりに
 
 PrintやConsoleなどにエラーが表示されてしまう点が少し気になりますが、動作上は問題なく、それ以外に特に問題点はなさそうでした。  
-あと、プロジェクトにソースファイルを追加するときに、VS Codeに追加しただけではプロジェクトファイルに反映されず、いちいちXcodeで設定しなければならないなど、まだXcodeから脱却しきれていない点があります。  
+プロジェクトにソースファイルを追加するときに、VS Codeに追加しただけではプロジェクトファイルに反映されず、いちいちXcodeで設定しなければならない（当たり前だけど）など、まだXcodeから脱却しきれていない点があります。  
 しばらく使ってみて気付いたことや、なにか進展などがあったらまた書きたいと思います。
 
 # 参考文献
 
-実現方法は少し異なりますが、過去に実践された方の記事を執筆中に見つけたので、IntelliSenseの設定内容など一部を参考にさせていただきました。
+過去に実践された方の記事を執筆中に見つけたので、IntelliSenseの設定内容など一部を参考にさせていただきました。実現方法は少し異なりますが、基本的なアイデアは一緒です。
 
-- [OpenSiv3Dプロジェクトにおいて、VSCode(Windows)だけで補完&ビルドを完結させる](https://qiita.com/projectappbird/items/977af22c3a5c4ae68e9f){:target="_blank"}
 - [Xcodeを開かずにOpenSiv3Dを使いたい](https://qiita.com/makia/items/3188b08670f178104f6d){:target="_blank"}
 
-appファイルの開き方についてはこちら。
+- [OpenSiv3Dプロジェクトにおいて、VSCode(Windows)だけで補完&ビルドを完結させる](https://qiita.com/projectappbird/items/977af22c3a5c4ae68e9f){:target="_blank"}
+
+appからコンソール出力を得る方法についてはこちら。
 
 - [How to get the output of an OS X application on the console, or to a file?](https://stackoverflow.com/questions/364564/how-to-get-the-output-of-an-os-x-application-on-the-console-or-to-a-file){:target="_blank"}
