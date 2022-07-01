@@ -13,15 +13,19 @@ OpenSiv3Dアプリもこれで開発したい。しかしMac版のOpenSiv3DはXc
 
 <!--more-->  
 
-# 概要
-
-## 動作確認環境
+# 動作確認環境
 
 - MacBook Air 2020 (13-inch)
   - chip: Apple M1
   - RAM: 8GB
   - VS Code、Xcode、Xcode CommandLineTools、Rosetta2 インストール済み
+  
+  
+  
 - OpenSiv3D v0.6.4
+
+
+
 - Visual Studio Code ver.1.68.1
   - C/C++, C/C++ Extension Pack, C/C++ Themes インストール済み
 
@@ -160,7 +164,7 @@ tasks.jsonの内容はこんな感じにしておきます。
 
 Debugビルド用とReleaseビルド用にそれぞれbuildタスクとbuild-runタスクを作成しました。buildタスクは``xcodebuild``を呼び出し、build-runタスクはbuildタスクに加え、ビルドしたバイナリを開き実行します。  
 
-appファイル名は変数APP_NAMEとしてsettings.jsonに設定しています。tasks.jsonがあるディレクトリ(``.vscode/``)にsettings.jsonを作成し、APP_NAMEにappファイルの名前を記述します。  
+appファイル名は変数APP_NAMEとしてsettings.jsonに設定しています。先程作ったtasks.jsonがあるディレクトリ``.vscode``にsettings.jsonを作成し、APP_NAMEにappファイルの名前を記述します。  
 例）「empty.app」の場合  
 
 ```
@@ -172,7 +176,7 @@ appファイル名は変数APP_NAMEとしてsettings.jsonに設定していま�
   
 
 ``build-run``をビルドのショートカット（Cmd + shift + B）が押された際に実行するようにしています。  
-このとき、debug用（debug-run）とrelease用（release-run）の2つの選択肢から選んでビルドします。  
+このとき、debug用（debug-run）とrelease用（release-run）からいずれかを選んでビルドします。  
 ![スクリーンショット 2022-07-01 18.56.25](../../../assets/img/post/2022-7-1/スクリーンショット 2022-07-01 18.56.25.png)
 
 ## IntelliSenseの設定
@@ -224,11 +228,11 @@ Ctrl+shift+Bを押してdebug-build-runを選択すると、ビルドが始ま�
 
 PrintやConsoleなどにエラーが表示されてしまう点が少し気になりますが、動作上は問題なく、それ以外に特に問題点はなさそうでした。  
 あと、プロジェクトにソースファイルを追加するときに、VS Codeに追加しただけではプロジェクトファイルに反映されず、いちいちXcodeで設定しなければならないなど、まだXcodeから脱却しきれていない点があります。  
-しばらく使ってみて気付いたことや、なにか進展などがあったらまた書きます。
+しばらく使ってみて気付いたことや、なにか進展などがあったらまた書きたいと思います。
 
 # 参考文献
 
-手法は少し異なりますが、執筆中に過去に実践された方の記事を見つけたので、IntelliSenseの設定内容など一部を参考にさせていただきました。
+実現方法は少し異なりますが、過去に実践された方の記事を執筆中に見つけたので、IntelliSenseの設定内容など一部を参考にさせていただきました。
 
 1. [OpenSiv3Dプロジェクトにおいて、VSCode(Windows)だけで補完&ビルドを完結させる](https://qiita.com/projectappbird/items/977af22c3a5c4ae68e9f#%E4%BB%8A%E5%BE%8C%E3%81%AE%E8%AA%B2%E9%A1%8C){:target="_blank"}
 2. [Xcodeを開かずにOpenSiv3Dを使いたい](https://qiita.com/makia/items/3188b08670f178104f6d){:target="_blank"}
