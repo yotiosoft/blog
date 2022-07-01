@@ -234,6 +234,9 @@ PrintやConsoleなどにエラーが表示されてしまう点が少し気に�
 
 実現方法は少し異なりますが、過去に実践された方の記事を執筆中に見つけたので、IntelliSenseの設定内容など一部を参考にさせていただきました。
 
-1. [OpenSiv3Dプロジェクトにおいて、VSCode(Windows)だけで補完&ビルドを完結させる](https://qiita.com/projectappbird/items/977af22c3a5c4ae68e9f#%E4%BB%8A%E5%BE%8C%E3%81%AE%E8%AA%B2%E9%A1%8C){:target="_blank"}
-2. [Xcodeを開かずにOpenSiv3Dを使いたい](https://qiita.com/makia/items/3188b08670f178104f6d){:target="_blank"}
-3. [How to get the output of an OS X application on the console, or to a file?](https://stackoverflow.com/questions/364564/how-to-get-the-output-of-an-os-x-application-on-the-console-or-to-a-file){:target="_blank"}
+- [OpenSiv3Dプロジェクトにおいて、VSCode(Windows)だけで補完&ビルドを完結させる](https://qiita.com/projectappbird/items/977af22c3a5c4ae68e9f){:target="_blank"}
+- [Xcodeを開かずにOpenSiv3Dを使いたい](https://qiita.com/makia/items/3188b08670f178104f6d){:target="_blank"}
+
+appファイルの開き方についてはこちら。
+
+- [How to get the output of an OS X application on the console, or to a file?](https://stackoverflow.com/questions/364564/how-to-get-the-output-of-an-os-x-application-on-the-console-or-to-a-file){:target="_blank"}
