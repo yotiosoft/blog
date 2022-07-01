@@ -5,7 +5,10 @@ tags: [Mac, OpenSiv3D, VS Code]
 excerpt_separator: <!--more-->
 ---
 
-最近は主にHTMLやJavaScriptを扱うプロジェクトでVS Codeを日常的に使うようになり、OpenSiv3Dアプリもこれで開発したい。しかしOpenSiv3DはXcodeでのビルドが前提条件です。  
+最近、主にHTMLやJavaScriptを扱うプロジェクトでVS Codeを使うようになり、便利な拡張機能も多数手に入るようになりました。何よりWindowsでもMacでも同等のUIと機能が利用可能という長所があり、両刀使いの自分にはぴったりですし、VS CodeならGitHub Copilotも利用可能です。  
+
+OpenSiv3Dアプリもこれで開発したい。しかしMac版のOpenSiv3DはXcodeでのビルドが前提条件です。  
+
 そこで、エディタはVS Codeを使い、ビルドだけXcodeにやってもらうことに。ビルドのためにいちいちXcodeを開くのは面倒なので、VS CodeにOpenSiv3Dアプリをビルドするタスクを実行してもらうことで、VS Codeでビルドから実行まで自動的にできるようにしてみます。
 
 <!--more-->  
