@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "MacのVSCodeでGitHub Copilotを使ってOpenSiv3D開発したい"
+title: "MacでもVSCodeでOpenSiv3D開発したい"
 tags: [Mac, OpenSiv3D, VS Code]
 excerpt_separator: <!--more-->
 ---
 
-最近、主にWindowsでの開発時にGitHub Copilotを利用するようになって、Macでもこれを使いたい。しかしGitHub CopilotはXcodeは非対応。VS Codeなら使えるけども、OpenSiv3DはXcodeでのビルドが前提条件です。  
+最近は主にHTMLやJavaScriptを扱うプロジェクトでVS Codeを日常的に使うようになり、OpenSiv3Dアプリもこれで開発したい。しかしOpenSiv3DはXcodeでのビルドが前提条件です。  
 そこで、エディタはVS Codeを使い、ビルドだけXcodeにやってもらうことに。ビルドのためにいちいちXcodeを開くのは面倒なので、VS CodeにOpenSiv3Dアプリをビルドするタスクを実行してもらうことで、VS Codeでビルドから実行まで自動的にできるようにしてみます。
 
 <!--more-->  
@@ -20,7 +20,7 @@ excerpt_separator: <!--more-->
   - VS Code、Xcode、Xcode CommandLineTools、Rosetta2 インストール済み
 - OpenSiv3D v0.6.4
 - Visual Studio Code ver.1.68.1
-  - C/C++, C/C++ Extension Pack, C/C++ Themes, GitHub Copilot インストール済み
+  - C/C++, C/C++ Extension Pack, C/C++ Themes インストール済み
 
 
 # 実現方法
@@ -211,13 +211,6 @@ ${workspaceFolder}/../../include/ThirdParty/
 <video src="../../../assets/img/post/2022-7-1/画面収録-2022-07-01-19.55.54.mp4" controls></video>
 
 Ctrl+shift+Bを押してdebug-build-runを選択すると、ビルドが始まりアプリが起動しました。コンソール出力もできています。
-
-# GitHub Copilotを試す
-
-最後に、GitHub Copilotが動くか見てみます。  
-<video src="../../../assets/img/post/2022-7-1/画面収録-2022-07-01-20.13.55.mp4" controls></video>
-
-動きました。ときどきOpenSiv3Dに存在しない関数を提案してきたりしますが、思った以上に精度は良さげです。
 
 # おわりに
 
