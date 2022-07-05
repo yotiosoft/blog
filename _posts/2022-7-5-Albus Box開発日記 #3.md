@@ -13,22 +13,22 @@ excerpt_separator: <!--more-->
 # 歌詞設定画面
 
 既存のプレイリスト画面と同様、リスト形式で歌詞が書かれたカードが並ぶスタイルで実装しました。  
-![SnapCrab_NoName_2022-7-4_23-43-55_No-00](../../../assets/img/post/2022-7-5-Albus Box開発日記 #3/SnapCrab_NoName_2022-7-4_23-43-55_No-00.png)
+![SnapCrab_NoName_2022-7-4_23-43-55_No-00](../../../assets/img/post/2022-7-5/SnapCrab_NoName_2022-7-4_23-43-55_No-00.png)
 
 マウスでスクロール可能で、各カードは歌詞の表示順に並ばせています。  
-![SnapCrab_NoName_2022-7-4_23-44-22_No-00](../../../assets/img/post/2022-7-5-Albus Box開発日記 #3/SnapCrab_NoName_2022-7-4_23-44-22_No-00.png)
+![SnapCrab_NoName_2022-7-4_23-44-22_No-00](../../../assets/img/post/2022-7-5/SnapCrab_NoName_2022-7-4_23-44-22_No-00.png)
 
 カードをクリックすると歌詞の表示開始時間、表示終了時間、歌詞の内容、歌詞の削除といった設定ができます。  
-![SnapCrab_NoName_2022-7-4_23-44-3_No-00](../../../assets/img/post/2022-7-5-Albus Box開発日記 #3/SnapCrab_NoName_2022-7-4_23-44-3_No-00.png)  
+![SnapCrab_NoName_2022-7-4_23-44-3_No-00](../../../assets/img/post/2022-7-5/SnapCrab_NoName_2022-7-4_23-44-3_No-00.png)  
 
 設定が完了したら、カード外の部分をクリックすると歌詞の変更が反映されます。このとき、歌詞の表示時間を変更すると、歌詞の表示順にカードが並び替えられます。  
 
 右下の＋ボタンを押すと新たな歌詞カードが末尾に挿入されます。デフォルトで表示開始時間に現在の再生位置が挿入され、表示終了時間はその3秒後としています。もちろん歌詞の表示時間に合わせて変更可能です。  
-![SnapCrab_NoName_2022-7-4_23-52-16_No-00](../../../assets/img/post/2022-7-5-Albus Box開発日記 #3/SnapCrab_NoName_2022-7-4_23-52-16_No-00.png)  
+![SnapCrab_NoName_2022-7-4_23-52-16_No-00](../../../assets/img/post/2022-7-5/SnapCrab_NoName_2022-7-4_23-52-16_No-00.png)  
 
 実際に歌詞を設定しているときの様子を録画しました。よかったらご覧ください。  
 
-<video src="../../../assets/img/post/2022-7-5-Albus Box開発日記 #3/albus220705.mp4" controls></video>
+<video src="../../../assets/img/post/2022-7-5/albus220705.mp4" controls></video>
 
 使用楽曲は魔王魂さんの「シャイニングスター」です。言わずとしれたフリー素材の名曲ですね。  
 [https://maou.audio/14_shining_star/](https://maou.audio/14_shining_star/){:target="_blank"}  
