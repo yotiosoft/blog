@@ -51,7 +51,7 @@ HTMLとJavaScriptで作っていきますが、全部載せると長くなって
                 </div>
             </th>
             <th class="input">
-                <select name="pets" id="id_select_random" class="simple-select" style="width: 300px;">
+                <select name="select_random" id="id_select_random" class="simple-select" style="width: 300px;">
                     <option value="uniform">一様分布</option>
                     <option value="normal">正規分布</option>
                     <option value="beta">ベータ分布</option>
