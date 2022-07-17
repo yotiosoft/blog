@@ -45,12 +45,12 @@ HTMLとJavaScriptで作っていきますが、全部載せると長くなって
 <table class="input-table">
     <!--確率分布の指定-->
         <tr>
-            <th class="summary">
+            <td class="summary">
                 <div class="checkbox">
                     確率分布関数
                 </div>
-            </th>
-            <th class="input">
+            </td>
+            <td class="input">
                 <select name="select_random" id="id_select_random" class="simple-select" style="width: 300px;">
                     <option value="uniform">一様分布</option>
                     <option value="normal">正規分布</option>
@@ -59,25 +59,25 @@ HTMLとJavaScriptで作っていきますが、全部載せると長くなって
                     <option value="lambda">ラムダ分布</option>
                     <option value="gamma">ガンマ分布</option>
                 </select>
-            </th>
+            </td>
         </tr>
         <tr>
-            <th class="summary">
+            <td class="summary">
                 <div class="checkbox">
                     試行回数
                 </div>
-            </th>
-        <th class="input">
+            </td>
+        <td class="input">
             <input type="number" id="id_trials" name="trials" placeholder="試行回数" class="simple-inputtext" value="5">
-        </th>
+        </td>
     </tr>
     <tr>
-        <th colspan="2" class="wide">
+        <td colspan="2" class="wide">
             <div class="checkbox">
                 <input type="checkbox" id="id_integer_mode" name="integer_mode">
                 <label for="integer_mode">整数で生成</label>
             </div>
-        </th>
+        </td>
     </tr>
 </table>
 ```
@@ -141,59 +141,59 @@ select_random.addEventListener('change', function() {
 <!--パラメータ設定：一様分布-->
 <table class="input-table random_options is_show uniform_options">
     <tr>
-        <th class="summary">
+        <td class="summary">
             <div class="checkbox">
                 <input type="radio" id="id_range_limit_uniform" name="range_uniform" checked>
                 <label for="id_range_limit">範囲指定</label>
             </div>
-        </th>
-        <th class="input">
+        </td>
+        <td class="input">
                 <input type="number" id="id_input_min_uniform" name="input_min" placeholder="最小値" class="simple-inputtext" value="0">
                 <p style="margin-left: 10px; margin-right:10px;">〜</p>
                 <input type="number" id="id_input_max_uniform" name="input_mac" placeholder="最大値" class="simple-inputtext" value="100">
-        </th>
+        </td>
     </tr>
     <tr>
-        <th class="summary">
+        <td class="summary">
                 <div class="checkbox">
                     <input type="radio" id="id_range_digit_uniform" name="range_uniform">
                     <label for="id_range_digit"_uniform>桁数指定</label>
                 </div>
-        </th>
-        <th class="input">
+        </td>
+        <td class="input">
                 <input type="number" id="id_input_digit_uniform" name="input_digit" placeholder="桁数" class="simple-inputtext" value="5">
-        </th>
+        </td>
     </tr>
     <tr>
-        <th class="summary">
+        <td class="summary">
                 <div class="checkbox">
                     <input type="radio" id="id_range_nolimit_uniform" name="range_uniform">
                     <label for="id_range_nolimit_uniform">範囲無制限</label>
                 </div>
-        </th>
+        </td>
     </tr>
 </table>
 <!--パラメータ設定：正規分布-->
 <table class="input-table random_options normal_options">
     <tr>
-        <th class="summary">
+        <td class="summary">
             <div class="checkbox">
                 平均値μ
             </div>
-        </th>
-        <th class="input">
+        </td>
+        <td class="input">
             <input type="number" id="id_input_mu" name="input_mu" placeholder="平均値μ" class="simple-inputtext" value="0">
-        </th>
+        </td>
     </tr>
     <tr>
-        <th class="summary">
+        <td class="summary">
             <div class="checkbox">
                 標準偏差σ
             </div>
-        </th>
-        <th class="input">
+        </td>
+        <td class="input">
             <input type="number" id="id_input_sigma" name="input_sigma" placeholder="標準偏差σ" class="simple-inputtext" value="1">
-        </th>
+        </td>
     </tr>
 </table>
 （後略）
