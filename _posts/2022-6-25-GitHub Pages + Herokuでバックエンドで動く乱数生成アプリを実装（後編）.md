@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 > Herokuの無料プランの廃止が発表されました。  
 > 2022年11月28日以降、Herokuの無料での利用ができなくなります。ご注意ください。  
 >
-> 参考：[Heroku's Next Chapter \| Heroku](https://blog.heroku.com/next-chapter){target:"_blank"}
+> 参考：[Heroku's Next Chapter \| Heroku](https://blog.heroku.com/next-chapter){:target"_blank"}
 
 # 今回つくるもの
 
