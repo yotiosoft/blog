@@ -11,6 +11,13 @@ excerpt_separator: <!--more-->
 
 <!--more-->  
 
+> 注意  
+>
+> Herokuの無料プランの廃止が発表されました。  
+> 2022年11月28日以降、Herokuの無料での利用ができなくなります。ご注意ください。  
+>
+> 参考：[Heroku's Next Chapter \| Heroku](https://blog.heroku.com/next-chapter){target:"_blank"}
+
 # 今回つくるもの
 
 「Yapps」という自作Webツール集のWebサイトに、新しいツールとして「乱数生成」というものを作成しており、今回はそのフロントエンド部分、すなわちユーザ側が操作する部分を作ります。  
