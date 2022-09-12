@@ -96,7 +96,7 @@ Tokenを開き、生成されたTokenをコピーしてGoogle Colabの実行画�
 とりあえず、付属のsample.jpgを変換。と、その前に、元のサイズのままで進めるとout of memoryになってしまうので、512x256に縮小してsample_small.jpgとして保存しておき、縮小後の画像に対して変換を施します。生成画像は``outputs/img2img-samples``に出力されます。  
 
 元画像がこちら。  
-![ダウンロード](../../../assets/img/post/2022-8-27/ダウンロード.jpeg)  
+![ダウンロード](../../../assets/img/post/2022-8-27/sample_small.jpg)  
 
 これに対し、"anime"と指定して変換。  
 
