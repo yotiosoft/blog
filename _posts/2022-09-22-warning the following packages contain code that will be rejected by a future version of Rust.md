@@ -5,7 +5,9 @@ tags: [Rust, Windows]
 excerpt_separator: <!--more-->
 ---
 
-最近、Rustを個人的に勉強し始めていて、簡単なツールを作っているのですが、Windowsでビルドしたときだけこんな警告が現れるようになりました。  
+最近、Rustを個人的に勉強し始めていて、簡単なツールを作っているのですが、Windowsでビルドしたときだけこんな警告が現れるようになりました。
+
+<!--more-->  
 
 ```powershell
 > cargo run
@@ -15,8 +17,6 @@ note: to see what the problems were, use the option `--future-incompat-report`, 
 ```
 
 「次のパッケージは、将来rejectされるコードを含んでいます」という内容の警告。``winapi v0.2.8``がこの警告の原因のようで、これはWindows APIを呼び出すためのパッケージです。
-
-<!--more-->  
 
 # レポートを見てみる
 
