@@ -89,8 +89,7 @@ The package `winapi v0.2.8` currently triggers the following future incompatibil
 
 # 原因を探る
 
-しかしながら、winapiは直接Cargo.tomlのdependenciesに追加したわけではなく、dependenciesに追加した何らかのパッケージが依存しているものと考えられます。  
-今、Cargo.tomlのdependenciesがこんな感じ。
+今回の場合はwinapiは自分でCargo.tomlのdependenciesに追加したわけではないので、dependenciesに追加した何らかのパッケージがこれに依存しているものと考えられます。今、Cargo.tomlのdependenciesがこんな感じ。
 
 ```toml
 [dependencies]
@@ -100,7 +99,7 @@ serde_json = "1.0.85"
 regex = "0.0.1"
 ```
 
-``cargo update``を使うなり``cargo search``で検索するなりして各パッケージを最新版に更新してみると、regexがやたら古いバージョンを指定していたことが判明。多分、ネットのサンプルだか本だかに載っていたバージョンが相当古かったのでしょう。やっぱり自分でちゃんとバージョンを調べないとだめですね。  
+``cargo update``を使うなり``cargo search``で検索するなりして各パッケージを最新版に更新してみると、regexがやたら古いバージョンを指定していたことが判明。多分、自分が以前参考にしたネットのサンプルなり本なりに載っていたregaxのバージョン番号が相当古かったのでしょう。自分でちゃんと最新バージョンを調べないとだめですね。  
 
 # 解決
 
