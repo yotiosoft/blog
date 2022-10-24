@@ -176,15 +176,9 @@ First, please set your DeepL API-key:
   $ dptran -c api-key [YOUR_API_KEY]
 You can get DeepL API-key for free here:
   https://www.deepl.com/ja/pro-api?cta=header-pro-api/
-(base) ytani@ytaninoMacBook-Air homebrew-dptran % dptran 1c664a9f-4696-d92d-1caa-b4a3634ec562:fx
-Welcome to dptran!
-First, please set your DeepL API-key:
-  $ dptran -c api-key [YOUR_API_KEY]
-You can get DeepL API-key for free here:
-  https://www.deepl.com/ja/pro-api?cta=header-pro-api/
 ```
 
-うまくいきました。パスも通ってます。homebrew で導入できるとかなり楽ですね。  
+無事起動できました。パスも通ってます。homebrew で導入できるとかなり楽ですね。  
 
 ## 問題点
 
