@@ -86,12 +86,12 @@ class Dptran < Formula
 end
 ```
 
-このファイルは``/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/``に保存されます。  
-ローカルリポジトリの Formula ディレクトリに移動しておきましょう。  
+ファイルは``/opt/homebrew/Library/Taps/yotiosoft/homebrew-dptran/Formula/dptran.rb``に保存されていました。  
+homebrew-dptran に Formula ディレクトリを作り、そこに移動しておきます。  
 
 ```zsh
 % mkdir Formula
-% mv /opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/dptran.rb Formula
+% mv /opt/homebrew/Library/Taps/yotiosoft/homebrew-dptran/Formula/dptran.rb Formula
 ```
 
 最終的にはこんな構成になります。  
