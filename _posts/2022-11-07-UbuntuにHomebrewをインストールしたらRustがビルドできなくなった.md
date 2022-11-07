@@ -65,8 +65,8 @@ error: linking with `cc` failed: exit status: 1
 なんか大量の glibc の関数が undefined reference になってる…なぜ？  
 # 直前にやったこと
 
-ズバリ、Linux 版 Homebrew の導入。  
-Homebrew を導入する時点ではまだ Linux に Rust は導入しておらず、Homebrew でとあるパッケージをビルド＆インストールする際に同時に rustc や cargo などもインストールされました。（結局こっちも同様の症状で失敗したけど…）  
+Linux 版 Homebrew の導入。  
+Homebrew を導入する時点ではまだ Linux に Rust は導入しておらず、Homebrew でとあるパッケージをビルド＆インストールする際に rustc や cargo なども一緒にインストールされました。（結局こっちも同様の症状でビルドに失敗したけど…）  
 
 その後、以下のようにして Rust の再インストールを試み、Rust のインストール自体は成功したもののビルドエラーは解決せず。  
 ```bash
