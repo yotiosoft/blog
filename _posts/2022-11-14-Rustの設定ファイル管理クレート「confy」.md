@@ -11,7 +11,7 @@ CLI ツールを開発していると、設定ファイルの管理という面�
 例を挙げると、  
 
 - Windows なら``C:\\Users\[ユーザ名]\AppData\[アプリ名]``
-- Mac なら``~/Preferences/[アプリ名]``
+- Mac なら``~/Library/Preferences/[アプリ名]``
 - Linux なら``/etc/[アプリ名]``
 
 などなど…  
@@ -114,3 +114,8 @@ pub fn clear_settings() -> Result<(), ConfyError> {
 ```
 
 ``default()``を呼び出すことで初期値を取得し、これに上書き。
+
+## 設定ファイルの保存先
+
+![スクリーンショット 2022-11-14 23.33.21](../assets/img/post/2022-11-14-Rustの設定ファイル管理クレート「confy」/スクリーンショット 2022-11-14 23.33.21.png)  
+Mac の場合は``~/Library/Preferences/rs.<アプリ名>/<設定ファイル名>.toml``の中に保存されていました。toml がデフォルトの保存形式のようですね。
