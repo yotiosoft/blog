@@ -6,18 +6,18 @@ excerpt_separator: <!--more-->
 ---
 
 CLI ツールを開発していると、設定ファイルの管理という面倒な問題に直面してしまいます。  
-何が面倒かというと、まあ、JSONとかxmlのシリアライズ・デシリアライズも面倒なんですが、OS によって各 CLI ツールが扱うファイルを置くための場所が変わってしまうのが何より面倒。  
+何が面倒かというと、JSON とか xml とか toml のシリアライズ・デシリアライズも面倒なんですが、OS によって各 CLI ツールが扱うファイルを置くための場所が変わってしまうのが何より面倒。  
 
 例を挙げると、  
 
-- Windows なら``C:\\\\Users\\[ユーザ名]\\AppData\\[アプリ名]``
+- Windows なら``C:\\Users\[ユーザ名]\AppData\[アプリ名]``
 - Mac なら``~/Preferences/[アプリ名]``
 - Linux なら``/etc/[アプリ名]``
 
 などなど…  
 
-実行ファイルと同じ場所に設定ファイル置いておいてもいいんですが、本来置くべき場所とは違う場所（例えば bash の参照ディレクトリとか）に置くことになってしまう場合も考えられるので微妙。  
-そんな中、便利そうなクレートがあったのでメモ。
+実行ファイルと同じ場所に設定ファイル置いておいてもいいんですが、環境によっては本来置くべき場所とは違う場所（例えば bash の参照ディレクトリとか）に置くことになってしまう場合も考えられるので微妙だし、相対パスが使えない（端末のカレントディレクトリが参照されるため）。  
+そんな中、それらを自動でやってくれるクレートがあったので、ブログ更新回数稼ぎを兼ねてメモ。
 
 <!--more-->  
 
@@ -28,8 +28,7 @@ CLI ツールを開発していると、設定ファイルの管理という面�
 設定ファイルの管理をやってくれるクレート。  
 
 OS や環境固有のファイルパスを事前に取得し、そこに設定ファイルを読み書きしてくれます。  
-それだけでなく、設定ファイルのシリアライズ / デシリアライズ（ファイルとデータとの間の変換）もやってくれます。  
-Rust で設定ファイルを扱うプログラムを作る場合は必須と言っていいほど便利。  
+それだけでなく、設定ファイルのシリアライズ / デシリアライズ（ファイルとデータとの間の変換）もやってくれます。
 
 # 例
 
@@ -65,7 +64,7 @@ impl Default for Configure {
 ```
 
 ``Configure``が設定ファイルの構造体。  
-Default を指定しておくことで、設定ファイルが作成されたとき、ここに定義した初期値が設定ファイルにも適用されます。  
+ここで、``Configure``に対し Default を指定しておくことで、設定ファイルが初めて作成されたとき、ここに定義した初期値が設定ファイルにも適用されます。  
 
 ## 設定の読み込み
 
@@ -82,34 +81,20 @@ pub fn get_settings() -> Result<Configure, ConfyError> {
 
 ```rust
 /// APIキーの設定  
-/// 設定ファイルにAPIキーを設定する
-pub fn set_apikey(api_key: String) -> Result<(), io::Error> {
-    let mut settings = get_settings();
-    match settings {
-        Ok(ref mut settings) => {
-            settings.api_key = api_key;
-            confy::store("dptran", "configure", settings).expect("Failed to save configure");
-        }
-        Err(e) => {
-            return Err(io::Error::new(io::ErrorKind::Other, e));
-        }
-    }
+/// 設定ファイルconfig.jsonにAPIキーを設定する。
+pub fn set_apikey(api_key: String) -> Result<(), ConfyError> {
+    let mut settings = get_settings()?;
+    settings.api_key = api_key;
+    confy::store("dptran", "configure", settings)?;
     Ok(())
 }
 
 /// デフォルトの翻訳先言語の設定  
-/// 設定ファイルにデフォルトの翻訳先言語を設定する
-pub fn set_default_target_language(default_target_language: String) -> Result<(), io::Error> {
-    let mut settings = get_settings();
-    match settings {
-        Ok(ref mut settings) => {
-            settings.default_target_language = default_target_language;
-            confy::store("dptran", "configure", settings).expect("Failed to save configure");
-        }
-        Err(e) => {
-            return Err(io::Error::new(io::ErrorKind::Other, e));
-        }
-    }
+/// 設定ファイルconfig.jsonにデフォルトの翻訳先言語を設定する。
+pub fn set_default_target_language(default_target_language: String) -> Result<(), ConfyError> {
+    let mut settings = get_settings()?;
+    settings.default_target_language = default_target_language;
+    confy::store("dptran", "configure", settings)?;
     Ok(())
 }
 ```
@@ -121,17 +106,9 @@ pub fn set_default_target_language(default_target_language: String) -> Result<()
 
 ```rust
 /// 設定の初期化
-pub fn clear_settings() -> Result<(), io::Error> {
-    let mut settings = get_settings();
-    match settings {
-        Ok(ref mut settings) => {
-            *settings = Configure::default();
-            confy::store("dptran", "configure", settings).expect("Failed to save configure");
-        }
-        Err(e) => {
-            return Err(io::Error::new(io::ErrorKind::Other, e));
-        }
-    }
+pub fn clear_settings() -> Result<(), ConfyError> {
+    let settings = Configure::default();
+    confy::store("dptran", "configure", settings)?;
     Ok(())
 }
 ```
