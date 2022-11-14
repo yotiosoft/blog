@@ -81,7 +81,7 @@ pub fn get_settings() -> Result<Configure, ConfyError> {
 
 ```rust
 /// APIキーの設定  
-/// 設定ファイルconfig.jsonにAPIキーを設定する。
+/// 設定ファイルにAPIキーを設定する
 pub fn set_apikey(api_key: String) -> Result<(), ConfyError> {
     let mut settings = get_settings()?;
     settings.api_key = api_key;
@@ -90,7 +90,7 @@ pub fn set_apikey(api_key: String) -> Result<(), ConfyError> {
 }
 
 /// デフォルトの翻訳先言語の設定  
-/// 設定ファイルconfig.jsonにデフォルトの翻訳先言語を設定する。
+/// 設定ファイルにデフォルトの翻訳先言語を設定する
 pub fn set_default_target_language(default_target_language: String) -> Result<(), ConfyError> {
     let mut settings = get_settings()?;
     settings.default_target_language = default_target_language;
