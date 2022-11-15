@@ -117,7 +117,7 @@ pub fn clear_settings() -> Result<(), ConfyError> {
 
 ## 設定ファイルの保存先
 
-![SnapCrab_config_2022-11-15_20-8-20_No-00.png](C:\Users\ytani\Desktop\captcha2021\SnapCrab_config_2022-11-15_20-8-20_No-00.png)  
+![SnapCrab_config_2022-11-15_20-8-20_No-00.png](../../../assets/img/post/2022-11-14/SnapCrab_config_2022-11-15_20-8-20_No-00.png)  
 Windows の場合は``C:\Users\<ユーザ名>\AppData\Roaming\<アプリ名>\config\configure.toml``でした。toml がデフォルトの保存形式のようですね。
 
 ![スクリーンショット 2022-11-14 23.33.21](../../../assets/img/post/2022-11-14/スクリーンショット 2022-11-14 23.33.21.png)  
