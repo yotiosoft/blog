@@ -34,7 +34,7 @@ excerpt_separator: <!--more-->
 
 ``post_info.html``というファイルがありました。おそらくこれです。
 
-![スクリーンショット 2022-12-10 6.49.30](../../../assets/img/post/2022-12-10-Jekyll（Type-on-Strap）の日付表示を日本式に変更/スクリーンショット 2022-12-10 6.49.30.png)  
+![スクリーンショット 2022-12-10 6.49.30](../../../assets/img/post/2022-12-10/スクリーンショット 2022-12-10 6.49.30.png)  
 このソースコードから、``str_months[]``という配列に月の表記（January, February, March, ...)が書き込まれているものと思われます。  
 str_months[] を設定したファイルがこちらの``language.yml``。
 
@@ -80,13 +80,12 @@ str_cookie_disclaimer: "We would like to use third party cookies and scripts to 
 str_months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 ```
 
-
 これでよし、とデプロイしてみると…    
 
-![SnapCrab_NoName_2022-12-9_0-42-48_No-00](../../../assets/img/post/2022-12-10/SnapCrab_NoName_2022-12-9_0-42-48_No-00.png)    
+全部 January になっちゃった！
 
-わぁ、全記事の日付が January になっちゃった！  
-おかしいな…
+![SnapCrab_NoName_2022-12-9_0-42-48_No-00](../../../assets/img/post/2022-12-10/SnapCrab_NoName_2022-12-9_0-42-48_No-00.png)  
+えぇ…
 
 # issue を見てみる
 
