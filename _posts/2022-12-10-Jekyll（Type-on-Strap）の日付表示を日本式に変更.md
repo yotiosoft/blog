@@ -34,25 +34,8 @@ excerpt_separator: <!--more-->
 
 ``post_info.html``というファイルがありました。おそらくこれです。
 
-```html
-{% assign author = site.data.authors[include.author] %}
-{% assign date = include.date | default: "today" | date: "%B %-d, %Y" %}
-
-<div class="post-info">
-  {%- if author.url -%}<a href="{{ author.url | relative_url }}" target="_blank">{%- endif -%}
-    {% if author.avatar  %}
-      <img alt="Author's avatar" src="{{ author.avatar | relative_url }}">
-    {% endif %}
-    <p class="meta">
-      {% if author.name %}{{ author.name }} - {% endif %}
-      {% assign x = date | date: "%m" | minus: 1 %}
-      {{ site.data.language.str_months[x] | default: date | date: "%B" }} {{ date | date: "%d, %Y" }}
-    </p>
-  {%- if author.url -%}</a>{%- endif -%}
-</div>
-```
-
-このソースコードから、``str_months[]``という配列に月の表記（January, February, March, ...）が書き込まれているものと思われます。  
+![スクリーンショット 2022-12-10 6.49.30](../../../assets/img/post/2022-12-10-Jekyll（Type-on-Strap）の日付表示を日本式に変更/スクリーンショット 2022-12-10 6.49.30.png)  
+このソースコードから、``str_months[]``という配列に月の表記（January, February, March, ...)が書き込まれているものと思われます。  
 str_months[] を設定したファイルがこちらの``language.yml``。
 
 ```yaml
@@ -134,11 +117,8 @@ There are different shorthand formats you can use:
 ```
 
 なるほど、%うんたらが日付表記形式を決定づけているわけか。  
-で、もう一度``post_info.html``を見てみると、
-
-```html
-{{ site.data.language.str_months[x] | default: date | date: "%B" }} {{ date | date: "%d, %Y" }}
-```
+で、もう一度``post_info.html``を見てみると、  
+![スクリーンショット 2022-12-10 6.48.55](../../../assets/img/post/2022-12-10/スクリーンショット 2022-12-10 6.48.55.png)
 
 ``date: "%B"``の表記が。犯人はこいつかぁ。  
 要は、``%B``としておくと January, February, March, ..., December という英語風の表記になってしまうようです。  
@@ -148,9 +128,7 @@ issue の書き込みによると、``%m``で padding なしの数値での01～
 
 じゃあ、「YYYY年MM月DD日」という表記にしようと、以下のように修正。
 
-```html
-{{ date | date: "%Y年" }}{{ site.data.language.str_months[x] | default: date | date: "%m月" }}{{ date | date: "%d日" }}
-```
+![スクリーンショット 2022-12-10 6.48.26](../../../assets/img/post/2022-12-10/スクリーンショット 2022-12-10 6.48.26.png)
 
 ところが、GitHub Actions でのビルド時にエラーが発生。  
 
@@ -160,13 +138,11 @@ issue の書き込みによると、``%m``で padding なしの数値での01～
 
 仕方ないので、「YYYY年MM月DD日」ではなく「YYYY/MM/DD」という表記に修正しました。
 
-```html
-{{ date | date: "%Y/" }}{{ site.data.language.str_months[x] | default: date | date: "%m/" }}{{ date | date: "%d" }}
-```
+![スクリーンショット 2022-12-10 6.47.56](../../../assets/img/post/2022-12-10/スクリーンショット 2022-12-10 6.47.56.png)
 
 これでデプロイしてみると、  
 
-![SnapCrab_NoName_2022-12-9_1-45-53_No-00](../assets/img/post/2022-12-10/SnapCrab_NoName_2022-12-9_1-45-53_No-00.png)  
+![SnapCrab_NoName_2022-12-9_1-45-53_No-00](../../../assets/img/post/2022-12-10/SnapCrab_NoName_2022-12-9_1-45-53_No-00.png)  
 
 やった！  
 てなわけで、ようやく日本式の日付表記に修正できました。
