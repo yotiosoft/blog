@@ -131,7 +131,7 @@ issue の書き込みによると、``%m``で padding なしの数値での01～
 
 ところが、GitHub Actions でのビルド時にエラーが発生。  
 
-![SnapCrab_NoName_2022-12-9_1-30-46_No-00](../assets/img/post/2022-12-10/SnapCrab_NoName_2022-12-9_1-30-46_No-00.png)  
+![SnapCrab_NoName_2022-12-9_1-30-46_No-00](../../../assets/img/post/2022-12-10/SnapCrab_NoName_2022-12-9_1-30-46_No-00.png)  
 
 うーむ、マルチバイト文字を含んでいるとダメっぽい。  
 
