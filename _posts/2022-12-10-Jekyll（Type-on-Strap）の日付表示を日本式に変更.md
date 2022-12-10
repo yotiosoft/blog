@@ -20,12 +20,12 @@ excerpt_separator: <!--more-->
 ```html
 <div class="post-info">
     <p class="meta">
-      
-      
+
+
       December 08, 2022
     </p></div>
 
-      
+
     </div>
   </header>
 ```
@@ -92,7 +92,6 @@ str_months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 Type-on-Strap の issue を見てみると、こんなことが書いてありました。  
 [Add date localization formating in config.yml #241](https://github.com/sylhare/Type-on-Strap/pull/241){:target="_blank"}
 
-
 ```
 There are different shorthand formats you can use:
 
@@ -116,11 +115,12 @@ There are different shorthand formats you can use:
 ```
 
 なるほど、%うんたらが日付表記形式を決定づけているわけか。  
+  
 で、もう一度``post_info.html``を見てみると、  
 ![スクリーンショット 2022-12-10 6.48.55](../../../assets/img/post/2022-12-10/スクリーンショット 2022-12-10 6.48.55.png)
 
 ``date: "%B"``の表記が。犯人はこいつかぁ。  
-要は、``%B``としておくと January, February, March, ..., December という英語風の表記になってしまうようです。  
+要は、``%B``としておくと 1, 2, 3, ..., 12 という数値が January, February, March, ..., December という英語風の表記に変換されてしまうようです。  
 ``default: date | date: "%B"``となっているので、先程変更した``str_months[]``の設定は使用されていなかったっぽいですね。  
 
 issue の書き込みによると、``%m``で padding なしの数値での01～12表記になるので、これを採用。  
@@ -145,8 +145,3 @@ issue の書き込みによると、``%m``で padding なしの数値での01～
 
 やった！  
 てなわけで、ようやく日本式の日付表記に修正できました。
-
-
-
-
-
