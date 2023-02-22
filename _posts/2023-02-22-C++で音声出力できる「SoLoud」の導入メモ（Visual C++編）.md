@@ -5,7 +5,7 @@ tags: [C/C++, Windows, SoLoud]
 excerpt_separator: <!--more-->
 ---
 
-Albus Box により高度なサウンドエフェクトを導入したいと思い、ここ最近はオーディオ関連のライブラリを調査しています。まずは OpenSiv3D でも採用されている SoLoud という C++ 向けのライブラリを試してみました。（前回、OpenSiv3D の Audio クラスに OpenAL が採用されているとか書きましたが、あれは勘違いです）  
+Albus Box により高度なサウンドエフェクトを導入したいと思い、ここ最近はオーディオ関連のライブラリを調査しています。まずは OpenSiv3D でも採用されている [SoLoud](http://solhsa.com/soloud/index.html){:target="_blank"} という C++ 向けのライブラリを試してみました。（前回、OpenSiv3D の Audio クラスに OpenAL が採用されているとか書きましたが、あれは勘違いです）  
 
 リファレンスをざっと読んだ限り OpenSiv3D にまだ実装されていない機能、例えばイコライザ※ や 3D サウンド、FFTFilter などもサポートしています（※イコライザは開発版のみサポート）。  
 Albus Box は OpenSiv3D 製ですが、今回は SoLoud 自体がサポートしている機能を求めているため、 OpenSiv3D を介さずに直接 SoLoud を弄る方向で検討しています。  
