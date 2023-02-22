@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SoLoudの導入メモ（Visual Studio編）"
+title: "C++で音声出力できる「SoLoud」の導入メモ（Visual C++編）"
 tags: [C/C++, Windows, SoLoud]
 excerpt_separator: <!--more-->
 ---
@@ -31,7 +31,9 @@ Albus Box は OpenSiv3D 製ですが、今回は SoLoud 自体がサポートし
 
 ## ダウンロード
 
-[こちら](http://solhsa.com/soloud/downloads.html){:target="_blank"} から最新版をダウンロード。開発版は [GitHub](https://github.com/jarikomppa/soloud){:target="_blank"} から入手可能です。
+[こちら](http://solhsa.com/soloud/downloads.html){:target="_blank"} から最新の安定版をダウンロードできます。安定版にはビルド済みのサンプルプログラム（megademo など）が付属します。  
+
+開発版は [GitHub](https://github.com/jarikomppa/soloud){:target="_blank"} から入手可能です。開発版では安定版に実装されていない機能も利用可能です。
 
 ## ファイルの include
 
