@@ -73,9 +73,9 @@ Visual C++ では ``sprintf()`` の使用は非推奨で、代わりに `sprintf
 自分の用途上、Visual C++ で動かす必要があるため Visual Studio で新たにプロジェクトを作成し、サンプルプログラムをコピペして動かしてみました。  
 
 ```cpp
-#include "soloud/include/soloud.h"
-#include "soloud/include/soloud_speech.h"
-#include "soloud/include/soloud_thread.h"
+#include "soloud.h"
+#include "soloud_speech.h"
+#include "soloud_thread.h"
 
 // Entry point
 int main(int argc, char* argv[])
@@ -147,8 +147,8 @@ Visual C++ で実装する上で必要となった操作をまとめておきま
 SoLoud では wav、flac、mp3、ogg などをサポートしており、これらは ``SoLoud::Wav`` クラスで再生できます。プログラムも非常にシンプルです。動作テスト用に自分で組んだプログラムがこちら。  
 
 ```cpp
-#include "soloud/include/soloud.h"
-#include "soloud/include/soloud_wav.h"
+#include "soloud.h"
+#include "soloud_wav.h"
 
 // Entry point
 int main(int argc, char* argv[])
