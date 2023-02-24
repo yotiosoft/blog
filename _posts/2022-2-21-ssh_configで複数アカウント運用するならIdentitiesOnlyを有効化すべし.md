@@ -97,11 +97,11 @@ gitでssh接続で複数のアカウントを利用し、なおかつ秘密鍵�
 
 # 追記（2023年2月24日）
 
-GitHub のアカウントを複数持つことについて一応注意書きをしておきます。GitHub では、**無料アカウントを1人で複数持つことは規約違反**にあたります。ただし、2つのアカウントを持っていて、一方のアカウントが GitHub Pro、または有償の GitHub Organization に所属している場合は規約違反にはあたりません。  
-筆者のもう一方（研究室用）のアカウントは、研究室が有償 Organization を契約しているため問題ありません。アカウント自体も GitHub Pro に契約しております。
+この記事へのアクセス数が増えているので、GitHub のアカウントを複数持つことについて一応注意書きをしておきます。GitHub では、**無料アカウントを1人で複数持つことは規約違反**にあたります。ただし、2つのアカウントを持っていて、一方のアカウントが GitHub Pro、または有償の GitHub Organization に所属している場合は規約違反にはあたりません。  
+なお、筆者のもう一方（研究室用）のアカウントは、研究室が有償 Organization を契約しており、アカウント自体も GitHub Pro に契約しているため契約違反には該当しません。
 
-参考：
+参考：  
 
 - [GitHub Terms of Service - GitHub Docs](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#b-account-terms)
 
-- [GitHubで会社用とプライベートアカウントを分けよう(問題ないよ)](https://medium.com/@ask_yoshi_taka/github%E3%81%A7%E4%BC%9A%E7%A4%BE%E7%94%A8%E3%81%A8%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E5%88%86%E3%81%91%E3%82%88%E3%81%86-%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%84%E3%82%88-b00557c3bd78)
+- [GitHubで会社用とプライベートアカウントを分けよう(問題ないよ) - yoshi-taka - Medium](https://medium.com/@ask_yoshi_taka/github%E3%81%A7%E4%BC%9A%E7%A4%BE%E7%94%A8%E3%81%A8%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E5%88%86%E3%81%91%E3%82%88%E3%81%86-%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%84%E3%82%88-b00557c3bd78)
