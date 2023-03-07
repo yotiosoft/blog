@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 自分の環境ではGitHubアカウントごとにssh接続用の秘密鍵を使い分けているのですが、どうしても片方の秘密鍵でログインされてしまいます。  
 おかしいなと思ってググったら、``~/.ssh/config``で複数アカウントを運用する上で重要な設定``IdentitiesOnly yes``が抜けていたことが判明しました。
 
-<!--more-->  
+<!--more-->
 
 # 問題点
 
@@ -94,3 +94,14 @@ Host GitHub-Labo
 # まとめ
 
 gitでssh接続で複数のアカウントを利用し、なおかつ秘密鍵を使い分けているときは、必ず``IdentitiesOnly yes``を設定しよう。設定しないとアカウントの切り替えがうまくいかない事態が起こりえます。
+
+# 追記（2023年2月24日）
+
+この記事へのアクセス数が増えているので、GitHub のアカウントを複数持つことについて一応注意書きをしておきます。GitHub では、**無料アカウントを1人で複数持つことは規約違反**にあたります。ただし、2つのアカウントを持っていて、一方のアカウントが GitHub Pro、または有償の GitHub Organization に所属している場合は規約違反にはあたりません。  
+なお、筆者のもう一方（研究室用）のアカウントは、研究室が有償 Organization を契約しており、アカウント自体も GitHub Pro に契約しているため契約違反には該当しません。
+
+参考：  
+
+- [GitHub Terms of Service - GitHub Docs](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#b-account-terms)
+
+- [GitHubで会社用とプライベートアカウントを分けよう(問題ないよ) - yoshi-taka - Medium](https://medium.com/@ask_yoshi_taka/github%E3%81%A7%E4%BC%9A%E7%A4%BE%E7%94%A8%E3%81%A8%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E5%88%86%E3%81%91%E3%82%88%E3%81%86-%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%84%E3%82%88-b00557c3bd78)
