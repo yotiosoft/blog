@@ -16,6 +16,11 @@
     @extend .subtle-txt-shadow;
   }
 
+  .custom_shadow {
+    font-family: $font-family-logo;
+    @extend .subtle-txt-shadow;
+  }
+
   /* --- Responsive --- */
   @media screen and (min-width: $break) {
     background-size: 120% auto;
