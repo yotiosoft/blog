@@ -8,7 +8,8 @@ avatar: assets/img/blog_logo.png                        # Empty for no avatar in
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
 # Header and footer text
-header_text: "YotioSoft's Diary"				# Change Blog header text
+header_text: "YotioSoft's Diary"			# Change Blog header text
+header_subtext: "為せばnull 為さねばnullぬ NaNごとも"
 header_feature_image: assets/img/pexels/PXL_20230305_233723442.webp
 footer_text: >
   © 2021-2023 YotioSoft | Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
