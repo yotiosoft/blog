@@ -8,7 +8,6 @@ avatar: assets/img/blog_logo.png                        # Empty for no avatar in
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
 # Header and footer text
-<<<<<<< HEAD
 header_text: "Yotio's Diary"				# Change Blog header text
 header_subtext: "～為せばnull 為さねばnullぬ NaNごとも～"
 header_feature_image: assets/img/pexels/PXL_20230305_233723442.webp
