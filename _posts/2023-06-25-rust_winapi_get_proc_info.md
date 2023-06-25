@@ -63,7 +63,7 @@ use winapi::um::winnt::{ MEM_COMMIT, MEM_RELEASE, PAGE_EXECUTE_READWRITE };
 use ntapi::ntexapi::*;
 
 // SystemProcessInformation を buffer に取得
-fn get_system_process_information(mut buffer_size: u32) -> *mut c_void {
+fn get_system_processes_info(mut buffer_size: u32) -> *mut c_void {
     unsafe {
         let mut base_address = VirtualAlloc(std::ptr::null_mut(), buffer_size as usize, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 
@@ -93,13 +93,46 @@ fn get_system_process_information(mut buffer_size: u32) -> *mut c_void {
     }
 }
 
+fn get_proc_info(next_address: isize) -> SYSTEM_PROCESS_INFORMATION {
+    unsafe {
+        let mut system_process_info: SYSTEM_PROCESS_INFORMATION = std::mem::zeroed();
+
+        // base_address の該当オフセット値から SYSTEM_PROCESS_INFORMATION 構造体の情報をプロセス1つ分取得
+        ReadProcessMemory(
+            GetCurrentProcess(), next_address as *const c_void, &mut system_process_info as *mut _ as *mut c_void, 
+            std::mem::size_of::<SYSTEM_PROCESS_INFORMATION>() as usize, std::ptr::null_mut()
+        );
+
+        system_process_info
+    }
+}
+
+fn get_proc_name(proc_info: SYSTEM_PROCESS_INFORMATION) -> String {
+    unsafe {
+        // プロセス名を取得
+        let mut image_name_vec: Vec<u16> = vec![0; proc_info.ImageName.Length as usize];
+        ReadProcessMemory(
+            GetCurrentProcess(), proc_info.ImageName.Buffer as *const c_void, image_name_vec.as_mut_ptr() as *mut c_void, 
+            proc_info.ImageName.Length as usize, std::ptr::null_mut()
+        );
+        // \0 を除去
+        let proc_name = String::from_utf16_lossy(&image_name_vec).trim_matches(char::from(0)).to_string();
+
+        proc_name
+    }
+}
+
+fn get_proc_id(proc_info: SYSTEM_PROCESS_INFORMATION) -> u32 {
+    proc_info.UniqueProcessId as u32
+}
+
 fn main() {
     unsafe {
         // プロセス情報を取得
-        let base_address = get_system_process_information(0x10000);
+        let base_address = get_system_processes_info(0x10000);
 
         // base_address に取得したプロセス情報を SYSTEM_PROCESS_INFORMATION 構造体 system_process_info に格納
-        let mut system_process_info: SYSTEM_PROCESS_INFORMATION = std::mem::zeroed();
+        let mut system_process_info = get_proc_info(base_address as isize);
 
         let mut next_address = base_address as isize;
         // すべてのプロセス情報を取得
@@ -107,26 +140,17 @@ fn main() {
             // 次のプロセス情報の格納先アドレス
             next_address += system_process_info.NextEntryOffset as isize;
 
-            // base_address の該当オフセット値から SYSTEM_PROCESS_INFORMATION 構造体の情報をプロセス1つ分取得
-            ReadProcessMemory(
-                GetCurrentProcess(), next_address as *const c_void, &mut system_process_info as *mut _ as *mut c_void, 
-                std::mem::size_of::<SYSTEM_PROCESS_INFORMATION>() as usize, std::ptr::null_mut()
-            );
+            // base_address に取得したプロセス情報を SYSTEM_PROCESS_INFORMATION 構造体 system_process_info に格納
+            system_process_info = get_proc_info(next_address);
 
             // プロセス名を取得
-            let mut image_name_vec: Vec<u16> = vec![0; system_process_info.ImageName.Length as usize];
-            ReadProcessMemory(
-                GetCurrentProcess(), system_process_info.ImageName.Buffer as *const c_void, image_name_vec.as_mut_ptr() as *mut c_void, 
-                system_process_info.ImageName.Length as usize, std::ptr::null_mut()
-            );
-            // \0 を除去
-            let proc_name = String::from_utf16_lossy(&image_name_vec).trim_matches(char::from(0)).to_string();
+            let proc_name = get_proc_name(system_process_info);
 
             // プロセスIDを取得
-            let proc_id = system_process_info.UniqueProcessId as u32;
+            let proc_id = get_proc_id(system_process_info);
 
             // プロセス名とプロセスIDを表示
-            println!("pid {} - {:#x?}", proc_id, proc_name);
+            println!("pid {} - {}", proc_id, proc_name);
 
             // すべてのプロセス情報を取得したら終了
             if system_process_info.NextEntryOffset == 0 {
@@ -139,7 +163,9 @@ fn main() {
 }
 ```
 
-## プロセス情報の取得
+# 実装の詳細
+
+## プロセス情報の取得：get_system_procs_info(), get_proc_info()
 
 大まかな手順は以下のとおりです。
 
@@ -187,7 +213,7 @@ typedef struct _SYSTEM_PROCESS_INFORMATION {
 
 `base_adress` は、現在動作中の全プロセス分のデータを持つ可変長なデータですが、各プロセスのオフセット値は SYSTEM_PROCESS_INFORMATION 構造体のメンバ変数 ``NextEntryOffset`` から取得できます。よって、オフセット分を足した次のアドレスを算出していき、それぞれのデータについて for 文でぶん回して見ていきます。
 
-## プロセス名の取得
+## プロセス名の取得：get_proc_name()
 
 ここではプロセス名を取得するために、以下の手順で処理を進めます。
 
@@ -197,17 +223,17 @@ typedef struct _SYSTEM_PROCESS_INFORMATION {
 
 ここでは、SYSTEM_PROCESS_INFORMATION 構造体 の ``ImageName.Buffer`` から、[u16] 型の文字列 `image_name_vec` にプロセス名を格納していきます。このとき、ここで格納した文字列にはヌル文字 ``\0`` が含まれますので、これを除去しておきます。
 
-## プロセス ID の取得
+## プロセス ID の取得：get_proc_id()
 
 プロセス ID は SYSTEM_PROCESS_INFORMATION 構造体 の ``UniqueProcessId`` から取得可能です。
 
 # 実行
 
-![SnapCrab_Windows PowerShell_2023-6-25_18-0-57_No-00.webp](..\..\..\assets\img\post\2023-06-25\SnapCrab_Windows%20PowerShell_2023-6-25_18-0-57_No-00.webp)
+![SnapCrab_Windows PowerShell_2023-6-25_19-1-19_No-00.png](\..\..\..\assets\img\post\2023-06-25\SnapCrab_Windows%20PowerShell_2023-6-25_19-1-19_No-00.png)
 
-![SnapCrab_Windows PowerShell_2023-6-25_18-1-7_No-00.webp](..\..\..\assets\img\post\2023-06-25\SnapCrab_Windows%20PowerShell_2023-6-25_18-1-7_No-00.webp)
+![SnapCrab_Windows PowerShell_2023-6-25_19-1-2_No-00.png](\..\..\..\assets\img\post\2023-06-25\SnapCrab_Windows%20PowerShell_2023-6-25_19-1-2_No-00.png)
 
-自分自身のプロセス（WinProcInfo.exe）も含め、すべてのプロセスを取得できました。同じ名前のプロセスがいくつもあるのが気になりますが、おそらくスレッドごとに別個に取得しているのでしょう。
+自分自身のプロセス（WinProcInfo.exe）も含め、すべてのプロセスを取得できました。同じ名前のプロセスがいくつもあるのが気になりますが、おそらく同一プロセス内のスレッドかと思われます。
 
 # おわりに
 
@@ -217,12 +243,12 @@ typedef struct _SYSTEM_PROCESS_INFORMATION {
 
 # 参考文献
 
-1. [NtQuerySystemInformation 関数 (winternl.h) - Win32 apps \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation)
+1. [NtQuerySystemInformation 関数 (winternl.h) - Win32 apps \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation){:target="_blank"}
 
-2. [winapi - Rust](https://docs.rs/winapi/latest/winapi/index.html)
+2. [winapi - Rust](https://docs.rs/winapi/latest/winapi/index.html){:target="_blank"}
 
-3. [ntapi - Rust](https://docs.rs/ntapi/latest/ntapi/)
+3. [ntapi - Rust](https://docs.rs/ntapi/latest/ntapi/){:target="_blank"}
 
 # リポジトリ
 
-[GitHub - yotiosoft/WinProcInfoByRust](https://github.com/yotiosoft/WinProcInfoByRust)
+[GitHub - yotiosoft/WinProcInfoByRust](https://github.com/yotiosoft/WinProcInfoByRust){:target="_blank"}
