@@ -213,7 +213,7 @@ typedef struct _SYSTEM_PROCESS_INFORMATION {
 } SYSTEM_PROCESS_INFORMATION;
 ```
 
-（出典：[NtQuerySystemInformation 関数 (winternl.h) - Win32 apps \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation)）
+（出典：[NtQuerySystemInformation 関数 (winternl.h) - Win32 apps \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation){:target="_blank"}）
 
 `base_adress` は、現在動作中の全プロセス分のデータを持つ可変長なデータですが、各プロセスのオフセット値は SYSTEM_PROCESS_INFORMATION 構造体のメンバ変数 ``NextEntryOffset`` から取得できます。よって、オフセット分を足した次のアドレスを算出していき、それぞれのデータについて loop でぶん回して見ていきます。
 
@@ -237,11 +237,11 @@ typedef struct _SYSTEM_PROCESS_INFORMATION {
 
 ![SnapCrab_Windows PowerShell_2023-6-25_19-1-2_No-00.png](\..\..\..\assets\img\post\2023-06-25\SnapCrab_Windows%20PowerShell_2023-6-25_19-1-2_No-00.png)
 
-自分自身のプロセス（WinProcInfo.exe）も含め、すべてのプロセスを取得できました。同じ名前のプロセスがいくつもあるのが気になりますが、おそらく同一プロセス内のスレッドかと思われます。
+自分自身のプロセス（win_proc_info.exe）も含め、すべてのプロセスを取得できました。同じ名前のプロセスがいくつもあるのが気になりますが、おそらく同一プロセス内のスレッドかと思われます。
 
 # おわりに
 
-今回は、Rust で winapi と ntapi の関数を用いてプロセス情報を取得するところまでできました。今回表示したのはプロセス ID とプロセス名のみですが、プロセス内のスレッド数や仮想メモリのサイズ、メモリページ数などが取得できるようです。詳しくは参考文献 1 をご覧ください。
+今回は、Rust で winapi と ntapi の関数を用いてプロセス情報を取得するところまでできました。今回表示したのはプロセス ID とプロセス名のみですが、プロセス内のスレッド数や仮想メモリのサイズ、メモリページ数などが取得できるようです。詳しくは後述の参考文献 1 をご覧ください。
 
 プロセス一覧の取得までできたので、次のステップとして、それぞれのプロセスが調査対象のファイルを開いているかどうか、それぞれが持つハンドラを取得することで判定するプログラムを今後は作っていきたいと思います。
 
