@@ -62,6 +62,7 @@ use winapi::um::processthreadsapi::*;
 use winapi::um::winnt::{ MEM_COMMIT, MEM_RELEASE, PAGE_EXECUTE_READWRITE };
 use ntapi::ntexapi::*;
 
+// 現在動作中のすべてのプロセス情報を取得
 // SystemProcessInformation を buffer に取得
 fn get_system_processes_info(mut buffer_size: u32) -> *mut c_void {
     unsafe {
@@ -93,6 +94,7 @@ fn get_system_processes_info(mut buffer_size: u32) -> *mut c_void {
     }
 }
 
+// プロセス一つ分の情報を取得
 fn get_proc_info(next_address: isize) -> SYSTEM_PROCESS_INFORMATION {
     unsafe {
         let mut system_process_info: SYSTEM_PROCESS_INFORMATION = std::mem::zeroed();
@@ -107,6 +109,7 @@ fn get_proc_info(next_address: isize) -> SYSTEM_PROCESS_INFORMATION {
     }
 }
 
+// プロセス名を取得し、String 型で返す
 fn get_proc_name(proc_info: SYSTEM_PROCESS_INFORMATION) -> String {
     unsafe {
         // プロセス名を取得
@@ -122,6 +125,7 @@ fn get_proc_name(proc_info: SYSTEM_PROCESS_INFORMATION) -> String {
     }
 }
 
+// プロセス ID を取得
 fn get_proc_id(proc_info: SYSTEM_PROCESS_INFORMATION) -> u32 {
     proc_info.UniqueProcessId as u32
 }
@@ -211,7 +215,7 @@ typedef struct _SYSTEM_PROCESS_INFORMATION {
 
 （出典：[NtQuerySystemInformation 関数 (winternl.h) - Win32 apps \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation)）
 
-`base_adress` は、現在動作中の全プロセス分のデータを持つ可変長なデータですが、各プロセスのオフセット値は SYSTEM_PROCESS_INFORMATION 構造体のメンバ変数 ``NextEntryOffset`` から取得できます。よって、オフセット分を足した次のアドレスを算出していき、それぞれのデータについて for 文でぶん回して見ていきます。
+`base_adress` は、現在動作中の全プロセス分のデータを持つ可変長なデータですが、各プロセスのオフセット値は SYSTEM_PROCESS_INFORMATION 構造体のメンバ変数 ``NextEntryOffset`` から取得できます。よって、オフセット分を足した次のアドレスを算出していき、それぞれのデータについて loop でぶん回して見ていきます。
 
 ## プロセス名の取得：get_proc_name()
 
