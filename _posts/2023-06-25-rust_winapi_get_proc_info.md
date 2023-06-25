@@ -13,7 +13,7 @@ Rust で WindownAPI を用いて、現在 Windows 上で実行されているプ
 
 1年半前、C++ で WindowsAPI の RestartManager API を使ってファイルをロックしているプロセスを取得する記事を書きました。
 
-[Win32APIのRestart Managerでファイルをロックしているプロセスを特定する | 為せばnull](https://blog.yotiosoft.com/2021/12/13/Win32API%E3%81%AERestart-Manager%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%AD%E3%83%83%E3%82%AF%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%82%92%E7%89%B9%E5%AE%9A%E3%81%99%E3%82%8B.html)
+[Win32APIのRestart Managerでファイルをロックしているプロセスを特定する \| 為せばnull](https://blog.yotiosoft.com/2021/12/13/Win32API%E3%81%AERestart-Manager%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%AD%E3%83%83%E3%82%AF%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%82%92%E7%89%B9%E5%AE%9A%E3%81%99%E3%82%8B.html)
 
 こちらの記事では文字通り「ファイルをロックしているプロセスを取得する」ことはできたものの、ファイルをロックせずにファイルを開いているプロセスについての取得までは辿り着けませんでした。理由は「RestartManeger がファイルをロックしているプロセスしか取得できない仕様」だからです。
 
