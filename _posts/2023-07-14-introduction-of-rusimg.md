@@ -105,7 +105,7 @@ rusimg は大きく分けて2段階のモジュールから構成されます。
 
 実は動作テストを兼ねて、このブログで使う画像を jpeg や png から webp に変換するときには rusimg を使っているのですが、特に一括変換と変換元ファイルの自動削除は自分でもよく使います。そもそも rusimg の開発を始めた大元の動機が、ブログを書いてるときの画像変換や画像圧縮の煩雑さにあります。
 
-![SnapCrab_Windows PowerShell_2023-7-13_2-37-23_No-00.png](..\..\..\assets\img\post\2023-07-13\SnapCrab_Windows%20PowerShell_2023-7-13_2-37-23_No-00.png)
+![SnapCrab_Windows PowerShell_2023-7-13_2-37-23_No-00.png](..\..\..\assets\img\post\2023-07-13\SnapCrab_Windows%20PowerShell_2023-7-13_2-37-23_No-00.webp)
 
 （もちろんこの画像↑も rusimg で変換しています）
 
@@ -117,15 +117,15 @@ rusimg は大きく分けて2段階のモジュールから構成されます。
 
 つまりこういうことです。
 
-![SnapCrab_Windows PowerShell_2023-7-13_2-14-30_No-00.png](..\..\..\assets\img\post\2023-07-13\SnapCrab_Windows%20PowerShell_2023-7-13_2-14-30_No-00.png)
+![SnapCrab_Windows PowerShell_2023-7-13_2-14-30_No-00.png](..\..\..\assets\img\post\2023-07-13\SnapCrab_Windows%20PowerShell_2023-7-13_2-14-30_No-00.webp)
 
 こんな画質の粗い無駄機能いつ使うんだ、という感じですが、実はトリミング機能やグレースケール化機能を使ったとき、操作結果の確認などに使えたりします。
 
-![SnapCrab_Windows PowerShell_2023-7-13_2-22-31_No-00.png](..\..\..\assets\img\post\2023-07-13\SnapCrab_Windows%20PowerShell_2023-7-13_2-22-31_No-00.png)
+![SnapCrab_Windows PowerShell_2023-7-13_2-22-31_No-00.png](..\..\..\assets\img\post\2023-07-13\SnapCrab_Windows%20PowerShell_2023-7-13_2-22-31_No-00.webp)
 
 これは viuer というクレートを利用しており、短いコードで簡単にコマンドラインに画像出力できるという代物になっております。
 
-[viuer - Rust](https://docs.rs/viuer/latest/viuer/)
+[viuer - Rust](https://docs.rs/viuer/latest/viuer/){:target="_blank"}
 
 ```rust
 fn view(&self) -> Result<(), RusimgError> {
@@ -248,7 +248,7 @@ fn open(path: PathBuf) -> Result<Self, RusimgError> {
 
 コマンドライン引数の受け取りには clap という有名なパーサを利用しています。
 
-[clap - Rust](https://docs.rs/clap/latest/clap/)
+[clap - Rust](https://docs.rs/clap/latest/clap/){:target="_blank"}
 
 これはコマンドライン引数の受け取りはもちろん、オプションの生成やヘルプ、バージョン情報の表示も自動で実装してくれる優れものです。
 
@@ -337,7 +337,7 @@ Options:
 
 ファイルパスにおけるワイルドカード文字（``?`` と ``*``）への対応には、glob というクレートを利用しています。
 
-[glob - Rust](https://docs.rs/glob/latest/glob/)
+[glob - Rust](https://docs.rs/glob/latest/glob/){:target="_blank"}
 
 下記のコードは、ワイルドカードを含むファイルパスを与えたときに、該当するすべての画像ファイルパスが格納された配列を返す関数です。
 
@@ -365,56 +365,39 @@ fn get_files_by_wildcard(source_path: &PathBuf) -> Result<Vec<PathBuf>, String> 
 
 - gif、RAW 形式への対応
   
-  - [gif - Rust](https://docs.rs/gif/latest/gif/)
-  
-  - [GitHub - pedrocr/rawloader: rust library to extract the raw data and some metadata from digital camera images](https://github.com/pedrocr/rawloader)
-
 - Inpainting 機能
   
   - 消しゴムマジックで消してやるのさっ！
-  
-  - [GitHub - EmbarkStudios/texture-synthesis: 🎨 Example-based texture synthesis written in Rust 🦀](https://github.com/EmbarkStudios/texture-synthesis)
-
 - Style Transfer 機能
   
   - 画像の質感を他の画像に適用する機能
-  
-  - [GitHub - EmbarkStudios/texture-synthesis: 🎨 Example-based texture synthesis written in Rust 🦀](https://github.com/EmbarkStudios/texture-synthesis)
-
 - 顔検出・モザイク機能
   
   - OpenCV の利用を検討
   
   - yapps 向けに以前作ったものを流用？
     
-    - [opencv.jsを使ってブラウザ上で顔を検出＆モザイクをかける](../../../2022/12/08/opencv.js%E3%81%A7%E9%A1%94%E8%AA%8D%E8%AD%98-%E3%83%A2%E3%82%B6%E3%82%A4%E3%82%AF%E3%82%92%E3%81%8B%E3%81%91%E3%82%8B.html)
-
+    - [opencv.jsを使ってブラウザ上で顔を検出＆モザイクをかける \| 為せばnull](../../../2022/12/08/opencv.js%E3%81%A7%E9%A1%94%E8%AA%8D%E8%AD%98-%E3%83%A2%E3%82%B6%E3%82%A4%E3%82%AF%E3%82%92%E3%81%8B%E3%81%91%E3%82%8B.html)
 - 二値化機能
-
 - エッジ検出機能
-
 - 更新日時でのファイル指定機能
-
 - バグ修正
-
 - とにかく完成させる
 
 とりあえずは現状の機能でバグ修正を進め、一旦ベータ版として近日中に公開しようかなと思っております。
 
 # 参考文献
 
-- [image - Rust](https://creative-coding-the-hard-way.github.io/Agents/image/index.html)
-
-- [GitHub - mozilla/mozjpeg: Improved JPEG encoder.](https://github.com/mozilla/mozjpeg)
-
-- [oxipng - Rust](https://docs.rs/oxipng/latest/oxipng/)
-
-- [webp - Rust](https://docs.rs/webp/latest/webp/)
-
-- [viuer - Rust](https://docs.rs/viuer/latest/viuer/)
+- [image - Rust](https://creative-coding-the-hard-way.github.io/Agents/image/index.html){:target="_blank"}
+- [GitHub - mozilla/mozjpeg: Improved JPEG encoder.](https://github.com/mozilla/mozjpeg){:target="_blank"}
+- [oxipng - Rust](https://docs.rs/oxipng/latest/oxipng/){:target="_blank"}
+- [webp - Rust](https://docs.rs/webp/latest/webp/){:target="_blank"}
+- [clap - Rust](https://docs.rs/clap/latest/clap/){:target="_blank"}
+- [glob - Rust](https://docs.rs/glob/latest/glob/){:target="_blank"}
+- [viuer - Rust](https://docs.rs/viuer/latest/viuer/){:target="_blank"}
 
 # リポジトリ
 
 コードを公開しておりますので、Rust の開発環境があれば Windows / macOS / Linux でコンパイル可能です。ただしまだ動作の保証はできませんのでご承知おきください。
 
-[GitHub - yotiosoft/rusimg: A image processing CLI tool for bmp, jpeg, png and webp written by Rust.](https://github.com/yotiosoft/rusimg)
+[GitHub - yotiosoft/rusimg: A image processing CLI tool for bmp, jpeg, png and webp written by Rust.](https://github.com/yotiosoft/rusimg){:target="_blank"}
