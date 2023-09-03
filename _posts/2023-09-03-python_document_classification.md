@@ -90,7 +90,7 @@ BOW および各単語の TF-IDF が求められたら、いよいよ機械学�
 
 今回は cls-acl10 というデータセットを用います。
 
-[Webis Cross-Lingual Sentiment Dataset 2010 (Webis-CLS-10) | Zenodo](https://zenodo.org/record/3251672){:target="_blank"}
+[Webis Cross-Lingual Sentiment Dataset 2010 (Webis-CLS-10) \| Zenodo](https://zenodo.org/record/3251672){:target="_blank"}
 
 これは 2010 年頃の Amazon レビューをまとめたもので、日本語や英語などのレビュー文書に対し、それぞれ高評価 / 低評価のラベル分けがなされています（よってポジネガ分析とも言えます）。さらに嬉しいことに、形態素解析済みの前処理済みデータセットもあり、こんな感じ↓で各文書における各単語の出現回数がデータ化されています。
 
