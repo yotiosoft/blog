@@ -86,7 +86,7 @@ match TcpStream::connect(address).await {
         // write
         let writer = tokio::spawn(telnet_input(writer, encode.clone()));
 
-        reader.await?;
+        let _ = reader.await?;
         writer.abort();
     },
     Err(e) => println!("Failed to connect: {}", e),
@@ -147,7 +147,7 @@ async fn telnet_read(mut stream: ReadHalf<TcpStream>, encode: Encode) -> Result<
 
 # 動作確認
 
-![chat.png](/Users/ytani/git/blog/assets/img/post/2023-09-08/chat.png)
+![chat.png](../../../assets/img/post/2023-09-08/chat.png)
 
 緑色の書き込みが Rustel で書き込んだ内容です。きちんとチャットに書き込めていることが確認できました。
 
