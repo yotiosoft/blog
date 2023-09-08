@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TELNETクライアント（読み取り専用）を作った"
-tags: [Rust]
+tags: [Rust, 開発日記, Rustel]
 excerpt_separator: <!--more-->
 ---
 
@@ -166,8 +166,6 @@ fn main() {
 <div>
 <video src="../../../assets/img/post/2023-09-06/telnet.mp4" controls></video>
 </div>
-
-
 
 # 今後の予定
 
