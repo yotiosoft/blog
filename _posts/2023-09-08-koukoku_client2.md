@@ -17,6 +17,10 @@ excerpt_separator: <!--more-->
 
 - encoding_rs 0.8.23
 
+- tokio 1.32.0
+
+- clap 4.4.2
+
 # 今回のターゲット
 
 「一般社団法人サイバー技術・インターネット自由研究会
@@ -51,7 +55,7 @@ $ rustel -u koukoku.shadan.open.ad.jp -p 23 -e sjis
 
 Rust の ``std::net::TcpStream`` であれば、``write()`` 関数などを使用してメッセージをサーバに対して平文で送れば書き込みが完了します。
 
-TELNET 版の場合は受診時と同様に、チャット書き込み内容についても Shift_JIS で送信する必要があります。手っ取り早いのは UTF-8 で標準入力から書き込み文字列を取得し、 ``encoding_rs::SHIFT_JIS.encode()`` で Shift_JIS のバイナリに変換する方法です。
+TELNET 版の場合は受信時と同様に、チャット書き込み内容についても Shift_JIS で送信する必要があります。手っ取り早いのは UTF-8 で標準入力から書き込み文字列を取得し、 ``encoding_rs::SHIFT_JIS.encode()`` で Shift_JIS のバイナリに変換する方法です。
 
 ```rust
 async fn telnet_write_sjis(stream: &mut WriteHalf<TcpStream>, str: &str) -> Result<(), std::io::Error> {
@@ -68,7 +72,7 @@ async fn telnet_write_sjis(stream: &mut WriteHalf<TcpStream>, str: &str) -> Resu
 
 厄介なのが標準入力からの書き込み受け付けと、電子公告およびチャットの受信・標準出力への出力処理を並行して行わなければならない点です。
 
-通常の ``std::io::BufReader``、``std::io::BufWriter`` では、文字列の入力が完了し Enter キーが押されるまで処理をブロッキングしてしまいます。これでは、受信処理と送信処理をループ内で順に実行させようとしたときに、何か文字列を標準入力に入力（あるいは空の状態で Enter キーを押下）するまで、次の TCP パケットの受信・表示処理が行えません。
+通常の ``std::net::TcpStream`` に対する入力では、文字列の入力が完了し Enter キーが押されるまで処理をブロッキングしてしまいます。これでは、受信処理と送信処理をループ内で順に実行させようとしたときに、何か文字列を標準入力に入力（あるいは空の状態で Enter キーを押下）するまで、次の TCP パケットの受信・表示処理が行えません。
 
 そこで今回は tokio による非同期処理を実装し、入力処理・出力処理を別々のスレッドとして実行させています。
 
@@ -153,8 +157,8 @@ async fn telnet_read(mut stream: ReadHalf<TcpStream>, encode: Encode) -> Result<
 
 # 今後の予定
 
-- Telnet 標準表現に対応する＆他のサーバにも対応する
+- Telnet 標準表現に対応する
+
+- TELNET サーバも立てられるようにする（なるべく）
 
 - TELNET on SSL に対応する（できたら）
-
-- TELNET サーバも立てられるようにする（できたら）
