@@ -29,11 +29,13 @@ excerpt_separator: <!--more-->
 
 [telnet://koukoku.shadan.open.ad.jp](telnet://koukoku.shadan.open.ad.jp)
 
-# 実装
+# リポジトリ
 
-「Rustel」と名付け、GitHub リポジトリにて公開しています。
+今回実装したものは「Rustel」と名付け、GitHub リポジトリにて公開しています。
 
-[GitHub - yotiosoft/rustel at rustel_v2](https://github.com/yotiosoft/rustel/tree/rustel_v2)
+[GitHub - yotiosoft/rustel at rustel_v2](https://github.com/yotiosoft/rustel/tree/rustel_v2){target:"_blank"}
+
+## 利用方法
 
 主な使用方法は以下のとおりです。
 
@@ -46,6 +48,8 @@ $ rustel -u [URL] -p [Port Number] -e [Encode (utf8 or sjis)] -i [IP version (4 
 ```bash
 $ rustel -u koukoku.shadan.open.ad.jp -p 23 -e sjis
 ```
+
+# 実装
 
 実装の全体像についてはリポジトリをご覧いただくとして、今回実装した内容を以下に示します。
 
@@ -162,3 +166,13 @@ async fn telnet_read(mut stream: ReadHalf<TcpStream>, encode: Encode) -> Result<
 - TELNET サーバも立てられるようにする（なるべく）
 
 - TELNET on SSL に対応する（できたら）
+
+# 参考文献
+
+- [AsyncBufReadExt in tokio::io - Rust](https://docs.rs/tokio/latest/tokio/io/trait.AsyncBufReadExt.html){target:"_blank"}
+
+- [spawn in tokio::task - Rust](https://docs.rs/tokio/latest/tokio/task/fn.spawn.html){target:"_blank"}
+
+- [TcpStream in tokio::net - Rust](https://docs.rs/tokio/latest/tokio/net/struct.TcpStream.html){target:"_blank"}
+
+- [I/O｜Tokio チュートリアル (日本語訳)](https://zenn.dev/magurotuna/books/tokio-tutorial-ja/viewer/io){target:"_blank"}
