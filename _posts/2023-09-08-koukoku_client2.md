@@ -101,7 +101,7 @@ match TcpStream::connect(address).await {
 }
 ```
 
-これに伴い、受信を行う ``telnet_read()`` の方も修正を加えました。前回は ``main()`` 内で受信内容を表示していましたが、今回は受信用スレッド内で表示させるために`telnet_read()`  内で表示も行います。
+これに伴い、受信を行う ``telnet_read()`` の方も修正を加えました。前回は ``main()`` 内で受信内容を表示していましたが、今回は受信用スレッド内で完結させるために`telnet_read()`  内にループを設け、受信内容の表示まで行います。
 
 ```rust
 async fn telnet_read_utf8(stream: &mut ReadHalf<TcpStream>) -> Result<Option<String>, std::io::Error> {
@@ -144,6 +144,33 @@ async fn telnet_read(mut stream: ReadHalf<TcpStream>, encode: Encode) -> Result<
             if str.contains("\u{1a}") {
                 break;
             }
+        }
+        else {
+            break;
+        }
+    };
+    Ok(())
+}
+```
+
+送信用スレッドで実行する ``telnet_input()`` も同様に、関数内にループを設けて入力の受付と送信を行います。
+
+```rust
+async fn telnet_write(stream: &mut WriteHalf<TcpStream>, encode: &Encode, str: &str) -> Result<(), std::io::Error> {
+    match encode {
+        Encode::UTF8 => telnet_write_utf8(stream, str).await,
+        Encode::SHIFTJIS => telnet_write_sjis(stream, str).await,
+    }
+}
+
+async fn telnet_input(mut stream: WriteHalf<TcpStream>, encode: Encode) -> Result<(), std::io::Error> {
+    loop {
+        let mut input = String::new();
+        if let Ok(_) = std::io::stdin().read_line(&mut input) {
+            if input.len() == 0 {
+                break;
+            }
+            telnet_write(&mut stream, &encode, &input).await?;
         }
         else {
             break;
