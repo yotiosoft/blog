@@ -33,7 +33,7 @@ excerpt_separator: <!--more-->
 
 今回実装したものは「Rustel」と名付け、GitHub リポジトリにて公開しています。
 
-[GitHub - yotiosoft/rustel at rustel_v2](https://github.com/yotiosoft/rustel/tree/rustel_v2){target:"_blank"}
+[GitHub - yotiosoft/rustel at rustel_v2](https://github.com/yotiosoft/rustel/tree/rustel_v2){:target="_blank"}
 
 ## 利用方法
 
@@ -169,10 +169,10 @@ async fn telnet_read(mut stream: ReadHalf<TcpStream>, encode: Encode) -> Result<
 
 # 参考文献
 
-- [AsyncBufReadExt in tokio::io - Rust](https://docs.rs/tokio/latest/tokio/io/trait.AsyncBufReadExt.html){target:"_blank"}
+- [AsyncBufReadExt in tokio::io - Rust](https://docs.rs/tokio/latest/tokio/io/trait.AsyncBufReadExt.html){:target="_blank"}
 
-- [spawn in tokio::task - Rust](https://docs.rs/tokio/latest/tokio/task/fn.spawn.html){target:"_blank"}
+- [spawn in tokio::task - Rust](https://docs.rs/tokio/latest/tokio/task/fn.spawn.html){:target="_blank"}
 
-- [TcpStream in tokio::net - Rust](https://docs.rs/tokio/latest/tokio/net/struct.TcpStream.html){target:"_blank"}
+- [TcpStream in tokio::net - Rust](https://docs.rs/tokio/latest/tokio/net/struct.TcpStream.html){:target="_blank"}
 
-- [I/O｜Tokio チュートリアル (日本語訳)](https://zenn.dev/magurotuna/books/tokio-tutorial-ja/viewer/io){target:"_blank"}
+- [I/O｜Tokio チュートリアル (日本語訳)](https://zenn.dev/magurotuna/books/tokio-tutorial-ja/viewer/io){:target="_blank"}
