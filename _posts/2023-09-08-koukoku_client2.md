@@ -167,9 +167,6 @@ async fn telnet_input(mut stream: WriteHalf<TcpStream>, encode: Encode) -> Resul
     loop {
         let mut input = String::new();
         if let Ok(_) = std::io::stdin().read_line(&mut input) {
-            if input.len() == 0 {
-                break;
-            }
             telnet_write(&mut stream, &encode, &input).await?;
         }
         else {
