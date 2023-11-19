@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Docker Windowsのコンテナの保管場所を移動する"
+title: "Docker Desktop for Windowsのコンテナの保管場所を移動する"
 tags: [Docker, Windows]
 excerpt_separator: <!--more-->
 ---
@@ -9,9 +9,9 @@ excerpt_separator: <!--more-->
 
 ![cdrive.png](..\..\..\assets\img\post\2023-11-19\cdrive.png)
 
-Docker を日常的に利用しているんですが、C ドライブに置かれているコンテナが問答無用で C ドライブをガバガバ食っていくので空き容量が足りません。（そもそも C ドライブが 128GB なのが悪い）
+Docker を日常的に利用しているんですが、C ドライブに置かれているコンテナが問答無用で C ドライブをガバガバ食っていくので空き容量が足りません。
 
-よって今回は、容量を巣食うコンテナを別の HDD に移動します。
+C ドライブが 128GB しかないのが悪いという点はさておき、今回は容量を巣食うコンテナを別の HDD に移動します。
 
 <!--more-->
 
@@ -32,11 +32,11 @@ C:\Users\<ユーザ名>\AppData\Local
 
 筆者の環境ではユーザディレクトリ下の ``AppData\Local\Docker\`` でした。
 
-ここの更に下の ``wsl\data`` にヤツが潜んでいます。
+ここの更に下の ``wsl\data`` にコンテナデータを格納する仮想ハードディスクファイルが潜んでいます。
 
 ![SnapCrab_NoName_2023-11-18_12-33-31_No-00.png](..\..\..\assets\img\post\2023-11-19\SnapCrab_NoName_2023-11-18_12-33-31_No-00.png)
 
-サイズはおよそ 12GB ほど。Docker は各種コンテナのデータを ext4.vhdx に保存しているんですが、これが肥大化の原因です。
+手元の環境ではサイズはおよそ 12GB ほど。Docker は各コンテナのデータを ext4.vhdx に保存しているんですが、これが肥大化の原因です。
 
 # シンボリックリンクで手っ取り早く対応する
 
@@ -66,8 +66,6 @@ Docker ではコンテナ保管場所の変更オプションが存在しない�
 >mklink C:\Users\<ユーザ名>\AppData\Local\Docker\wsl\data\ext4.vhdx D:\docker\data\ext4.vhdx
 C:\Users\<ユーザ名>\AppData\Local\Docker\wsl\data\ext4.vhdx <<===>> D:\docker\data\ext4.vhdx のシンボリック リンクが作成され ました
 ```
-
-
 
 これで完了です。
 
