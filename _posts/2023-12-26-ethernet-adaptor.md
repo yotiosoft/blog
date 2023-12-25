@@ -1,13 +1,11 @@
 ---
 layout: post
-title: "LANアダプタのドライバが自動インストールできなかったときので対処した"
+title: "LANアダプタのドライバが自動インストールできなかったので対処した"
 tags: [その他, Windows]
 excerpt_separator: <!--more-->
 ---
 
 クリスマスイブの日、ソロ充を楽しもうと秋葉原の電気街を散策していたときに、こちらのイーサネットアダプタを購入しました。
-
-
 
 「電脳大作戦 USB 接続 LAN アダプタ DEN-004」
 
@@ -43,33 +41,23 @@ excerpt_separator: <!--more-->
 
 - ドライバを検索しても「このデバイス用のドライバーが見つかりませんでした」と表示される
 
-
-
 まず、LAN アダプタを挿入した後に Windows のネットワーク設定を見てもイーサネット接続は確認できず。
 
 ![SnapCrab_設定_2023-12-26_0-3-59_No-00.png](..\..\..\assets\img\post\2023-12-26\SnapCrab_設定_2023-12-26_0-3-59_No-00.png)
-
-
 
 次にデバイスドライバを見てみると、「ネットワークデバイス」には LAN アダプタのドライバは見当たりません。代わりに「その他のデバイス」に「USB 2.0 10/100M Ethernet adaptor」なるもの警告付きで表示されています。
 
 ![SnapCrab_デバイス マネージャー_2023-12-26_0-2-52_No-00.png](..\..\..\assets\img\post\2023-12-26\SnapCrab_デバイス%20マネージャー_2023-12-26_0-2-52_No-00.png)
 
-
-
 どうもこの「USB 2.0 10/100M Ethernet adaptor」が今回購入した LAN アダプタのドライバのようなんですが、エラーコード 28 でインストールが中断してしまっています。どうやらドライバを検索したが見つからなかった模様。
 
 ![SnapCrab_USB 20 10100M Ethernet Adaptorのプロパティ_2023-12-26_0-5-10_No-00.png](..\..\..\assets\img\post\2023-12-26\SnapCrab_USB%2020%2010100M%20Ethernet%20Adaptorのプロパティ_2023-12-26_0-5-10_No-00.png)
-
-
 
 「ドライバーの更新」を選択しても、Windows 側でドライバを見つけられなかったという旨の下記のエラーメッセージが表示されるのみです。
 
 （撮影ミスって変な領域でキャプチャされてしまいました）
 
 ![SnapCrab_USB 20 10100M Ethernet Adaptorのプロパティ_2023-12-25_23-55-32_No-00.png](..\..\..\assets\img\post\2023-12-26\SnapCrab_USB%2020%2010100M%20Ethernet%20Adaptorのプロパティ_2023-12-25_23-55-32_No-00.png)
-
-
 
 # 解決策
 
@@ -78,8 +66,6 @@ excerpt_separator: <!--more-->
 似たような名前のドライバを公開しているページがヒットしますが、商品写真を見る限りこちらは名前が似ているだけの別物です。
 
 [USB 2.0 - 10/100 Mbps Ethernet 有線LANアダプタ - USB &amp; USB-C ネットワークアダプタ | StarTech.com 日本](https://www.startech.com/ja-jp/networking-io/usb2100){:target="_blank"}
-
-
 
 そこでヒットしたのがこちらの動画。
 
@@ -90,8 +76,6 @@ excerpt_separator: <!--more-->
 というわけで、ネットに転がってる同名の LAN アダプタのドライバーをインストールすることで解決しました。怪しいダウンローダサイトが多数ヒットしますので、一番マシそうな archive.org からダウンロードしました。ただしこちらも公式のものではないので自己責任でお願いします。
 
 [RD9700 USB Ethernet adapter driver disc : Free Download, Borrow, and Streaming : Internet Archive](https://archive.org/details/rd9700){:target="_blank"}
-
-
 
 ![SnapCrab_NoName_2023-12-25_23-59-42_No-00.png](..\..\..\assets\img\post\2023-12-26\SnapCrab_NoName_2023-12-25_23-59-42_No-00.png)
 
