@@ -73,7 +73,7 @@ excerpt_separator: <!--more-->
 
 [Download RD9700 USB2.0 to Fast Ethernet Adapter driver for Windows 7 / 8 - YouTube](https://youtu.be/DzkiH-Tu4KA)
 
-どうやらこちらの商品、OEM のようで、「RD9700 USB2.0 to Fast Ethernet Adapter」なるものがこの LAN アダプタのドライバに当たるようです。RD9700 というのは QTS1081B に搭載されているチップの型番のようですね。
+この動画によれば、「RD9700 USB2.0 to Fast Ethernet Adapter」なるものがこの LAN アダプタのドライバに当たるとのこと。RD9700 というのは QTS1081B に搭載されているチップの型番のようですね。
 
 こちらの動画にはドライバのダウンロードリンクが概要欄に貼られていますが、今見たらドライバファイルが非公開になっていました。
 
