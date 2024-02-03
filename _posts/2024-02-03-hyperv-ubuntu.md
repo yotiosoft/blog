@@ -31,7 +31,15 @@ excerpt_separator: <!--more-->
 
 - イーサネット（Realtek PCIe GbE Family Controller）接続
 
+- Hyper-V は有効化済み
+
 大前提として、Hyper-V を使用するには Windows の Pro 版である必要があります。（ググったら一応 Windows Home にも Hyper-V をインストールする術はあるみたいですが…これってライセンス的に大丈夫なんでしょうかね？）
+
+また、Hyper-V ロールを既に有効化していることが前提です。デフォルトでは無効になっています。
+
+[Windows 10 での Hyper-V の有効化 \| Microsoft Learn](https://learn.microsoft.com/ja-jp/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v){:target="_blank"}
+
+（Windows 11 の公式記事が見つかりませんでしたが、ほぼ同じだったと思います）
 
 今回導入するのは Ubuntu 22.04 LTS です。もうすぐ 24.04 LTS が出るかと思いますが、執筆時点での最新版はこれです。
 
