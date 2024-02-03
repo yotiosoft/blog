@@ -45,41 +45,41 @@ Hyper-V にはクイック作成というツールがあり、こちらから Wi
 
 まずは Hyper-V クイック作成を開きます。スタートメニューで検索すれば出てきます。
 
-![SnapCrab_検索_2024-2-3_3-11-13_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_検索_2024-2-3_3-11-13_No-00.webp)
+![SnapCrab_検索_2024-2-3_3-11-13_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_検索_2024-2-3_3-11-13_No-00.webp)
 
 これを開き、
 
-![SnapCrab_仮想マシンの作成_2024-2-3_3-13-54_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_仮想マシンの作成_2024-2-3_3-13-54_No-00.webp)
+![SnapCrab_仮想マシンの作成_2024-2-3_3-13-54_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_仮想マシンの作成_2024-2-3_3-13-54_No-00.webp)
 
 最新版の Ubuntu を選択して「仮想マシンの作成(V)」をクリックします。
 
 するとダウンロードが始まりますので、しばらく待機します。
 
-![SnapCrab_仮想マシンの作成_2024-2-3_3-15-53_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_仮想マシンの作成_2024-2-3_3-15-53_No-00.webp)
+![SnapCrab_仮想マシンの作成_2024-2-3_3-15-53_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_仮想マシンの作成_2024-2-3_3-15-53_No-00.webp)
 
 それで、ダウンロードが完了するとハードディスクの作成やら仮想環境の作成やらの処理を全自動でやってくれます。文字通りワンクリックで仮想環境を生成できました。
 
-![SnapCrab_仮想マシンの作成_2024-2-3_3-20-31_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_仮想マシンの作成_2024-2-3_3-20-31_No-00.webp)
+![SnapCrab_仮想マシンの作成_2024-2-3_3-20-31_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_仮想マシンの作成_2024-2-3_3-20-31_No-00.webp)
 
 「接続」を選び、仮想マシン接続のウィンドウが出現したら「起動」をクリックします。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-21-30_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-21-30_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-21-30_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-21-30_No-00.webp)
 
 ここからは Ubuntu の通常通りの初期設定です。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-22-45_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-22-45_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-22-45_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-22-45_No-00.webp)
 
 ユーザ設定を終えたらインストール完了を待ちます。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-24-14_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-24-14_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-24-14_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-24-14_No-00.webp)
 
 再起動するとログイン画面が出現します。ネイティブ環境での Ubuntu 使いにとっては見慣れないログイン画面ですが、これは xrdp なるリモートデスクトップ接続のログイン画面で、初期設定で設定したユーザ名とパスワードをそのまま入力すれば OK です。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-29-30_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-29-30_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-29-30_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-29-30_No-00.webp)
 
 初回起動時に出てくるプライバシー設定等を終えて、おなじみのデスクトップ画面が出現しました。これにて Ubuntu の導入は完了です。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-31-44_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-31-44_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-31-44_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-31-44_No-00.webp)
 
 # SSH サーバの導入
 
@@ -105,39 +105,39 @@ Hyper-V にはクイック作成というツールがあり、こちらから Wi
 
 まずは現状確認です。自身の環境では、初期状態では仮想環境のローカル IP アドレスはeth0 に対して「172.20.44.35」となっていました。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-57-26_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-57-26_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_3-57-26_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_3-57-26_No-00.webp)
 
 これが Default switch によって割り当てられたローカル IP アドレスです。仮想スイッチを生成するとルータから直接 IP アドレスが割り当てられます。一般的な自宅の LAN 環境であれば 192.168.xxx.xxx になるかと思います。
 
 一旦仮想環境はオフにし、Hyper-V の「操作」メニューから「仮想スイッチ マネージャー」を選択します。
 
-![SnapCrab_Hyper-V マネージャー_2024-2-3_4-13-5_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_Hyper-V%20マネージャー_2024-2-3_4-13-5_No-00.webp)
+![SnapCrab_Hyper-V マネージャー_2024-2-3_4-13-5_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_Hyper-V%20マネージャー_2024-2-3_4-13-5_No-00.webp)
 
 「外部」を選択した状態で「仮想スイッチの作成(S)」を選択。
 
-![SnapCrab_DESKTOP-6Q8U12V の仮想スイッチ マネージャー_2024-2-3_4-14-9_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20の仮想スイッチ%20マネージャー_2024-2-3_4-14-9_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V の仮想スイッチ マネージャー_2024-2-3_4-14-9_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20の仮想スイッチ%20マネージャー_2024-2-3_4-14-9_No-00.webp)
 
 「接続の種類」で「外部ネットワーク(E)」を選び、ホスト環境のイーサネットアダプタを選びます。名前も分かりやすい名前にしておきましょう。完了したら「OK」をクリックし仮想スイッチの作成を完了します。
 
 （筆者の環境では既に作成済みのため実際には作成しません。同じ外部ネットワークに対して二重追加することはできないっぽいです）
 
-![SnapCrab_DESKTOP-6Q8U12V の仮想スイッチ マネージャー_2024-2-3_17-52-28_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20の仮想スイッチ%20マネージャー_2024-2-3_17-52-28_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V の仮想スイッチ マネージャー_2024-2-3_17-52-28_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20の仮想スイッチ%20マネージャー_2024-2-3_17-52-28_No-00.webp)
 
 次に、仮想環境の名前を右クリックして「設定(E)」を開きます。
 
-![SnapCrab_Hyper-V マネージャー_2024-2-3_17-56-37_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_Hyper-V%20マネージャー_2024-2-3_17-56-37_No-00.webp)
+![SnapCrab_Hyper-V マネージャー_2024-2-3_17-56-37_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_Hyper-V%20マネージャー_2024-2-3_17-56-37_No-00.webp)
 
 「Default Switch」となっているところを先程作成した仮想スイッチに変更します。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS の設定_2024-2-3_17-57-52_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20の設定_2024-2-3_17-57-52_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS の設定_2024-2-3_17-57-52_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20の設定_2024-2-3_17-57-52_No-00.webp)
 
 また、「メモリ」の項目から「動的メモリを有効にする(E)」のチェックを外しておきます（ここのチェックを外しておかないと起動できません）。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS の設定_2024-2-3_18-0-17_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20の設定_2024-2-3_18-0-17_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS の設定_2024-2-3_18-0-17_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20の設定_2024-2-3_18-0-17_No-00.webp)
 
 以上で仮想スイッチの設定は完了です。仮想環境を立ち上げ、``$ ip a``でローカル IP アドレスを確認してみましょう。
 
-![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_18-25-49_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_18-25-49_No-00.webp)
+![SnapCrab_DESKTOP-6Q8U12V 上の Ubuntu 2204 LTS  - 仮想マシン接続_2024-2-3_18-25-49_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_DESKTOP-6Q8U12V%20上の%20Ubuntu%202204%20LTS%20%20-%20仮想マシン接続_2024-2-3_18-25-49_No-00.webp)
 
 先程と違い、eth0 に対して「192.168.0.88」が割り当てられました。これが LAN のルータから与えられたローカル IP アドレスです。これで LAN 内の他の PC からも仮想環境を認識することができます。
 
@@ -179,13 +179,13 @@ Firewall reloaded
 
 現時点では SSH-key は設定していないので Basic 認証、すなわちログインのためにパスワード入力が必須です。
 
-![SnapCrab_ytani@ytani-Virtual-Machine ~_2024-2-3_18-22-50_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_ytani@ytani-Virtual-Machine%20~_2024-2-3_18-22-50_No-00.webp)
+![SnapCrab_ytani@ytani-Virtual-Machine ~_2024-2-3_18-22-50_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_ytani@ytani-Virtual-Machine%20~_2024-2-3_18-22-50_No-00.webp)
 
 このように、ホスト環境の PowerShell からアクセスすることができました。
 
 次に、LAN 内の他の PC からもアクセスしてみます。
 
-![スクリーンショット 2024-02-03 18.30.13.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\スクリーンショット%202024-02-03%2018.30.13.webp)
+![スクリーンショット 2024-02-03 18.30.13.webp](..\..\..\assets\img\post\2024-02-03\スクリーンショット%202024-02-03%2018.30.13.webp)
 
 このように、LAN 内の他の PC（MacBook）からもアクセスできることが確認できました。
 
@@ -243,7 +243,7 @@ Host [お好みの SSH サーバ名, 例:Ubuntu-2204]
 
 設定した SSH サーバ名でクライアント側（Windows 側）からアクセスしてみます。
 
-![SnapCrab_ytani@ytani-Virtual-Machine ~_2024-2-3_20-0-10_No-00.webp](C:\Users\ytani\git\blog\assets\img\post\2024-02-03\SnapCrab_ytani@ytani-Virtual-Machine%20~_2024-2-3_20-0-10_No-00.webp)
+![SnapCrab_ytani@ytani-Virtual-Machine ~_2024-2-3_20-0-10_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_ytani@ytani-Virtual-Machine%20~_2024-2-3_20-0-10_No-00.webp)
 
 公開鍵を使用して ``ssh [SSH サーバ名]`` でアクセスできることが確認できました。
 
