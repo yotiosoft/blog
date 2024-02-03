@@ -67,7 +67,7 @@ excerpt_separator: <!--more-->
 
 似たような名前のドライバを公開しているページがヒットしますが、商品写真を見る限りこちらは名前が似ているだけの別物です。
 
-[USB 2.0 - 10/100 Mbps Ethernet 有線LANアダプタ - USB &amp; USB-C ネットワークアダプタ | StarTech.com 日本](https://www.startech.com/ja-jp/networking-io/usb2100){:target="_blank"}
+[USB 2.0 - 10/100 Mbps Ethernet 有線LANアダプタ - USB &amp; USB-C ネットワークアダプタ \| StarTech.com 日本](https://www.startech.com/ja-jp/networking-io/usb2100){:target="_blank"}
 
 そこでヒットしたのがこちらの動画。
 
