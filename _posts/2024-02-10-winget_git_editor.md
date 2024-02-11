@@ -16,7 +16,7 @@ Git for Windows のデフォルトエディタが MinTTY という使い慣れ�
 apt や homebrew などに比べるとまだまだですが、有名どころのパッケージはだいたい winget で入手できます。入手可能なパッケージは search コマンドで検索できます。
 
 ```powershell
-PS C:\Users\ytani> winget search vim
+> winget search vim
 名前                          ID                          バージョン  一致                 ソース
 --------------------------------------------------------------------------------------------------
 Vim Cheat Sheet               9WZDNCRDMCWR                Unknown                          msstore
@@ -34,7 +34,7 @@ lf                            gokcehan.lf                 r31         Tag: vim  
 4K Video Downloader           OpenMedia.4KVideoDownloader 4.29.0.5640 Tag: vimeo           winget
 Kaku                          Chia-Lung.Kaku              2.0.2       Tag: vimeo           winget
 Replit                        Replit.Replit               1.0.6       Tag: desenvolvimento winget
-PS C:\Users\ytani> winget search emacs
+> winget search emacs
 名前      ID        バージョン 一致           ソース
 ----------------------------------------------------
 GNU Emacs GNU.Emacs 29.2       Moniker: emacs winget
@@ -110,8 +110,13 @@ d-----        2024/02/10     22:57                vim91
 ``C:\Program Files``の下、``C:\Program Files\Vim\vim91``にありました（``vim``の後の数字はバージョンにより異なるかと思います）。これを PATH に追加します。
 
 ```powershell
-> $ENV:Path+=";C:\Program Files\Vim\vim91"
+> $new_dir = "C:\Program Files\Vim\vim91"
+> $new_path = [Environment]::GetEnvironmentVariable("Path", "User")
+> $new_path += ";$new_dir"
+> [Environment]::SetEnvironmentVariable("Path", $new_path, "User")
 ```
+
+（2/11 更新：PATH の追加方法を修正しました）
 
 ようやっと vim が使えるようになりました。
 
@@ -204,7 +209,10 @@ d-----        2024/02/10     23:23                share
 vim と違い、こちらは ``emacs-[version]\bin`` ディレクトリの下にバイナリファイルがありました。最新版の方の PATH を通しておきます。
 
 ```powershell
-> $ENV:Path+=";C:\Program Files\Emacs\emacs-29.2\bin"
+> $new_dir = "C:\Program Files\Emacs\emacs-29.2\bin"
+> $new_path = [Environment]::GetEnvironmentVariable("Path", "User")
+> $new_path += ";$new_dir"
+> [Environment]::SetEnvironmentVariable("Path", $new_path, "User")
 ```
 
 ``emacs -nw`` で CUI モードで起動してみます。
@@ -246,6 +254,10 @@ Please supply the message using either -m or -F option.
 
 ![スクリーンショット 2024-02-10 234110.webp](..\..\..\assets\img\post\2024-02-11\スクリーンショット%202024-02-10%20234110.webp)
 
-
-
 以上です。
+
+# 参考文献
+
+- [Gitで使用するエディターを変更する #Git - Qiita](https://qiita.com/ucan-lab/items/9b442e042988e2d7a35d)
+
+- [Windows10/11でPowerShellからパスを通す (環境変数PATHの変更) #Windows - Qiita](https://qiita.com/zakuroishikuro/items/754e44e4b59580ca451d)
