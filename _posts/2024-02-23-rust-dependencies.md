@@ -179,14 +179,14 @@ default = ["app"]
 app = ["clap", "regex", "viuer", "glob", "colored"]
 ```
 
-ただ、こうすると、下記のようにdependencies に rusimg を含めた場合に、
+ただ、こうすると、
 
 ```toml
 [dependencies]
 rusimg = { git = "https://github.com/yotiosoft/rusimg.git" }
 ```
 
-デフォルトでバイナリ用の依存クレートまで一緒にコンパイルされてしまいます。
+のようにdependencies にライブラリのクレートを含めた場合に、デフォルトでバイナリ用の依存クレートまで一緒にコンパイルされてしまいます。
 
 これを回避するためには、わざわざ
 
@@ -195,7 +195,7 @@ rusimg = { git = "https://github.com/yotiosoft/rusimg.git" }
 rusimg = { git = "https://github.com/yotiosoft/rusimg.git", default-features = false}
 ```
 
-…と表記して、default feature を無効化しておく必要があります。
+…と表記して、default features を無効化しておく必要があります。
 
 どちらが便利かは微妙です。バイナリに重きを置くなら default に含めて、ライブラリに重くを置くなら含めない、といった形になりますかね。
 
@@ -213,7 +213,7 @@ Caused by:
   Consider enabling them by passing, e.g., `--features="app"`
 ```
 
-やはり ``--features="app"`` を明記しろ、と言ってきます。必要なことは明白なのに面倒ですね。
+やはり ``--features="app"`` を明記しろ、と言ってきます。``app`` が必要なことは明白なのに面倒ですね。
 
 これに関しては過去にも、「bin が要求した feature は自動でインストールするべきか」という議論がされていたようですが…
 
