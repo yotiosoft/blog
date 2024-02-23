@@ -55,8 +55,9 @@ Cargo.toml に下記を追記します。
 [[bin]]
 name = "rusimg"
 path = "src/main.rs"
-required-features = ["app"]
 ```
+
+``name`` にはバイナリクレートの名前（自由に決めて良い）、``path``にはバイナリクレートのソースファイルパスを設定します。
 
 ## 2. バイナリ用の feature を定義する
 
