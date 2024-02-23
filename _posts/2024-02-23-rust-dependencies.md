@@ -68,7 +68,7 @@ cargo には feature という概念があります。これはクレートを�
 
 feature を定義すると何が嬉しいかというと、feature ごとに依存クレートを定義することができます。
 
-rusimg で例えるなら、rusimg は bmp、jpeg、png、webp の4形式に対応しており、それぞれ次の外部クレートに依存しています。
+rusimg で例えるなら、rusimg は bmp、jpeg、png、webp の4形式に対応しており、それぞれの各変換機能は次の外部クレートを使用しています。
 
 - bmp : image 0.24.5
 
@@ -78,7 +78,7 @@ rusimg で例えるなら、rusimg は bmp、jpeg、png、webp の4形式に対�
 
 - webp : image 0.24.5, webp 0.2.2
 
-もしクレート利用者が bmp の機能だけを使いたい場合、mozjpeg、oxipng、webp は無駄になってしまいます。よって、bmp の実装に対して bmp という feature を予め定義しておき、利用者が bmp feature だけを有効にすることで、mozjpeg、oxipng、webp といった不必要なクレートのコンパイルを回避できます。
+もし librusimg の利用者が bmp の機能だけを使いたい場合、mozjpeg、oxipng、webp は無駄になってしまいます。よって、bmp の実装に対して bmp という feature を予め定義しておき、利用者が bmp feature だけを有効にすることで、mozjpeg、oxipng、webp といった不必要なクレートのコンパイルを回避できます。
 
 これはバイナリに対しても同様に定義可能です。まずは ``[features]`` に、バイナリ用の feature として ``app`` を定義しておきます（名前は何でも OK です）。
 
@@ -203,7 +203,7 @@ rusimg = { git = "https://github.com/yotiosoft/rusimg.git", default-features = f
 
 ## 余談
 
-``cargo install`` では ``--bin`` オプションでインストールするバイナリを指定することもできます。ただ、``--bin`` オプションを指定しても、そのバイナリが依存する feature は自動ではインストールされないようです。
+``cargo install`` では ``--bin`` オプションでインストールするバイナリを指定することもできます。ただ、``--bin`` オプションを指定しても、そのバイナリが依存する features は自動ではインストールされないようです。
 
 ```bash
 $ cargo install --git https://github.com/yotiosoft/rusimg --bin rusimg
@@ -217,11 +217,11 @@ Caused by:
 
 やはり ``--features="app"`` を明記しろ、と言ってきます。``app`` が必要なことは明白なのに面倒ですね。
 
-これに関しては過去にも、「bin が要求した feature は自動でインストールするべきか」という議論がされていたようですが…
+これに関しては過去にも、「bin が要求した features は自動でインストールするべきか」という議論がされていたようですが…
 
 - [Automatically enable required-features when running an example · Issue #4663 · rust-lang/cargo · GitHub](https://github.com/rust-lang/cargo/issues/4663){:target="_blank"}
 
-ここでは、バイナリをインストールする時、自動的に feature を有効化する ``enable-features`` オプションが提案されています。ただ、現時点では実現はしていないようですし、issue が立てられてから6年経った今も open のままです。
+ここでは、バイナリをインストールする時、自動的に features を有効化する ``enable-features`` オプションが提案されています。ただ、現時点では実現はしていないようですし、issue が立てられてから6年経った今も open のままです。
 
 # 参考文献
 
