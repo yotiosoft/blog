@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 前回の記事では、feature を用いてバイナリクレートとライブラリクレートの dependencies を分けました。
 
-[Rustでバイナリとライブラリでdependenciesを分ける | 為せばnull](https://blog.yotiosoft.com/2024/02/23/rust-dependencies.html)
+[Rustでバイナリとライブラリでdependenciesを分ける \| 為せばnull](https://blog.yotiosoft.com/2024/02/23/rust-dependencies.html)
 
 今回はもう一つの手法として、dev-dependencies を用いる方法を書き残したいと思います。
 
@@ -45,7 +45,7 @@ rusimg
 │ ├ main.rs
 │ └ lib.rs
 ├ Cargo.toml
-└ 	
+└     
 ```
 
 これを
@@ -58,7 +58,7 @@ rusimg
 ├ src
 │ └ lib.rs
 ├ Cargo.toml
-└ 	
+└     
 ```
 
 こうします。
@@ -146,8 +146,6 @@ $ cargo add --git https://github.com/yotiosoft/rusimg
 ```
 
 こちらでは、clap などといった、``[dev-dependencies]`` に登録したクレートを除き、ライブラリが必要とする外部クレートだけがインストールされたようするが確認できました。
-
-
 
 続いて、examples をインストールしてみます。``cargo install --git https://github.com/yotiosoft/rusimg --examples rusimg`` でインストールできます。
 
