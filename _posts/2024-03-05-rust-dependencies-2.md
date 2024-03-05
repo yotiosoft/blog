@@ -39,28 +39,26 @@ excerpt_separator: <!--more-->
 
 アプリケーションのソースコードである ``main.rs`` を ``examples/[example名]`` に移動することで、アプリケーションは examples として扱われます。example 名はアプリケーションの名前でも付けておきましょう。
 
-すなわち、アプリケーション名が（現在自分が開発している）rusimg の場合、
+すなわち、
 
 ```
-rusimg
+rust-app
 ├ src
 │ ├ main.rs
 │ └ lib.rs
-├ Cargo.toml
-└     
+└ Cargo.toml  
 ```
 
 これを
 
 ```
-rusimg
+rust-app
 ├ examples
-│ └ rusimg
+│ └ rust-app
 │ 　 └ main.rs
 ├ src
 │ └ lib.rs
-├ Cargo.toml
-└     
+└ Cargo.toml    
 ```
 
 こうします。
@@ -69,7 +67,7 @@ rusimg
 
 ```toml
 [[examples]]
-name = "rusimg"
+name = "rust-app"
 ```
 
 Cargo.toml に ``[[examples]]`` を追記しておき、``name`` に先ほどのアプリケーション名を設定しておきます。
@@ -115,6 +113,8 @@ colored = { version = "2.0.4" }
 これで完了です。
 
 # 動作確認
+
+ここからは、自分が現在開発しているアプリケーション「[rusimg](https://github.com/yotiosoft/rusimg){:target"_blank"}」を例に動作確認してみます。
 
 まずは ``cargo install --git https://github.com/yotiosoft/rusimg`` でインストールしようとした場合の結果を見てみます。すると、
 
@@ -166,7 +166,7 @@ $ cargo install --git https://github.com/yotiosoft/rusimg --examples rusimg
  ...
 ```
 
-今度は examples がビルドされている様子が確認できました。インストール完了後、コマンドとしても実行可能でした。
+今度は examples がビルドされている様子が確認できました。インストール完了後、コマンドとして rusimg を実行できました。
 
 ```bash
 $ rusimg
