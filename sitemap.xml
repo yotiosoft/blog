@@ -5,288 +5,645 @@
 <url>
   <loc>https://blog.yotiosoft.com/</loc>
   <priority>1.0</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/about/</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/gallery/</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/portfolio/</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/search/</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/tags/</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/27/Google%E3%81%8C%E3%81%AA%E3%81%8B%E3%81%AA%E3%81%8B%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%E3%81%AB%E8%BC%89%E3%81%9B%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%AA%E3%81%84.html</loc>
+  <loc>https://blog.yotiosoft.com/2024/03/07/rust-atty.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/24/%E3%82%B5%E3%83%B3%E3%82%BF%E7%8B%A9%E3%82%8A%E3%81%B8GO!-%E3%82%92%E5%85%AC%E9%96%8B%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html</loc>
+  <loc>https://blog.yotiosoft.com/2024/03/05/rust-dependencies-2.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/22/%E5%86%AC%E8%87%B3%E3%81%AA%E3%81%AE%E3%81%A7%E4%BB%8A%E5%BE%8CYapps%E3%81%AB%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%84%E3%81%8D%E3%81%9F%E3%81%84%E6%A9%9F%E8%83%BD%E3%82%92%E6%8C%99%E3%81%92%E3%81%A6%E3%81%84%E3%81%8F.html</loc>
+  <loc>https://blog.yotiosoft.com/2024/02/23/rust-dependencies.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/14/%E3%82%88%E3%81%86%E3%82%84%E3%81%8Fgit%E3%81%A7%E3%81%AEssh%E6%8E%A5%E7%B6%9A%E3%81%AE%E8%A4%87%E6%95%B0%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E6%89%B1%E3%81%84%E6%96%B9%E3%82%92%E8%A6%9A%E3%81%88%E3%81%9F%E3%81%AE%E3%81%A7%E3%83%A1%E3%83%A2.html</loc>
+  <loc>https://blog.yotiosoft.com/2024/02/12/cf_workers_python.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/13/Win32API%E3%81%AERestart-Manager%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%AD%E3%83%83%E3%82%AF%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%82%92%E7%89%B9%E5%AE%9A%E3%81%99%E3%82%8B.html</loc>
+  <loc>https://blog.yotiosoft.com/2024/02/10/winget_git_editor.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/07/GitHub%E3%81%AB%E6%84%8F%E5%9B%B3%E3%81%97%E3%81%AA%E3%81%84%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E6%99%82%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95.html</loc>
+  <loc>https://blog.yotiosoft.com/2024/02/03/hyperv-ubuntu.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/06/Ubuntu%E3%81%A7-VPN%E6%8E%A5%E7%B6%9A%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E3%83%BC%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%81%E3%81%BE%E3%81%9B%E3%82%93-%E3%81%A8%E5%87%BA%E3%81%A6%E3%81%8D%E3%81%9F.html</loc>
+  <loc>https://blog.yotiosoft.com/2024/01/06/10th_aniv.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/12/02/Web%E3%83%84%E3%83%BC%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%88-Yapps-%E3%82%92%E5%85%AC%E9%96%8B.html</loc>
+  <loc>https://blog.yotiosoft.com/2023/12/31/goodbye_2023.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/11/25/C%E8%A8%80%E8%AA%9E%E3%81%AEaccept%E9%96%A2%E6%95%B0%E3%81%A7Invalid-argument%E3%81%A8%E5%87%BA%E3%82%8B.html</loc>
+  <loc>https://blog.yotiosoft.com/2023/12/26/ethernet-adaptor.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/11/22/Firefox%E3%81%A7%E3%81%AEbreak-inside-column-avoid%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</loc>
+  <loc>https://blog.yotiosoft.com/2023/12/11/windows-pc.html</loc>
   <priority>0.8</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/blog/page2</loc>
   <priority>0.8</priority>
-  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/blog/page4</loc>
+  <loc>https://blog.yotiosoft.com/blog/page12</loc>
   <priority>0.8</priority>
-  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/10/11/Albus-Box%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98-4.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/07/05/Albus-Box%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98-3.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/05/14/Albus-Box%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98-2.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/02/14/Albus-Box%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98-1.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/01/08/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E3%82%A2%E3%83%97%E3%83%AA%E9%96%8B%E7%99%BA%E3%81%A7%E3%81%AFdpi%E3%81%AE%E9%81%95%E3%81%84%E3%81%AB%E8%A6%81%E6%B3%A8%E6%84%8F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/30/%E6%96%B0%E3%81%9F%E3%81%AA%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%82%A2%E3%83%97%E3%83%AA-Albus-Box%E3%81%AE%CE%B2%E7%89%88%E3%82%92%E5%85%AC%E9%96%8B%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/02/22/C++%E3%81%A7%E9%9F%B3%E5%A3%B0%E5%87%BA%E5%8A%9B%E3%81%A7%E3%81%8D%E3%82%8B-SoLoud-%E3%81%AE%E5%B0%8E%E5%85%A5%E3%83%A1%E3%83%A2-Visual-C++%E7%B7%A8.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/25/%E3%83%9F%E3%83%84%E3%83%87%E3%82%B9%E3%83%9E%E3%82%B92-%E3%82%92%E5%85%AC%E9%96%8B%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/11/30/C++%E3%81%A7DeepL-API%E3%81%A7%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%8B%E3%82%89%E7%BF%BB%E8%A8%B3%E3%81%99%E3%82%8B%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/05/24/Cities-Box.cpp%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98-16.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/04/10/C++%E3%81%A7%E7%B0%A1%E6%98%93%E3%83%97%E3%83%AD%E3%82%B0%E3%83%AC%E3%82%B9%E3%83%90%E3%83%BC%E3%82%92%E4%BD%9C%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/02/19/Cities-Box.cpp%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98-15.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/24/%E3%82%B5%E3%83%B3%E3%82%BF%E7%8B%A9%E3%82%8A%E3%81%B8GO!-%E3%82%92%E5%85%AC%E9%96%8B%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/13/Win32API%E3%81%AERestart-Manager%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%AD%E3%83%83%E3%82%AF%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%82%92%E7%89%B9%E5%AE%9A%E3%81%99%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/11/25/C%E8%A8%80%E8%AA%9E%E3%81%AEaccept%E9%96%A2%E6%95%B0%E3%81%A7Invalid-argument%E3%81%A8%E5%87%BA%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/11/15/Chromebook%E3%81%A7OpenSiv3D%E9%96%8B%E7%99%BA.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/06/OpenSiv3D%E3%81%AB%E8%BF%BD%E5%8A%A0%E3%81%95%E3%82%8C%E3%81%9F3D%E6%8F%8F%E7%94%BB%E6%A9%9F%E8%83%BD%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/09/01/Cities-Box.cpp%E9%96%8B%E7%99%BA%E6%97%A5%E8%A8%98-14.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/06/25/GitHub-Pages-+-Heroku%E3%81%A7%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E3%81%A7%E5%8B%95%E3%81%8F%E4%B9%B1%E6%95%B0%E7%94%9F%E6%88%90%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E5%AE%9F%E8%A3%85-%E5%BE%8C%E7%B7%A8.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/11/22/Firefox%E3%81%A7%E3%81%AEbreak-inside-column-avoid%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/04/19/Chromebook%E3%81%A7Vivaldi%E3%81%AF%E4%BD%BF%E3%81%88%E3%82%8B%E3%81%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/03/18/Chromebook%E3%81%ABHSP3-for-Linux%E3%82%92%E5%B0%8E%E5%85%A5%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/11/08/Chromebook%E3%81%A7%E3%82%82Typora%E3%81%8C%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/11/07/MacBook-Pro%E3%81%AE%E3%83%90%E3%83%83%E3%83%86%E3%83%AA%E3%83%BC%E3%81%8C%E8%86%A8%E5%BC%B5%E3%81%97%E3%81%9F.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/09/07/Cities-Box%E3%81%AE%E5%A6%84%E6%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%83%9E%E3%83%83%E3%83%97.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/11/19/docker_container_move.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/03/23/AP%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92Heroku%E3%81%8B%E3%82%89Render%E3%81%AB%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/11/01/VS-Code%E3%81%A7GitHub-Copilot%E3%82%92%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E9%96%93%E9%81%95%E3%81%A3%E3%81%9F%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%A7%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%97%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/09/19/git-commit%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E5%89%8D%E5%9B%9E%E3%81%AE%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%8B%E3%82%89%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/06/14/GitHub-Pages-+-Heroku%E3%81%A7%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E3%81%A7%E5%8B%95%E3%81%8F%E4%B9%B1%E6%95%B0%E7%94%9F%E6%88%90%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E5%AE%9F%E8%A3%85-%E5%89%8D%E7%B7%A8.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/06/02/Jekyll(on-GitHub-Pages)%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%A6%E3%82%82%E8%A8%98%E4%BA%8B%E3%81%8C%E5%8F%8D%E6%98%A0%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/02/21/ssh_config%E3%81%A7%E8%A4%87%E6%95%B0%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E9%81%8B%E7%94%A8%E3%81%99%E3%82%8B%E3%81%AA%E3%82%89IdentitiesOnly%E3%82%92%E6%9C%89%E5%8A%B9%E5%8C%96%E3%81%99%E3%81%B9%E3%81%97.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/14/%E3%82%88%E3%81%86%E3%82%84%E3%81%8Fgit%E3%81%A7%E3%81%AEssh%E6%8E%A5%E7%B6%9A%E3%81%AE%E8%A4%87%E6%95%B0%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E6%89%B1%E3%81%84%E6%96%B9%E3%82%92%E8%A6%9A%E3%81%88%E3%81%9F%E3%81%AE%E3%81%A7%E3%83%A1%E3%83%A2.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/07/GitHub%E3%81%AB%E6%84%8F%E5%9B%B3%E3%81%97%E3%81%AA%E3%81%84%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E6%99%82%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/19/HSP3%E8%A3%BD%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92GitHub%E3%81%A7%E5%85%AC%E9%96%8B%E3%81%99%E3%82%8B%E6%99%82%E3%81%AF%E6%94%B9%E8%A1%8C%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E8%A6%81%E6%B3%A8%E6%84%8F.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/09/13/Stable-Diffusion%E3%82%92Google-Colab%E4%B8%8A%E3%81%A7%E9%81%8A%E3%81%B6.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/30/Typora%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%93%E3%81%A0%E5%8B%95%E7%94%BB%E3%81%8C%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%A7%E5%86%8D%E7%94%9F%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/01/23/Haskell%E3%81%AE%E5%85%A5%E9%96%80%E3%83%A1%E3%83%A2-%E5%BE%8C%E5%8D%8A.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/01/17/Haskell%E3%81%AE%E5%85%A5%E9%96%80%E3%83%A1%E3%83%A2-%E5%89%8D%E5%8D%8A.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/14/Haskell%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89-for-Windows.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/04/Haskell%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89-for-Mac.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/11/07/Ubuntu%E3%81%ABHomebrew%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%9F%E3%82%89Rust%E3%81%8C%E3%83%93%E3%83%AB%E3%83%89%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/10/24/brew-install%E3%81%A7%E8%87%AA%E4%BD%9CCLI%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E3%83%93%E3%83%AB%E3%83%89-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%95%E3%81%9B%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/08/opencv.js%E3%81%A7%E9%A1%94%E8%AA%8D%E8%AD%98-%E3%83%A2%E3%82%B6%E3%82%A4%E3%82%AF%E3%82%92%E3%81%8B%E3%81%91%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/10/Jekyll-Type-on-Strap-%E3%81%AE%E6%97%A5%E4%BB%98%E8%A1%A8%E7%A4%BA%E3%82%92%E6%97%A5%E6%9C%AC%E5%BC%8F%E3%81%AB%E5%A4%89%E6%9B%B4.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/03/05/Jekyll%E3%81%AB%E3%81%AF%E6%8A%95%E7%A8%BF%E4%BA%88%E7%B4%84%E6%A9%9F%E8%83%BD%E3%81%8C%E3%81%82%E3%82%8B-Jekyll%E3%81%AB%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BE%E3%83%BC%E3%83%B3%E3%82%92%E8%A8%AD%E5%AE%9A.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/05/07/%E5%86%99%E7%9C%9F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AA%E3%82%93%E3%81%8B%E3%81%AD%E3%81%88%E3%82%88.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/04/25/Mac%E7%89%88MS-Office%E3%81%A7%E7%B5%84%E7%B9%94%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E7%A7%BB%E8%A1%8C%E3%81%97%E3%82%88%E3%81%86%E3%81%A8%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E8%BA%93%E3%81%84%E3%81%9F%E3%81%93%E3%81%A8.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/09/29/OS%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E6%97%A5%E8%A8%98-2-%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97%E3%81%AE%E5%8F%96%E5%BE%97-%E3%82%AB%E3%83%BC%E3%83%8D%E3%83%AB%E3%81%AE%E8%B5%B7%E5%8B%95.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/08/19/OS%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E6%97%A5%E8%A8%98-1-M1-Mac%E3%81%AB-%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E3%81%AEOS%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80-%E3%81%AE%E7%92%B0%E5%A2%83%E5%B0%8E%E5%85%A5.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/07/15/M1-Mac%E3%81%A7x86%E7%89%88xv6%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/07/01/Mac%E3%81%A7%E3%82%82VSCode%E3%81%A7OpenSiv3D%E9%96%8B%E7%99%BA%E3%81%97%E3%81%9F%E3%81%84.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/06/01/M1-MacBook-Air%E3%82%921%E3%83%B6%E6%9C%88%E9%96%93%E4%BD%BF%E3%81%A3%E3%81%9F%E6%84%9F%E6%83%B3.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/05/28/M1-Mac%E4%B8%8A%E3%81%A7UTM%E3%81%A7Ubuntu-Desktop%E3%81%AE%E4%BB%AE%E6%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/05/02/M1-MacBook-Air%E3%81%8C%E6%9D%A5%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/04/12/dptran-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A7.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/04/08/Docker%E3%81%A7Mac%E3%81%ABUbuntu%E4%BB%AE%E6%83%B3%E7%92%B0%E5%A2%83%E3%82%92%E3%83%89%E3%82%AB%E3%83%83%E3%81%A8%E5%85%A5%E3%82%8C%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/03/07/xv6-riscv%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89-QEMU%E3%81%A7%E3%81%AE%E5%AE%9F%E8%A1%8C%E7%92%B0%E5%A2%83%E3%82%92Mac%E3%81%AB%E5%B0%8E%E5%85%A5%E3%81%99%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/01/29/Mac%E3%81%AE-.app%E3%81%AF%E5%A3%8A%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%81%9F%E3%82%81%E9%96%8B%E3%81%91%E3%81%BE%E3%81%9B%E3%82%93-%E3%81%AE%E5%8E%9F%E5%9B%A0%E3%81%AFDebug%E3%83%93%E3%83%AB%E3%83%89%E3%81%A0%E3%81%A3%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/22/%E5%85%85%E9%9B%BB%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84MacBook%E3%81%8C-%E9%9B%BB%E6%BA%90%E3%83%97%E3%83%A9%E3%82%B0%E3%82%92%E4%BA%A4%E6%8F%9B%E3%81%97%E3%81%9F%E3%82%89%E5%85%85%E9%9B%BB%E3%81%A7%E3%81%8D%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E8%A9%B1.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/20/Rust%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B-Mac%E7%B7%A8.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/23/Pixel7%E3%82%922%E9%80%B1%E9%96%93%E3%81%BB%E3%81%A9%E4%BD%BF%E3%81%A3%E3%81%9F%E6%84%9F%E6%83%B3.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/03/27/Prolog%E5%85%A5%E9%96%80%E3%83%A1%E3%83%A2.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/09/03/python_document_classification.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/09/23/(k,n)%E9%96%BE%E5%80%A4%E6%B3%95%E3%82%92%E3%81%9D%E3%81%AE%E3%81%BE%E3%81%BEPython%E3%81%A7%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/12/02/dptran.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/10/14/rustel_v3.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/09/08/koukoku_client2.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/09/06/koukoku_client.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/07/14/introduction-of-rusimg.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/06/25/rust_winapi_get_proc_info.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/11/14/Rust%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E7%AE%A1%E7%90%86%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%88-confy.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/09/22/warning-the-following-packages-contain-code-that-will-be-rejected-by-a-future-version-of-Rust.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/09/17/Rust%E5%85%A5%E9%96%80%E6%97%A5%E8%A8%98-2-%E9%96%A2%E6%95%B0%E3%81%A8%E3%83%95%E3%83%AD%E3%83%BC%E5%88%B6%E5%BE%A1.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/23/Rust%E5%85%A5%E9%96%80%E6%97%A5%E8%A8%98-1-Rust%E5%8D%8A%E7%AB%AF%E3%81%AA%E3%81%84%E3%81%A3%E3%81%A6.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/21/Rust%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B-Windows%E7%B7%A8.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
-  <loc>https://blog.yotiosoft.com/2021/10/16/GRUB%E3%81%AE%E8%B5%B7%E5%8B%95%E9%A0%86%E5%BA%8F%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B.html</loc>
+  <loc>https://blog.yotiosoft.com/2023/01/08/%E3%81%93%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%83%BC%E3%81%AF%E7%A9%BA%E3%81%A7%E3%81%99-%E5%A4%A7%E5%98%98.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/06/Ubuntu%E3%81%A7-VPN%E6%8E%A5%E7%B6%9A%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E3%83%BC%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%81%E3%81%BE%E3%81%9B%E3%82%93-%E3%81%A8%E5%87%BA%E3%81%A6%E3%81%8D%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/16/GRUB%E3%81%8C%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8BOS%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/27/%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%ABWeb%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E7%AB%8B%E3%81%A6%E3%82%8B%E3%81%AA%E3%82%89VS-Code%E3%81%AELive-Server%E3%81%8C%E4%BE%BF%E5%88%A9.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/11/13/Windows%E3%81%A7%E5%8D%81%E5%AD%97%E3%82%AD%E3%83%BC%E3%82%92%E6%8A%BC%E3%81%99%E3%81%A8%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%81%8C%E5%8B%9D%E6%89%8B%E3%81%AB%E5%8B%95%E3%81%8F.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/22/%E5%86%AC%E8%87%B3%E3%81%AA%E3%81%AE%E3%81%A7%E4%BB%8A%E5%BE%8CYapps%E3%81%AB%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%84%E3%81%8D%E3%81%9F%E3%81%84%E6%A9%9F%E8%83%BD%E3%82%92%E6%8C%99%E3%81%92%E3%81%A6%E3%81%84%E3%81%8F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/02/Web%E3%83%84%E3%83%BC%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%88-Yapps-%E3%82%92%E5%85%AC%E9%96%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/06/10/%E3%81%8A%E5%90%8D%E5%89%8D.com%E3%81%8B%E3%82%89Cloudflare-Registrar%E3%81%AB%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E7%A7%BB%E7%AE%A1%E3%81%97%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/01/06/%E4%BB%8A%E6%97%A5%E3%81%A78%E5%91%A8%E5%B9%B4%E3%82%89%E3%81%97%E3%81%84%E3%81%A7%E3%81%99.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/10/01/%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E7%A7%BB%E8%BB%A2%E5%AE%8C%E4%BA%86.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/09/30/%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E7%A7%BB%E8%BB%A2%E5%BD%93%E6%97%A5%E3%81%AE%E4%BA%88%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/09/25/%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E5%85%AC%E9%96%8B%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/09/13/StaticForms%E3%81%A7%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%9F.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/17/%E6%96%B0HP%E3%81%AE%E3%82%B9%E3%83%9E%E3%83%9B%E7%89%88%E3%82%92%E5%85%AC%E9%96%8B.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/12/%E3%81%93%E3%82%8C%E3%81%BE%E3%81%A7%E3%81%AE%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/11/%E6%96%B0%E3%81%97%E3%81%84%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/11/Hello-World!.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/03/21/%E7%B6%9A-Google%E3%81%8C%E3%81%AA%E3%81%8B%E3%81%AA%E3%81%8B%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%E3%81%AB%E8%BC%89%E3%81%9B%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%AA%E3%81%84.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/27/Google%E3%81%8C%E3%81%AA%E3%81%8B%E3%81%AA%E3%81%8B%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%E3%81%AB%E8%BC%89%E3%81%9B%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%AA%E3%81%84.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/03/19/%E5%8C%97%E6%B5%B7%E9%81%93-%E6%9D%B1%E6%97%A5%E6%9C%AC%E3%83%91%E3%82%B9%E3%81%A7%E8%A1%8C%E3%81%8F%E5%8C%97%E6%B5%B7%E9%81%93%E4%B8%80%E5%91%A8-%E5%BE%8C%E7%B7%A8.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/03/13/%E5%8C%97%E6%B5%B7%E9%81%93-%E6%9D%B1%E6%97%A5%E6%9C%AC%E3%83%91%E3%82%B9%E3%81%A7%E8%A1%8C%E3%81%8F%E5%8C%97%E6%B5%B7%E9%81%93%E4%B8%80%E5%91%A8-%E5%89%8D%E7%B7%A8.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/28/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93-%E5%8F%97%E9%A8%93%E4%BD%93%E9%A8%93%E8%AB%87.html</loc>
   <priority>0.7</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/08/11/blog_2nd_anniversary.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/02/14/%E8%BF%91%E6%B3%81%E5%A0%B1%E5%91%8A.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2023/01/03/%E3%81%82%E3%81%91%E3%81%BE%E3%81%97%E3%81%A6%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/31/%E3%81%97%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6%E3%81%BE%E3%81%9F%E6%9D%A5%E5%B9%B4.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/27/%E4%BB%8A%E5%B9%B4%E8%AA%AD%E3%82%93%E3%81%A0%E6%9C%AC%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81-2022.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/15/Qiita%E3%81%A8%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E4%BD%BF%E3%81%84%E5%88%86%E3%81%91.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/12/04/ChatGPT%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/11/04/%E5%A4%96%E4%BB%98%E3%81%91HDD%E3%82%92%E7%B5%84%E3%81%BF%E7%AB%8B%E3%81%A6%E3%81%9F.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/08/11/%E3%83%96%E3%83%AD%E3%82%B01%E5%B9%B4%E7%9B%AE%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%81%AA%E3%81%A9.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/03/14/%E5%80%8B%E4%BA%BA%E7%9A%84%E3%81%ABTwitter%E6%A4%9C%E7%B4%A2%E3%81%AB%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E3%83%A1%E3%83%A2.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2022/01/01/%E3%81%82%E3%81%91%E3%81%BE%E3%81%97%E3%81%A6%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:26+09:00</lastmod>
+</url>
+<url>
+  <loc>https://blog.yotiosoft.com/2021/12/31/%E3%81%97%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6%E3%82%8D%E3%81%8F%E3%81%AA%E3%81%93%E3%81%A8%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%9B%E3%82%93.html</loc>
+  <priority>0.7</priority>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 <url>
   <loc>https://blog.yotiosoft.com/2021/08/20//Rust%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B-Mac%E7%B7%A8.html</loc>
   <priority>0.6</priority>
-  <lastmod>2021-12-27T18:02:26+09:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2024-03-09T13:31:25+09:00</lastmod>
 </url>
 
 </urlset>
