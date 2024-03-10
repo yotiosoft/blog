@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "sitemap.xmlの更新を怠っていたら検索にヒットしなくなった"
+title: "sitemap.xmlの更新を怠っていたら検索にヒットしづらくなった"
 tags: [その他]
 excerpt_separator: <!--more-->
 ---
