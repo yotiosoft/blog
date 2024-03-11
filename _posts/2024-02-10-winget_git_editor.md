@@ -50,8 +50,10 @@ GNU Emacs GNU.Emacs 29.2       Moniker: emacs winget
 
 ## インストール＆PATH を通す
 
+単純に ``winget install vim`` でいけるかと思ったのですが、インストール時にはパッケージ名を``vim.vim``と指定しなければならないようです。
+
 ```powershell
-> winget install vim
+> winget install vim.vim
 見つかりました Vim [vim.vim] バージョン 9.1.0004
 このアプリケーションは所有者からライセンス供与されます。
 Microsoft はサードパーティのパッケージに対して責任を負わず、ライセンスも付与しません。
