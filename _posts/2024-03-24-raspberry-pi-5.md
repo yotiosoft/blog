@@ -25,7 +25,9 @@ excerpt_separator: <!--more-->
   - 製造元：U.K. Sony
 
 - Storage : micro SDXC 64GB (SanDisk, UHS-I U3)
-- OS : Ubuntu 23.10 Desktop (AArch64)
+- OS : Ubuntu 23.10 Desktop 
+  - Kernel : GNU/Linux 6.5.0-1013-raspi aarch64
+
 
 OS は [Raspberry Pi Imager](https://www.raspberrypi.com/software/){:target="_blank"} で SD に書き出しました。Raspberry Pi OS や Ubuntu Server と迷いましたが、一番使い慣れている Ubuntu Desktop を選択しました。
 
