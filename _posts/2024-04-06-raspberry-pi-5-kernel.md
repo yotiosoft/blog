@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Raspberry Pi 5にUbuntuをインストールしたらファンが全力で回りっぱなしになった"
-tags: [Raspberry Pi, Ubuntu]
-thumbnail: "/assets/img/thumbnails/feature-img/240324.jpg"
+tags: [Raspberry Pi, Ubuntu, Linux]
 excerpt_separator: <!--more-->
 ---
 
@@ -14,7 +13,7 @@ excerpt_separator: <!--more-->
 
 Raspberry Pi 5 を購入して早2週間、サーバとして利用するうえで色々と設定したり調べたりしなければならない点が多く、書きたいトピックが複数溜まっています。今回はその第1回目、OS のインストール編です。
 
-ざっくりいうと、Raspberry Pi 5 には PWM 制御の CPU ファンがあり、普通は CPU の温度に合わせて回転数が変化するのですが、Raspberry Pi 5 に Ubuntu 23.10 をインストールしたらファンが全力で回り続けてしまいました。
+ざっくりいうと、Raspberry Pi 5 には PWM 制御の CPU ファン機能があり、公式ケースを購入すると付属品として CPU ファンが付いてきます。普通は CPU の温度に合わせて回転数が変化するのですが、Raspberry Pi 5 に Ubuntu 23.10 をインストールしたらファンが全力で回り続けてしまいました。
 
 <!--more-->
 
@@ -76,3 +75,11 @@ $ sudo apt upgrade
 ```
 
 再起動後、起動直後は CPU 使用率からかファンが全力で回りますが、起動が完了すると驚くほどファンが静かになりました。
+
+アップデート後のカーネルバージョンは下記のとおりです（アップデート前のバージョンは記録し忘れました…）。
+
+```bash
+$ uname -r
+6.5.0-1013-raspi
+```
+
