@@ -57,11 +57,11 @@ CPU 使用率を確認しても数 % 程度。3月下旬、室温20度前後。C
 
 もしや GUI のせいか？と思い、microSD を Ubuntu Server 23.10 に焼き直しました。しかし、状況は変わりません。
 
-ではディストリビューションのせいか？と思い、Raspberry Pi OS に焼き直して起動しました。すると、今度はファンが静かです。
+ではディストリビューションかカーネルのせいか？と思い、Raspberry Pi OS に焼き直して起動しました。すると、今度はファンが静かです。
 
 # 原因と対処
 
-というわけで、Ubuntu 23.10 と Raspberry Pi 5 の間に何らかの互換性の問題がありそうです。調べてみるとこんな記事が。
+というわけで、Ubuntu 23.10（というよりそのデフォルトのカーネルバージョン）と Raspberry Pi 5 との間に何らかの互換性の問題がありそうです。調べてみるとこんな記事が。
 
 [Fan speed control on Raspberry Pi 5 not working In Ubuntu 23.10 - Ask Ubuntu](https://askubuntu.com/questions/1490462/fan-speed-control-on-raspberry-pi-5-not-working-in-ubuntu-23-10){:target="_blank"}
 
