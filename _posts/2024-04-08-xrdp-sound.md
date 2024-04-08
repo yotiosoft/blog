@@ -214,7 +214,7 @@ $ ls $(pkg-config --variable=modlibexecdir libpulse)
 
 相変わらず ``Dummy Output`` しか選択できませんでした。
 
-# （成功）PipeWire を導入する
+# （成功）PipeWire 用のモジュールを導入する
 
 どうやら、近年の Ubuntu では PulseAudio ではなく PipeWire がデフォルトになっているようで。
 
