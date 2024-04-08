@@ -76,13 +76,13 @@ $ sudo ufw allow 3389
 
 しかし、音が出ません。サウンド設定を見ても ``Dummy Output`` という、いかにも音声出力できませんよという出力デバイスしか見当たりませんでした。
 
-# （失敗）pulseaudio の導入
+# 1.（変わらず）pulseaudio の導入
 
 [ラズパイに音付きでリモート接続して操作する（xrdp+pulseaudio）   ofuton.org](https://hp.ofuton.org/426/){:target="_blank"}
 
 こちらを参考にさせていただき、まずは ``pulseaudio`` および ``pulseaudio-module-xrdp`` をインストールします。
 
-## sources.list の編集
+## 1.1 sources.list の編集
 
 pulseaudio のインスールには ``apt build-dep`` を利用するので、``/etc/apt/sources.list`` にリポジトリを追加しておきます。
 
@@ -100,7 +100,7 @@ $ sudo apt update
 
 しかし、ここで最初のハマりポイントが発生。
 
-### ハマりポイント①：「公開鍵を利用できないため、以下の署名は検証できませんでした」
+### 1.1.2 ハマりポイント①：「公開鍵を利用できないため、以下の署名は検証できませんでした」
 
 これに関しては、今 ``sources.list`` に登録した ``http://raspbian.raspberrypi.org/raspbian/`` の公開鍵を登録しておけばよいです。
 
@@ -114,7 +114,7 @@ $ sudo apt update
 $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys [公開鍵をここに入力]
 ```
 
-## pulseaudio のインストール
+## 1.2 pulseaudio のインストール
 
 次に ``build-dep`` および ``pulseaudio`` をインストールします。
 
@@ -136,7 +136,7 @@ $ sudo ./configure
 
 このとき、1行目の ``sudo apt build-dep pulseaudio`` で2つ目のハマりポイントがありました。
 
-### ハマりポイント②：「依存: libgconf2-dev しかし、インストールすることができません」
+### 1.2.1 ハマりポイント②：「依存: libgconf2-dev しかし、インストールすることができません」
 
 pulseaudio に必要な ``libgconf2-dev`` が存在しないと言われます。
 
@@ -172,7 +172,7 @@ $ sudo apt update
 $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys [公開鍵をここに入力]
 ```
 
-## pulseaudio-module-xrdp のビルド＆インストール
+## 1.3 pulseaudio-module-xrdp のビルド＆インストール
 
 次に、``pulseaudio-module-xrdp`` を git clone してきてビルドしインストールします。
 
@@ -187,7 +187,7 @@ $ sudo make
 $ sudo make install
 ```
 
-### ハマりポイント③：configure の実行中にエラー発生
+### 1.3.1 ハマりポイント③：configure の実行中にエラー発生
 
 ``libpulse-dev`` がないと言われてしまいました。インストールしたはずなのですが。
 
@@ -198,7 +198,7 @@ $ sudo apt autoremove libpulse-dev
 $ sudo apt install libpulse-dev
 ```
 
-## インストール完了の確認
+## 1.4 インストール完了の確認
 
 ```bash
 $ ls $(pkg-config --variable=modlibexecdir libpulse)
@@ -206,7 +206,7 @@ $ ls $(pkg-config --variable=modlibexecdir libpulse)
 
 を実行し、``module-xrdp-sink.la``、``module-xrdp-sink.so``、``module-xrdp-source.la``、``module-xrdp-source.so`` があれば完了です。
 
-# いざ再起動！…あれ？
+# 2. いざ再起動！…あれ？
 
 その後再起動し、サウンド設定を見てみました。すると…あれ？
 
@@ -214,7 +214,7 @@ $ ls $(pkg-config --variable=modlibexecdir libpulse)
 
 相変わらず ``Dummy Output`` しか選択できませんでした。
 
-# （成功）PipeWire 用のモジュールを導入する
+# 3.（成功）PipeWire 用のモジュールを導入する
 
 どうやら、近年の Ubuntu では PulseAudio ではなく PipeWire がデフォルトになっているようで。
 
@@ -222,7 +222,7 @@ $ ls $(pkg-config --variable=modlibexecdir libpulse)
 
 Ubuntu 23.10 では、PipeWire の xrdp モジュールを導入しなければなりませんでした。
 
-## **[pipewire-module-xrdp](https://github.com/neutrinolabs/pipewire-module-xrdp)** をインストールする
+## 3.1 **[pipewire-module-xrdp](https://github.com/neutrinolabs/pipewire-module-xrdp)** をインストールする
 
 ```bash
 $ mkdir ~/pipewire
