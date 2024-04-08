@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ubuntuでxrdpのリモートデスクトップから音声を出力させたい"
-tags: [Ubuntu, Linux, Respberry Pi]
+tags: [Ubuntu, Linux, Raspberry Pi]
 excerpt_separator: <!--more-->
 ---
 
@@ -76,7 +76,7 @@ $ sudo ufw allow 3389
 
 しかし、音が出ません。サウンド設定を見ても ``Dummy Output`` という、いかにも音声出力できませんよという出力デバイスしか見当たりませんでした。
 
-# 1.（変わらず）pulseaudio の導入
+# 1.（やっても変わらず）pulseaudio の導入
 
 [ラズパイに音付きでリモート接続して操作する（xrdp+pulseaudio）   ofuton.org](https://hp.ofuton.org/426/){:target="_blank"}
 
