@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 前回に引き続き、Raspberry Pi 5 の話です。
 
-前回：[[Raspberry Pi 5を購入しました](https://blog.yotiosoft.com/2024/03/24/raspberry-pi-5.html)](https://blog.yotiosoft.com/2024/03/24/raspberry-pi-5.html)
+前回：[Raspberry Pi 5を購入しました](https://blog.yotiosoft.com/2024/03/24/raspberry-pi-5.html)
 
 
 
