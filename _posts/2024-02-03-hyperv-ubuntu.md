@@ -39,7 +39,7 @@ excerpt_separator: <!--more-->
 
 [Windows 10 での Hyper-V の有効化 \| Microsoft Learn](https://learn.microsoft.com/ja-jp/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v){:target="_blank"}
 
-（Windows 11 の公式記事が見つかりませんでしたが、ほぼ同じだったと思います）
+（Windows 11 の公式記事が見つかりませんでしたが、手順はほぼ同じだったと思います）
 
 今回導入するのは Ubuntu 22.04 LTS です。もうすぐ 24.04 LTS が出るかと思いますが、執筆時点での最新版はこれです。
 
@@ -183,7 +183,7 @@ Firewall reloaded
 > ssh [仮想環境のローカル IP アドレス] -p [ポート番号:22]
 ```
 
-現時点では SSH-key は設定していないので Basic 認証、すなわちログインのためにパスワード入力が必須です。
+現時点では SSH-key は設定していないのでパスワード認証になります。
 
 ![SnapCrab_ytani@ytani-Virtual-Machine ~_2024-2-3_18-22-50_No-00.webp](..\..\..\assets\img\post\2024-02-03\SnapCrab_ytani@ytani-Virtual-Machine%20~_2024-2-3_18-22-50_No-00.webp)
 
