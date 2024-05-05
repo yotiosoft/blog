@@ -2,6 +2,8 @@
 layout: post
 title: "Hyper-VにUbuntuをインストール～SSHサーバの設定まで"
 tags: [Windows, Ubuntu, Hyper-V]
+feature-img: "/assets/img/feature-img/240506.webp"
+thumbnail: "/assets/img/thumbnails/feature-img/240506.jpg"
 excerpt_separator: <!--more-->
 ---
 
