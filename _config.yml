@@ -10,7 +10,7 @@ favicon: assets/favicon.ico                             # Icon displayed in the 
 # Header and footer text
 header_text: "Yotio's Diary"				# Change Blog header text
 header_subtext: "晴休雨眠"
-header_feature_image: assets/img/pexels/IMG_9211.webp
+header_feature_image: assets/img/pexels/DSC02733.webp
 footer_text: >
   © 2021-2024 yotio | Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
