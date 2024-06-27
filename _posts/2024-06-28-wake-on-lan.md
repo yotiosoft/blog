@@ -70,7 +70,7 @@ Windows 側では標準では Wake-on-LAN が無効化されていますので�
 
 まずはルータの設定を開きます。ルータ設定のアドレスはルータのメーカによりますが、筆者の環境では「192.168.0.1」です。ここからの設定方法はルータによって異なりますので、あくまでのご参考程度に。
 
-Wake-on-LAN は一般的に、ポート番号 9（UDP）が用いられますので、これを開放しておきます。
+Wake-on-LAN は一般的に、ポート番号 9（UDP）が用いられます [1] ので、これを開放しておきます。
 
 ![image-20240628014837756](../../../assets/img/post/2024-06-28-wake-on-lan/image-20240628014837756.webp)
 
@@ -84,11 +84,19 @@ Wake-on-LAN は一般的に、ポート番号 9（UDP）が用いられますの
 $ wakeonlan -i [自宅のグローバルIPアドレス] -p 9 [PCのMACアドレス]
 ```
 
+
+
+…と、これでできるはずなんですが、自分の環境では成功しませんでした。
+
+wakeonlan の送信元が LAN 内ならこれで起動できるんですが、LAN 外だと起動できず。うーん、ルータがブロックしているんですかね。ただ、ルータのパケットフィルタリング設定を見ても9番ポートのパケットフィルターは見つかりません。
+
 ### おすすめしない理由
 
-しかしこれでは危険です。グローバル IP アドレスと MAC アドレスがバレてしまえば、誰でも認証せずに PC を起動できてしまうからですね。
+というわけで、この方法をおすすめしない理由は下記の3つです。
 
-もう一つ、このようにポートフォワーディングしてしまうと、他の機器で Wake-on-LAN できなくなるという問題があります。ポートフォワーディングによって9番ポートが1台の PC に専有されてしまうからです。
+- ルータによってはマジックパケットがルータ越えできない場合がある [2]。
+- そもそも危険。グローバル IP アドレスと MAC アドレスがバレてしまえば、誰でも認証せずに PC を起動できてしまうため。
+- このようにポートフォワーディングしてしまうと、他の機器で Wake-on-LAN できなくなる。ポートフォワーディングによって9番ポートが1台の PC に専有されてしまうため。
 
 ## （推奨）Wake-on-LAN 用サーバを用意する
 
@@ -170,10 +178,12 @@ timeout 5 ping [Windows PCのローカルIPアドレス]
 
 # 参考文献
 
-[スマホアプリで外出先から自宅のPCを遠隔起動してみる「Wol Wake on Lan Wan」 - 自動化厨のプログラミングメモブログ │ CODE:LIFE](https://www.aterm.jp/support/qa/qa_external/00227/win11.html){:target="_blank"}
+[1] [スマホアプリで外出先から自宅のPCを遠隔起動してみる「Wol Wake on Lan Wan」 - 自動化厨のプログラミングメモブログ │ CODE:LIFE](https://www.aterm.jp/support/qa/qa_external/00227/win11.html){:target="_blank"}
 
-[Windows 用 OpenSSH の概要 \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui){:target="_blank"}
+[2] [「立ちはだかるルーターの壁」の巻：第8回 \| IT Leaders](https://it.impress.co.jp/articles/-/7797){:target="_blank"}
 
-[Windows 用 OpenSSH でのキーベースの認証 \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_keymanagement){:target="_blank"}
+[3] [Windows 用 OpenSSH の概要 \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui){:target="_blank"}
 
-[shutdown \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-server/administration/windows-commands/shutdown){:target="_blank"}
+[4] [Windows 用 OpenSSH でのキーベースの認証 \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_keymanagement){:target="_blank"}
+
+[5] [shutdown \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-server/administration/windows-commands/shutdown){:target="_blank"}
