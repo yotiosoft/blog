@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "自宅の外から遠隔でWindowsマシンをオンオフする"
-tags: [Windows, RaspberryPi]
+tags: [Windows, Raspberry Pi]
 excerpt_separator: <!--more-->
 ---
 
