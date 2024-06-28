@@ -106,11 +106,13 @@ wakeonlan の送信元が LAN 内ならこれで起動できるんですが、LA
 
 
 
-筆者の場合は Raspberry Pi 5 をサーバとして利用しております。実現方法はいくらかありますが、SSH サーバを用意し、SSH ログインして ``wakeonlan`` を実行。これがオーソドックスな方法かと思います。
+筆者の場合は Raspberry Pi 5 をサーバとして利用しております。実現方法はいくつかありますが、SSH サーバを用意し、SSH ログインして ``wakeonlan`` を実行する、というのがオーソドックスな方法かと思います。
+
+（例：SSH サーバの鍵を``raspi``と設定した場合）
 
 ```bash
 $ ssh raspi		# SSH でログイン
-ytani@raspberry-pi-5:~$ wakeonlan [PCのMACアドレス]		# SSH サーバ上で wake-on-lan を実行
+ytani@raspberry-pi-5:~$ wakeonlan [PCのMACアドレス]  # SSH サーバ上で wake-on-lan を実行
 ```
 
 
@@ -125,19 +127,16 @@ wakeonlan [PCのMACアドレス]
 を ``wakeonlan.sh`` として home ディレクトリに配置しておけば、
 
 ```bash
-$ ssh raspi
-ytani@raspberry-pi-5:~$ ./wakeonlan.sh
+$ ssh raspi ./wakeonlan.sh
 ```
 
-で遠隔起動できます。
+これだけで遠隔起動できます。
 
 # シャットダウンさせる
 
 シャットダウンは Wake-on-LAN ではできませんので、Windows 側のコマンドを用います。仕組みとしては、SSH サーバから Windows の ``Shutdown.exe`` を実行させるという方法です。
 
-少し面倒ですが、SSH サーバから Windows に SSH ログインできるようにしておきます。Windows での OpenSSH の設定方法については下記をご参照ください。
-
-なお、パスワード認証ではなく key 認証にすることを強く推奨します（セキュリティ上の理由もありますが、一番の理由は SSH サーバからコマンド一発でログインできるため）。
+少し面倒ですが、SSH サーバから Windows に SSH ログインできるようにしておきます。Windows での OpenSSH の設定方法については下記をご参照ください。なお、パスワード認証ではなく key 認証にすることを強く推奨します（セキュリティ上の理由もありますが、一番の理由は SSH サーバからコマンド一発でログインできるため）。
 
 [Windows 用 OpenSSH の概要 \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui){:target="_blank"}
 
