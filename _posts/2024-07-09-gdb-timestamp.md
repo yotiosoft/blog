@@ -88,7 +88,7 @@ print("sys_open run time: " + str(end_time - start_time))
 
 今回は例として、xv6 の open() システムコールのエントリポイント関数 ``sys_open()`` の実行時間を計測してみます。
 
-![スクリーンショット 2024-07-09 22.11.58](../../../assets/img/post/2024-07-09-GDB-timespan/sc1.webp)
+![スクリーンショット 2024-07-09 22.11.58](../../../assets/img/post/2024-07-09-gdb-timespan/sc1.webp)
 
 今回置くブレークポイントは ``sys_open()`` の先頭と最後です。ブレークポイントの位置（``break なんとか`` の箇所）は、適宜計測したいプログラムや関数に合わせて変更しておいてください。
 
