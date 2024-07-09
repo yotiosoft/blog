@@ -61,7 +61,22 @@ $ date +%s.%6N
 
 GDB では ``shell`` コマンドで外部コマンド ``date`` を実行すれば、GDB でブレークポイントに達したときに現在時刻を表示させることは上記で示しました。ただ、ここで一つ問題があります。``shell`` コマンドはあくまでもコマンドを実行して表示するのみで、その結果を簡易変数に代入できないのです。
 
-そこで、``shell`` コマンドを使うのは取りやめ、代わりに Python を利用します。GDB は Python の呼び出しをサポートしており、``python`` コマンドで Python スクリプトを1行ずつ実行させることができるのです。Python は ``os`` モジュールで外部コマンドの実行ができるので、 ``os.popen("date ...").read()`` を Python 側で実行し、Python 側で差分の計算と表示も行わせてみます。（``GDB.execution()`` を使って GDB の簡易変数に Python の演算結果を代入させることも可能ですが、今回は割愛します）
+そこで、``shell`` コマンドを使うのは取りやめ、代わりに Python を利用します。GDB は Python の呼び出しをサポートしており、``python`` コマンドで Python スクリプトを1行ずつ実行させることができるのです。Python は ``os`` モジュールで外部コマンドの実行ができるので、``date`` コマンドを Python 側で実行し、その結果を Python 側で実数に変換し、Python 側で差分の計算と表示も行わせてみます。（``GDB.execution()`` を使って GDB の簡易変数に Python の演算結果を代入させることも可能ですが、今回は割愛します）
+
+Python スクリプトを示すとこんな感じになります。
+
+```python
+import os
+
+start_time = float(os.popen("date +%s.%6N").read())
+
+# ここで次のブレークポイントまでの処理...
+
+end_time = float(os.popen("date +%s.%6N").read())
+print("sys_open run time: " + str(end_time - start_time))
+```
+
+
 
 # 実践
 
