@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GDBで関数の実行時間を計測する"
-tags: [Linux, Ubuntu, xv6, GDB, C/C++]
+tags: [Linux, Ubuntu, xv6, GDB, C/C++, Python]
 excerpt_separator: <!--more-->
 ---
 
