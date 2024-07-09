@@ -29,7 +29,7 @@ GDB ではブレークポイントを任意のソースファイルの任意の�
 
 GDB には、特定のブレークポイントに達したときに任意のコマンドを実行させる機能があります。
 
-- [GDB マニュアル - Break Commands](https://flex.phys.tohoku.ac.jp/texi/GDB-j/GDB-j_22.html){:target="_blank"}
+- [GDB マニュアル - Break Commands](https://flex.phys.tohoku.ac.jp/texi/gdb-j/gdb-j_22.html){:target="_blank"}
 
 ここでは主に GDB コマンド（例えば ``print`` で変数値を表示する、``set`` で変数に数値を代入するなど）の利用が想定されていますが、GDB にはシェルから外部コマンドを実行させる ``shell`` コマンドがあります。
 
@@ -84,11 +84,11 @@ print("sys_open run time: " + str(end_time - start_time))
 
 まず、GDB 起動のたびにブレークポイントや commands を定義するのは面倒です。そこで、コマンドファイルにブレークポイントの定義や実行するコマンドを書いていきます。
 
-- [GDB マニュアル - Command Files](https://flex.phys.tohoku.ac.jp/texi/GDB-j/GDB-j_54.html){:target="_blank"}
+- [GDB マニュアル - Command Files](https://flex.phys.tohoku.ac.jp/texi/gdb-j/gdb-j_54.html){:target="_blank"}
 
 今回は例として、xv6 の open() システムコールのエントリポイント関数 ``sys_open()`` の実行時間を計測してみます。
 
-![スクリーンショット 2024-07-09 22.11.58](../../../assets/img/post/2024-07-09-GDB-timespan/スクリーンショット 2024-07-09 22.11.58.webp)
+![スクリーンショット 2024-07-09 22.11.58](../../../assets/img/post/2024-07-09-GDB-timespan/sc1.webp)
 
 今回置くブレークポイントは ``sys_open()`` の先頭と最後です。ブレークポイントの位置（``break なんとか`` の箇所）は、適宜計測したいプログラムや関数に合わせて変更しておいてください。
 
@@ -134,7 +134,7 @@ $ gdb out/kernel.elf
 
 実行してみた結果がこちらです。
 
-![スクリーンショット 2024-07-09 22.18.08](../../../assets/img/post/2024-07-09-gdb-timespan/スクリーンショット 2024-07-09 22.18.08.webp)
+![スクリーンショット 2024-07-09 22.18.08](../../../assets/img/post/2024-07-09-gdb-timespan/sc2.webp)
 
 マイクロ秒精度よりも細かい数値なので有効桁数の調整は必要ですが、ひとまず ``sys_open()`` 関数実行中の実行時間を GDB で計測できていることが確認できました。
 
@@ -142,7 +142,8 @@ $ gdb out/kernel.elf
 
 # 参考文献
 
-- [GDB マニュアル - Break Commands](https://flex.phys.tohoku.ac.jp/texi/GDB-j/GDB-j_22.html){:target="_blank"}
+- [GDB マニュアル - Break Commands](https://flex.phys.tohoku.ac.jp/texi/gdb-j/gdb-j_22.html){:target="_blank"}
 - [man date (1): システムの日付や時刻の表示、設定を行う](https://ja.manpages.org/date){:target="_blank"}
 - [date コマンドで日時のミリ秒単位まで表示する #ShellScript - Qiita](https://qiita.com/niwasawa/items/9502e97b6c4d28d24042){:target="_blank"}
+- [GDB マニュアル - Command Files](https://flex.phys.tohoku.ac.jp/texi/gdb-j/gdb-j_54.html){:target="_blank"}
 - [Redirecting/storing output of shell into GDB variable? - Stack Overflow](https://stackoverflow.com/questions/6885923/redirecting-storing-output-of-shell-into-gdb-variable){:target="_blank"}
