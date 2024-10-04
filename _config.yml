@@ -9,7 +9,7 @@ favicon: assets/favicon.ico                             # Icon displayed in the 
 
 # Header and footer text
 header_text: "Yotio's Diary"				# Change Blog header text
-header_subtext: "ウルトラ・ハイパー・マキシマリスト"
+header_subtext: "永遠の17歳（16進数）"
 header_feature_image: assets/img/pexels/header1004.webp
 footer_text: >
   © 2021-2024 yotio | Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
