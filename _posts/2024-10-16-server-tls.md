@@ -139,10 +139,56 @@ If you like Certbot, please consider supporting our work by:
 
 以降、この証明書を使って SSL/TLS 通信が可能です。
 
-有効期限は3ヶ月間です。自動更新をさせたい場合はこちら ↓ の記事が参考になるかと思います。
+例えば、Rust の Actix web の場合：
 
-- [Let's Encrypt の証明書の更新を自動化する手順 (cron) |](https://weblabo.oscasierra.net/letsencrypt-renew-cron/){:target="_blank"}
+```rust
+#[post("/")]
+async fn index() -> impl Responder {
+    ...
+}
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    rustls::crypto::aws_lc_rs::default_provider()
+        .install_default()
+        .unwrap();
+
+    let mut certs_file = BufReader::new(File::open("fullchain.pem").unwrap());		// ← これと
+    let mut key_file = BufReader::new(File::open("privkey.pem").unwrap());			// ← これ
+    
+    // load TLS certs and key
+    // to create a self-signed temporary cert for testing:
+    // `openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'`
+    let tls_certs = rustls_pemfile::certs(&mut certs_file)
+        .collect::<Result<Vec<_>, _>>()
+        .unwrap();
+    let tls_key = rustls_pemfile::pkcs8_private_keys(&mut key_file)
+        .next()
+        .unwrap()
+        .unwrap();
+    
+    // set up TLS config options
+    let tls_config = rustls::ServerConfig::builder()
+        .with_no_client_auth()
+        .with_single_cert(tls_certs, rustls::pki_types::PrivateKeyDer::Pkcs8(tls_key))
+        .unwrap();
+
+    HttpServer::new(|| {
+            App::new()
+                .service(index)
+        })
+        .bind_rustls_0_23(("0.0.0.0", 443), tls_config)?
+        .run()
+        .await
+}
+```
+
+
+
+証明書の有効期限は3ヶ月間です。自動更新をさせたい場合はこちら ↓ の記事が参考になるかと思います。
+
+- [Let's Encrypt の証明書の更新を自動化する手順 (cron) ](https://weblabo.oscasierra.net/letsencrypt-renew-cron/){:target="_blank"}
 
 # おわりに
 
-次回はこれを利用して、LINE Messaging API の Webhook サーバを作っていきます。
+次回はこれを利用して、Rust で LINE Messaging API の Webhook サーバを作っていきます。
