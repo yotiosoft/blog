@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 前回の記事では LINE Messaging API を利用して、コマンドラインからプッシュメッセージを送信するツールを作成しました。
 
-- [LINE Messaging API #1 Rustで簡単なLINEメッセージ送信ツールを作る \| 為せばnull](../../../2024/09/23/mes.html){:target="_blank"}
+- [LINE Messaging API #1 Rustで簡単なLINEメッセージ送信ツールを作る \| 為せばnull](../../../2024/09/23/mes.html)
 
 その発展形として Webhook を利用して bot サーバを作ろうとしたのですが、Webhook を利用するにはサーバの SSL/TLS 証明書が必要です。
 
@@ -152,9 +152,10 @@ async fn main() -> std::io::Result<()> {
     rustls::crypto::aws_lc_rs::default_provider()
         .install_default()
         .unwrap();
-
-    let mut certs_file = BufReader::new(File::open("fullchain.pem").unwrap());		// ← これと
-    let mut key_file = BufReader::new(File::open("privkey.pem").unwrap());			// ← これ
+	
+    // 証明書を読み込み（ここ！）
+    let mut certs_file = BufReader::new(File::open("fullchain.pem").unwrap());
+    let mut key_file = BufReader::new(File::open("privkey.pem").unwrap());
     
     // load TLS certs and key
     // to create a self-signed temporary cert for testing:
