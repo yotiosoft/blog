@@ -21,6 +21,11 @@ excerpt_separator: <!--more-->
 
 <!--more-->
 
+# この記事の想定
+
+- 最終目標：自宅サーバに SSL/TLS 証明書を登録し、HTTPS で通信できるようにする
+- 対象：HTTPS 用の自宅サーバを立てたい人、Messaging API の Webhook を利用して bot サーバを立てたい人 
+
 # サーバの概要
 
 - Raspberry Pi 5
