@@ -44,6 +44,7 @@ HTTPS サーバを作成しますので、Web フレームワークが必要に�
 1. サーバアプリの雛形を作る
 2. Messaging API で使う JSON データ用の構造体を定義する
 3. メッセージに対する返答の定義、返信メッセージの送信処理の実装
+4. webhook の設定
 
 # 1. サーバアプリの雛形を作る
 
@@ -356,7 +357,7 @@ for (reply_token, messages) in response_messages {
 HttpResponse::Ok().body("ok")
 ```
 
-# 全体像
+# サーバアプリ：全体像
 
 ```rust
 use std::fs::File;
