@@ -285,7 +285,7 @@ for request in requests.events.iter() {
 
 ``replyToken`` が必要になりますので、``replyToken`` とのタプルとして配列に返答文を追加していきます。
 
-```bash
+```rust
 // 各リクエストに対して返信メッセージを生成
 // (reply_token, messages) のタプルを生成
 let mut response_messages: Vec<(String, Vec<String>)> = Vec::new();
