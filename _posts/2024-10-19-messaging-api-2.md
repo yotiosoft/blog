@@ -159,8 +159,8 @@ struct RequestEvent {
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestSource {
     #[serde(rename = "userId")]
-    pub user_id: String,
-    pub r#type: String,
+    user_id: String,
+    r#type: String,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -201,24 +201,24 @@ struct RequestMessageMentions {
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestDeliveryContext {
     #[serde(rename = "isRedelivery")]
-    pub is_redelivery: bool,
+    is_redelivery: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestLink {
-    pub result: String,
-    pub nonce: String,
+    result: String,
+    nonce: String,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestPostback {
-    pub data: String,
-    pub params: RequestPostbackParams,
+    data: String,
+    params: RequestPostbackParams,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestPostbackParams {
-    pub datetime: String,
+    datetime: String,
 }
 */
 ```
@@ -231,16 +231,16 @@ struct RequestPostbackParams {
 
 ```rust
 #[derive(Debug, Serialize, Deserialize)]
-pub struct ResponseReply {
+struct ResponseReply {
     #[serde(rename = "replyToken")]
-    pub reply_token: String,
-    pub messages: Vec<ResponseReplyMessage>,
+    reply_token: String,
+    messages: Vec<ResponseReplyMessage>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct ResponseReplyMessage {
-    pub r#type: String,
-    pub text: String,
+struct ResponseReplyMessage {
+    r#type: String,
+    text: String,
 }
 ```
 
@@ -395,8 +395,8 @@ struct RequestEvent {
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestSource {
     #[serde(rename = "userId")]
-    pub user_id: String,
-    pub r#type: String,
+    user_id: String,
+    r#type: String,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -437,40 +437,40 @@ struct RequestMessageMentions {
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestDeliveryContext {
     #[serde(rename = "isRedelivery")]
-    pub is_redelivery: bool,
+    is_redelivery: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestLink {
-    pub result: String,
-    pub nonce: String,
+    result: String,
+    nonce: String,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestPostback {
-    pub data: String,
-    pub params: RequestPostbackParams,
+    data: String,
+    params: RequestPostbackParams,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct RequestPostbackParams {
-    pub datetime: String,
+    datetime: String,
 }
 */
 /*----------------------------------------------*/
 
 /*------- messaging-API response structs -------*/
 #[derive(Debug, Serialize, Deserialize)]
-pub struct ResponseReply {
+struct ResponseReply {
     #[serde(rename = "replyToken")]
-    pub reply_token: String,
-    pub messages: Vec<ResponseReplyMessage>,
+    reply_token: String,
+    messages: Vec<ResponseReplyMessage>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct ResponseReplyMessage {
-    pub r#type: String,
-    pub text: String,
+struct ResponseReplyMessage {
+    r#type: String,
+    text: String,
 }
 /*----------------------------------------------*/
 
