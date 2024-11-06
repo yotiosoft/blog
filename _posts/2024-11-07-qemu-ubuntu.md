@@ -5,7 +5,7 @@ tags: [QEMU, Ubuntu]
 excerpt_separator: <!--more-->
 ---
 
-QEMU で Ubuntu Server を動かしたいとき、GUI が使える環境であればインストールメディアを指定すれば OK ですが、CUI しか使えない環境（gtk 非対応など）では少々面倒です。
+QEMU で Ubuntu Server を動かしたいとき、GUI が使える環境であればインストールメディアを指定すれば OK ですが、GUI が使えない（gtk が使えない、gtk initialization failed になるような環境）環境では少々面倒です。
 
 今回は、QEMU/KVM 上で Ubuntu Server インストールメディアを CUI 環境で起動し、仮想ハードディスクにインストールするまでの過程をメモっておこうと思います。
 
@@ -38,7 +38,7 @@ QEMU で Ubuntu Server を動かしたいとき、GUI が使える環境であ�
 
 [Get Ubuntu Server \| Download \| Ubuntu](https://ubuntu.com/download/server){:target="_blank"}
 
-ここから Ubuntu server インストールメディアの iso ファイルを入手します。
+ここから Ubuntu Server インストールメディアの iso ファイルを入手します。
 
 今回は Ubuntu 24.04.1 の AMD64 版を入手しました。
 
