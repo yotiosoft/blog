@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "nographicなQEMU環境にUbuntuをインストールする"
+title: "nographicなCUI環境のQEMUにUbuntuをインストールする"
 tags: [QEMU, Ubuntu]
 excerpt_separator: <!--more-->
 ---
@@ -13,7 +13,7 @@ QEMU で Ubuntu Server を動かしたいとき、GUI が使える環境であ�
 
 # この記事の想定
 
-- 最終目標：``-nographic`` オプション付きの QEMU/KVM で Ubuntu Server のインストールメディアを立ち上げ、インストールする
+- 最終目標：``-nographic`` オプション付きの QEMU で Ubuntu Server のインストールメディアを立ち上げ、インストールする
 - 読者対象：CUI 環境の QEMU で Ubuntu を使いたい人
 
 # 実行環境の概要
@@ -55,7 +55,7 @@ qemu-img create -f qcow2 vm.qcow2 80G
 
 ## KVM をロード
 
-QEMU/KVM を使うので、KVM を modprobe で読み込んでおきます。
+KVM を使う場合、``kvm_intel`` をカーネルにロードしておきます。
 
 ```bash
 sudo modprobe kvm_intel 
@@ -85,7 +85,7 @@ sudo qemu-system-x86_64 -hda vm.qcow2 -m 2048 -cdrom ubuntu-24.04.1-live-server-
 
 ## 原因
 
-グラフィック環境の出力先が QEMU の仮想 VGA になっているのが原因。現在、``--nographic`` によってコンソールは VM のシリアルポートに接続されているため、出力先をシリアルポートに設定しなければなりません。
+VM の出力先が QEMU の仮想 VGA になっているのが原因。現在、``--nographic`` によってコンソールは VM のシリアルポートに接続されているため、出力先をシリアルポートに設定しなければなりません。
 
 ## 解決策：GRUB で出力先をシリアルポートに設定
 
@@ -105,13 +105,13 @@ sudo qemu-system-x86_64 -hda vm.qcow2 -m 2048 -cdrom ubuntu-24.04.1-live-server-
 
 ![スクリーンショット 2024-11-06 23.06.13](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.06.13.png)
 
-ここで ``linux        /casper/vmlinuz  ---`` の行に十字キーで移動し、``linux        /casper/vmlinuz console=ttyS0,115200n8  ---`` に書き換え（``console=ttyS0,115200n8`` を追記）します。
+ここで ``linux        /casper/vmlinuz  ---`` の行に十字キーで移動し、``linux        /casper/vmlinuz console=ttyS0,115200n8  ---`` に書き換えます。
 
 ![スクリーンショット 2024-11-06 23.08.01](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.08.01.png)
 
 この ``console=ttyS0`` が出力先の指定です。
 
-ttyS0 は Linux の1番目のシリアルポートを示します。``115200n8`` についてはこちら ↓ のページが詳しいです。
+``ttyS0`` は Linux の1番目のシリアルポートを指します。``115200n8`` についてはこちら ↓ のページが詳しいです。
 
 [KVMでvirt-installする時にextra-argsに指定するconsole=tty0 console=ttyS0,115200n8rとは一体何者なのか](https://blog.osstech.co.jp/posts/2020/08/tty-console/){:target="_blank"}
 
@@ -119,17 +119,17 @@ ttyS0 は Linux の1番目のシリアルポートを示します。``115200n8``
 
 この状態で Ctrl+x または F10 キーを押すとインストールメディアが起動します。
 
+まずは Booting a command list と表示され、
+
 ![スクリーンショット 2024-11-06 23.12.29](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.12.29.png)
-
- まずは Booting a command list と表示され、
-
-![スクリーンショット 2024-11-06 23.12.36](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.12.36.png)
 
 Linux カーネルの起動が開始し…
 
-![スクリーンショット 2024-11-06 23.13.33](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.13.33.png)
+![スクリーンショット 2024-11-06 23.12.36](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.12.36.png)
 
 程なくして、Ubuntu Server のインストールメディアが起動します。
+
+![スクリーンショット 2024-11-06 23.13.33](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.13.33.png)
 
 ここではインストーラを basic mode（ASCII 文字のみ）で起動するか、rich mode（unicode と rich colour への対応が必須）で起動するかが尋ねられます。説明を見る限り SSH 接続でリモートからもインストールできるっぽいです。
 
