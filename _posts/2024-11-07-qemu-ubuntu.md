@@ -106,7 +106,7 @@ sudo qemu-system-x86_64 -hda vm.qcow2 -m 2048 -cdrom ubuntu-24.04.1-live-server-
 
 ![スクリーンショット 2024-11-06 23.06.13](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.06.13.webp)
 
-ここで ``linux        /casper/vmlinuz  ---`` の行に十字キーで移動し、``linux        /casper/vmlinuz console=ttyS0,115200n8  ---`` に書き換えます。
+ここで ``linux        /casper/vmlinuz  ---`` の行に十字キーで移動し、``linux        /casper/vmlinuz`` と ``---`` の間に ``console=ttyS0,115200n8`` を追記します。
 
 ![スクリーンショット 2024-11-06 23.08.01](../../../assets/img/post/2024-11-07-qemu-ubuntu/スクリーンショット 2024-11-06 23.08.01.webp)
 
