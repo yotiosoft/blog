@@ -5,7 +5,7 @@ tags: [お知らせ]
 excerpt_separator: <!--more-->
 ---
 
-もう一ヶ月ほど前になるのですが、新しく「[yotio.jp](https://yotio.jp/){:target="_blank"}」を取得しました。
+もう一ヶ月ほど前になるのですが、yotio 個人の活動用のドメインとして新しく「[yotio.jp](https://yotio.jp/){:target="_blank"}」を取得しました。
 
 つきましては、このブログも**12月14日をもちまして、yotio.jp のサブドメインである「[blog.yotio.jp](https://blog.yotio.jp){:target="_blank"}」に移転します**。
 
