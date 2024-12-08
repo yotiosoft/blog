@@ -1,0 +1,60 @@
+---
+layout: post
+title: "新しいドメインを取得しました＆ブログのURLを移転します"
+tags: [お知らせ]
+excerpt_separator: <!--more-->
+---
+
+もう一ヶ月ほど前になるのですが、新しく「[yotio.jp](https://yotio.jp/){:target="_blank"}」を取得しました。
+
+つきましては、このブログも**12月14日をもちまして、yotio.jp のサブドメインである「[blog.yotio.jp](https://blog.yotio.jp){:target="_blank"}」に移転します**。
+
+今回はそのお知らせです。
+
+<!--more-->
+
+# 新しいドメインを取得した理由
+
+これまでは「yotiosoft.com」というドメイン一本で YotioSoft も、各アプリの個別ページも、ブログも運営してきました。
+
+ここにきて今更「yotio.jp」を取得した理由は3つあります。
+
+## 理由1：ハンドルネームが変わった
+
+YotioSoft を開設した10年前からブログを開設した後の2022年まで、私はハンドルネームも「YotioSoft」名義でした。自作アプリを公開する場である「YotioSoft」以外の活動はしていなかったし、するつもりもなかったためです。「運営するサイト = ハンドルネーム」という構造になっていました。
+
+しかしながら、3年前の当ブログ開設を機に、活動のメインは自作アプリの開発から離れてしまいました。大学院のこともあり、もはや自作アプリを開発する時間もないし、アイデアもないし、気力もなくなってしまった自分にとって、YotioSoft はもはや主戦場ではなくなってしまいました。
+
+そこでハンドルネームを「yotio」に変更し、「YotioSoft というサイトも運営している yotio」という構造になりました。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">名前変えた～（soft外しただけ） <a href="https://t.co/ZBIYEoGkuv">https://t.co/ZBIYEoGkuv</a></p>&mdash; yotio (@yotiosoft) <a href="https://twitter.com/yotiosoft/status/1553660845766299648?ref_src=twsrc%5Etfw">July 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+このブログの URL が「blog.yotiosoft.com」だったのはハンドルネームが YotioSoft だった頃の名残です。
+
+## 理由2：個人としての Web ページを作りたかった
+
+実は YotioSoft とは別に、yotio 個人としてのポートフォリオサイト的なものを作っています（こちらは年末頃までに公開します）。
+
+YotioSoft はあくまでも自作アプリの公開の場ですし、おそらく YotioSoft を訪れた多くの人間にとって「yotio」個人の情報（趣味、興味の対象、etc.）なんかどうでもいいと思うんですよね。
+
+逆に YotioSoft 以外の分野から yotio 個人に興味を持ってくださった方（そんな方いらっしゃるのかな？）にとっては YotioSoft の自作アプリなんか興味ない方もいるでしょうし、だったら Web サイトごと「YotioSoft」と「yotio 個人」を分けたほうがいいだろうという結論に至りました。
+
+リアルで知り合った方に自分のホームページを紹介するなら、YotioSoft という自作アプリの公開の場を紹介するよりもシンプルな個人としての Web サイトのほうが好ましいでしょうし、そういった理由を踏まえて個人としての Web ページの作成を決めました。
+
+## 理由3：YotioSoft としての活動と、個人としての活動をドメインで分けたかった
+
+メインドメインとサブドメインの関係は「本体と派生」の関係性であることが自然であると理解しています。yotiosoft.com には YotioSoft で公開している自作アプリである「Cities Box」「Albus Box」「Yapps」などのサブドメインが複数存在します。
+
+であれば、YotioSoft とは異なる個人としての活動も、新たにドメインを設けて運用するべきです。
+
+…という後付けの理想論は置いといて、単に短いドメインが欲しかっただけです。
+
+# 移転までのスケジュール
+
+上記の通り、12月14日（土）の深夜に移転します。DNS の更新を伴いますので、移転中はこのサイトにはアクセスできません。
+
+Google Search Console にも URL の変更を設定しますが、検索結果への反映までには少し時間がかかるかもしれません。
+
+# 移転後のリダイレクトについて
+
+移転後は「blog.yotiosoft.com/xxx/yyy」は「blog.yotio.jp/xxx/yyy」にリダイレクトされます。移転後も「blog.yotiosoft.com」はリダイレクト用に保有しておきますし、ドメイン配下のディレクトリ構造（/xxx/yyy の部分）もそのままリダイレクトされますので、リンクの修正は必要ありません。
