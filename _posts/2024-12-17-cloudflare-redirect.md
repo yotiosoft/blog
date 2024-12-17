@@ -9,9 +9,9 @@ excerpt_separator: <!--more-->
 
 いくつかリダイレクトさせる方法があるのですが、Cloudflare Rules を使うのが一番良さそうだったので、そのときのメモです。
 
-前回：[URL移転しました \| 為せばnull](https://blog.yotio.jp/2024/12/14/url-moved.html)
-
 <!--more-->
+
+前回：[URL移転しました \| 為せばnull](https://blog.yotio.jp/2024/12/14/url-moved.html)
 
 # リダイレクト元・リダイレクト先の概要
 
@@ -80,7 +80,7 @@ index ページ以外のページ（つまり各記事のページ）でわざ�
 
 Cloudflare Rules を利用すると、自宅サーバを用意する必要なく、Cloudflare のサーバ側で動的にリダイレクトしてくれます。
 
-もともとリダイレクトできるサービスとして提供されていた Cloudflare Page Rules の廃止がアナウンスされていたようですが、今年から（？）より柔軟に設定できるようになって Cloudflare Redirect Rules として提供されています。
+もともとリダイレクトできるサービスとして提供されていた Cloudflare Page Rules の廃止がアナウンスされていたようですが、新しく Redirect Rules として更に柔軟に設定できるようになって提供されています。
 
 - 参考：[Page Rules のリタイアメントと新しいルールへの自動移行について](https://zenn.dev/kameoncloud/articles/0ea8889483d6c2){:target="_blank"}
 
