@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 当ブログの blog.yotiosoft.com から blog.yotio.jp への移転に伴い、旧 URL から新 URL への移転が必要になりました。
 
-いくつかリダイレクトさせる方法があるのですが、Cloudflare Rules を使うのが一番良さそうだったので、そのときのメモです。
+いくつかリダイレクトさせる方法があるのですが、Cloudflare Redirect Rules を使うのが一番良さそうだったので、そのときのメモです。
 
 <!--more-->
 
@@ -37,8 +37,12 @@ https://blog.yotio.jp/2024/12/14/url-moved.html
 
 このブログは GitHub Pages で運営していて、ブログは Jekyll で生成しています。ここでこんな制約条件が出てきます。
 
-- .htaccess が使えない。GitHub Pages ではセキュリティの観点から .htaccess をサポートしていないし、ゆえに HTTP 3xx（301 含む）でリダイレクトができない。ただし、JavaScript でリダイレクトさせる方法なら実現可能（この場合は HTTP 200 OK でリダイレクトされる）。
-- HTTP [301 Moved Permanently](https://developer.mozilla.org/ja/docs/Web/HTTP/Status/301) でリダイレクトしなければならない。上記と食い違ってしまうのだが、Google Search Console ではアドレス変更を Google に通知する際に、301（あるいは 308 etc.）でリダイレクトされていなければならない。（参考：[https://support.google.com/webmasters/answer/9370220?hl=ja](https://support.google.com/webmasters/answer/9370220?hl=ja){:target="_blank"）
+- .htaccess が使えない。
+  - GitHub Pages ではセキュリティの観点から .htaccess をサポートしていないし、ゆえに HTTP 3xx（301 含む）でリダイレクトができない。ただし、JavaScript でリダイレクトさせる方法なら実現可能（この場合は HTTP 200 OK でリダイレクトされる）。
+
+- HTTP [301 Moved Permanently](https://developer.mozilla.org/ja/docs/Web/HTTP/Status/301){:target="_blank"} でリダイレクトしなければならない。
+  - 上記と食い違ってしまうのだが、Google Search Console ではアドレス変更を Google に通知する際に、301（あるいは 308 etc.）でリダイレクトされていなければならない。（参考：[https://support.google.com/webmasters/answer/9370220?hl=ja](https://support.google.com/webmasters/answer/9370220?hl=ja){:target="_blank"}
+
 
 # リダイレクト方法の候補
 
