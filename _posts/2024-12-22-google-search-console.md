@@ -36,6 +36,13 @@ excerpt_separator: <!--more-->
 - 同じドメイン内の ``www`` とそれ以外のサブドメイン間の移転（``www.example.com`` から ``example.com`` など）
 - URL 変更を伴わない移転（アドレスが変更されないホストサーバの変更など）
 
+## 必須条件
+
+- 移転元ページから移転先ページへ [301 リダイレクト](https://developer.mozilla.org/ja/docs/Web/HTTP/Status/301){:target="_blank"}されていること。
+  - 308 でも OK。こちらを参照：[リダイレクトと Google 検索 \| Google 検索セントラル  \|  ドキュメント  \|  Google for Developers](https://developers.google.com/search/docs/crawling-indexing/301-redirects?hl=ja){:target="_blank"}
+- 移転先ページ用の Search Console プロパティを予め作成しておくこと。
+- 上記「アドレス変更ツールを使うべきケース」であること。
+
 # （再掲）リダイレクト元・リダイレクト先の概要
 
 このブログはもともと blog.yotiosoft.com という URL でした。
