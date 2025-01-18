@@ -27,7 +27,7 @@ Rust で WindowsAPI を用いて、現在 Windows 上で実行されているプ
 
 # 使用言語など
 
-今回は Rust で書いています。まあぶっちゃけ、どうせ全部 Unsafe で書かなければならないのでわざわざ Rust を使うメリットはあまりないのですが、Rust 向けの WinAPI の crate が存在するのと、Rust の方が依存関係の管理・導入が楽なので Rust で書きました。
+今回は Rust で書いています。まあぶっちゃけ、大部分を unsafe コードが占めることになるのですが、Rust 向けの WinAPI の crate が存在するのと、Rust の方が依存関係の管理・導入が楽なので Rust で書きました。
 
 - OS : Windows 10 Home (64bit)
 
@@ -60,38 +60,34 @@ use winapi::ctypes::*;
 use winapi::um::memoryapi::*;
 use winapi::um::processthreadsapi::*;
 use winapi::um::winnt::{ MEM_COMMIT, MEM_RELEASE, PAGE_EXECUTE_READWRITE };
+use winapi::shared::ntdef::*;
 use ntapi::ntexapi::*;
 
 // 現在動作中のすべてのプロセス情報を取得
 // SystemProcessInformation を buffer に取得
-fn get_system_processes_info(mut buffer_size: u32) -> *mut c_void {
-    unsafe {
-        let mut base_address = VirtualAlloc(std::ptr::null_mut(), buffer_size as usize, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+fn get_system_processes_info(mut buffer_size: u32) -> Option<*mut c_void> {
+    let base_address = unsafe {
+        VirtualAlloc(std::ptr::null_mut(), buffer_size as usize, MEM_COMMIT, PAGE_EXECUTE_READWRITE)
+    };
 
-        let tries = 0;
-        let max_tries = 5;
-        loop {
-            // プロセス情報を取得
-            // SystemProcessInformation : 各プロセスの情報（オプション定数）
-            // base_address             : 格納先
-            // buffer_size              : 格納先のサイズ
-            // &mut buffer_size         : 実際に取得したサイズ
-            let res = NtQuerySystemInformation(SystemProcessInformation, base_address, buffer_size, &mut buffer_size);
+    // プロセス情報を取得
+    // SystemProcessInformation : 各プロセスの情報（オプション定数）
+    // base_address             : 格納先
+    // buffer_size              : 格納先のサイズ
+    // &mut buffer_size         : 実際に取得したサイズ
+    let res = unsafe {
+        NtQuerySystemInformation(SystemProcessInformation, base_address, buffer_size, &mut buffer_size)
+    };
 
-            if res == 0 {
-                break;
-            }
-            if tries == max_tries {
-                break;
-            }
-
-            // realloc
+    // 取得失敗 → 解放
+    if NT_ERROR(res) {
+        unsafe {
             VirtualFree(base_address, 0, MEM_RELEASE);
-            base_address = VirtualAlloc(std::ptr::null_mut(), buffer_size as usize, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+            return None;
         }
-
-        return base_address;
     }
+
+    Some(base_address)
 }
 
 // プロセス一つ分の情報を取得
@@ -104,25 +100,24 @@ fn get_proc_info(next_address: isize) -> SYSTEM_PROCESS_INFORMATION {
             GetCurrentProcess(), next_address as *const c_void, &mut system_process_info as *mut _ as *mut c_void, 
             std::mem::size_of::<SYSTEM_PROCESS_INFORMATION>() as usize, std::ptr::null_mut()
         );
-
         system_process_info
     }
 }
 
 // プロセス名を取得し、String 型で返す
 fn get_proc_name(proc_info: SYSTEM_PROCESS_INFORMATION) -> String {
+    // プロセス名を取得
+    let mut image_name_vec: Vec<u16> = vec![0; proc_info.ImageName.Length as usize];
     unsafe {
-        // プロセス名を取得
-        let mut image_name_vec: Vec<u16> = vec![0; proc_info.ImageName.Length as usize];
         ReadProcessMemory(
             GetCurrentProcess(), proc_info.ImageName.Buffer as *const c_void, image_name_vec.as_mut_ptr() as *mut c_void, 
             proc_info.ImageName.Length as usize, std::ptr::null_mut()
         );
-        // \0 を除去
-        let proc_name = String::from_utf16_lossy(&image_name_vec).trim_matches(char::from(0)).to_string();
-
-        proc_name
     }
+    // \0 を除去
+    let proc_name = String::from_utf16_lossy(&image_name_vec).trim_matches(char::from(0)).to_string();
+
+    proc_name
 }
 
 // プロセス ID を取得
@@ -131,38 +126,46 @@ fn get_proc_id(proc_info: SYSTEM_PROCESS_INFORMATION) -> u32 {
 }
 
 fn main() {
-    unsafe {
-        // プロセス情報を取得
-        let base_address = get_system_processes_info(0x10000);
+    // メモリサイズ
+    let buffer_size = 0x500000;
+
+    // プロセス情報を取得
+    let base_address_o = get_system_processes_info(buffer_size);
+    if base_address_o.is_none() {
+        println!("Failed to get system process information.");
+        return;
+    }
+    let base_address = base_address_o.unwrap();
+
+    // base_address に取得したプロセス情報を SYSTEM_PROCESS_INFORMATION 構造体 system_process_info に格納
+    let mut system_process_info = get_proc_info(base_address as isize);
+
+    let mut next_address = base_address as isize;
+    // すべてのプロセス情報を取得
+    loop {
+        // 次のプロセス情報の格納先アドレス
+        next_address += system_process_info.NextEntryOffset as isize;
 
         // base_address に取得したプロセス情報を SYSTEM_PROCESS_INFORMATION 構造体 system_process_info に格納
-        let mut system_process_info = get_proc_info(base_address as isize);
+        system_process_info = get_proc_info(next_address);
 
-        let mut next_address = base_address as isize;
-        // すべてのプロセス情報を取得
-        loop {
-            // 次のプロセス情報の格納先アドレス
-            next_address += system_process_info.NextEntryOffset as isize;
+        // プロセス名を取得
+        let proc_name = get_proc_name(system_process_info);
 
-            // base_address に取得したプロセス情報を SYSTEM_PROCESS_INFORMATION 構造体 system_process_info に格納
-            system_process_info = get_proc_info(next_address);
+        // プロセスIDを取得
+        let proc_id = get_proc_id(system_process_info);
 
-            // プロセス名を取得
-            let proc_name = get_proc_name(system_process_info);
+        // プロセス名とプロセスIDを表示
+        println!("pid {} - {}", proc_id, proc_name);
 
-            // プロセスIDを取得
-            let proc_id = get_proc_id(system_process_info);
-
-            // プロセス名とプロセスIDを表示
-            println!("pid {} - {}", proc_id, proc_name);
-
-            // すべてのプロセス情報を取得したら終了
-            if system_process_info.NextEntryOffset == 0 {
-                break;
-            }
-        }   
-
-        VirtualFree(base_address, 0x0, MEM_RELEASE);
+        // すべてのプロセス情報を取得したら終了
+        if system_process_info.NextEntryOffset == 0 {
+            break;
+        }
+    }   
+	unsafe {
+        // メモリ解放
+        VirtualFree(base_address, buffer_size as usize, MEM_RELEASE);
     }
 }
 ```
