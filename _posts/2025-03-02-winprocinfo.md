@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "RustでWindowsのプロセス情報を取得する「winprocinfo」を公開しました"
-feature-img: "/assets/img/feature-img/250302.png"
 thumbnail: "/assets/img/thumbnails/feature-img/250302.png"
-tags: [Rust, Windows, Windows API, 開発日記]
+tags: [Rust, Windows, Windows API, 開発日記, winfuser, winprocinfo, お知らせ]
 excerpt_separator: <!--more-->
 ---
 
