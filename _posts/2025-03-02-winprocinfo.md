@@ -120,9 +120,9 @@ pub struct SYSTEM_PROCESS_INFORMATION {
 }
 ```
 
-``pub Threads: [SYSTEM_THREAD_INFORMATION; 1]`` のところにご注目。``Threads`` はプロセスが持つスレッド情報を示す ``SYSTEM_THREAD_INFORMATION`` 構造体の配列で、スレッド数分が確保される可変長配列なのですが、定義上は長さ1の配列になっていますね。
+``pub Threads: [SYSTEM_THREAD_INFORMATION; 1]`` のところにご注目。``Threads`` はプロセスが持つスレッド情報を示す ``SYSTEM_THREAD_INFORMATION`` 構造体の配列で、スレッド数分が確保される可変長配列なのですが、定義上は長さ1の配列になっています。
 
-これを Rust で利用すると、``Threads[2]`` 以降にアクセスするコードはそもそもコンパイルが通りません。メモリ安全性が保証できないからですね。
+これを Rust で利用すると、``Threads[2]`` 以降にアクセスするコードはそもそもコンパイルが通りません。メモリ安全性が保証できないからです。
 
 そもそも ``Threads`` が可変長配列ということは、``SYSTEM_PROCESS_INFORMATION`` のサイズも可変長です。1つ目のメンバ変数に ``NextEntryOffset`` というものがありますが、これは ``NtQuerySystemInformation`` で全プロセスの ``SYSTEM_PROCESS_INFORMATION`` の配列を取得したときに、次のプロセスの ``SYSTEM_PROCESS_INFORMATION`` までのオフセット値を示します。つまり、この値は、自身の ``SYSTEM_PROCESS_INFORMATION`` 構造体のサイズを示しているわけです。
 
@@ -160,7 +160,7 @@ fn get_thread_info_vec(proc_info_buffer: &BufferStruct, number_of_threads: u32) 
 }
 ```
 
-というコードを書くのに苦労しました…。Rust はメモリ安全な言語とはいえ、結局低レイヤなコードを書くうえでは unsafe コードからは逃れられません。
+以上のコードを含め、メモリのオフセット値の計算を伴うコードを書くのに苦労しました…。Rust はメモリ安全な言語とはいえ、結局低レイヤなコードを書くうえでは unsafe コードからは逃れられません。
 
 # おわりに
 
