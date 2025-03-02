@@ -91,9 +91,7 @@ winfuser は当初、下記のような構成で実現しようと考えてい�
 
 このうち、 5. の部分のみを先に作ったのが winprocinfo です。以前、こちらの記事で作ったものをライブラリ化した形になります。
 
-[Rust+winapiで現在動作中のプロセス一覧を取得する \| 為せばnull](https://blog.yotio.jp/2023/06/25/rust_winapi_get_proc_info.html)（投稿：2023年6月25日）
-
-
+- [Rust+winapiで現在動作中のプロセス一覧を取得する \| 為せばnull](https://blog.yotio.jp/2023/06/25/rust_winapi_get_proc_info.html)（投稿：2023年6月25日）
 
 実際のところは、プロセス名は PID からプロセスハンドルを取得（``OpenProcess``）→プロセスハンドルから実行ファイルのファイルパスを取得（``GetModuleBaseNameA``）という手順で実行したほうがより高速に済みます。よって winfuser では 5. の部分は結局いらなくなってしまったのですが、それはまた別の話です。（winfuser については後日別記事で書きます）
 
