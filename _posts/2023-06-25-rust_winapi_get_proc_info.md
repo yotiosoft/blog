@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust+winapiで現在動作中のプロセス一覧を取得する"
-tags: [Windows, Rust, Win32Api]
+tags: [Windows, Rust, Windows API, winfuser, winprocinfo]
 excerpt_separator: <!--more-->
 ---
 

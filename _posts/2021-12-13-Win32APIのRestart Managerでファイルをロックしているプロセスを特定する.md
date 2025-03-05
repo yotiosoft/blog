@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Win32APIのRestart Managerでファイルをロックしているプロセスを特定する"
-tags: [C/C++, Win32API, Windows]
+tags: [C/C++, Windows API, Windows, winfuser]
 thumbnail: "/assets/img/thumbnails/feature-img/1213.png"
 excerpt_separator: <!--more-->
 ---
