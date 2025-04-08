@@ -7,7 +7,7 @@ feature-img: "assets/img/pexels/travel.jpeg"
 
 # プロフィール
 
-プログラミングが好きな大学院生。普段は OS を研究分野としています。  
+プログラミングが好きな社会人。低レイヤ部分の研究開発をしています。  
 中学生の頃にホームページを立ち上げて以降、様々なソフトウェアを作って公開してきました。  
 作ったものはゲーム、OSもどき、プレイヤーアプリなど。  
 最近は何かを自作することは減り、新しい技術を調べたり、触れたりしてみる機会が増えました。  
@@ -41,7 +41,8 @@ feature-img: "assets/img/pexels/travel.jpeg"
 
 # ホームページ
 
-[![ys_banner](../../../assets/img/post/about/ys_banner.png)](https://yotiosoft.com)
-
-自作したソフトウェアやライブラリの公開を行っています。
+- [yotio.jp](https://yotio.jp/){:target="_blank"}
+  - 個人的なホームページです。詳しいプロフィールなどを記載しています。
+- [YotioSoft](https://yotiosoft.com/){:target="_blank"}
+  - 自作したソフトウェアやライブラリの公開を行っています。
 
