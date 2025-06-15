@@ -139,9 +139,9 @@ pip で jsmin を実行環境にインストール。
 
 ただ、GitHub Pages によってコミットごとに pages build and deployment が動く仕組みになっているので、自分のコミット→ pages build and deployment → minify による自動コミット → pages build and deployment と、無駄に2回 pages build が動いちゃうのはなんとかしたいですね。
 
+## パフォーマンス
 
-
-で、PageSpeed Insights でパフォーマンスの変化を計測してみたんですが、そこまで対して変わらず…。
+で、PageSpeed Insights でパフォーマンスの変化を計測してみたんですが、そこまで大して変わらず…。
 
 （minify 前）
 
@@ -155,4 +155,4 @@ pip で jsmin を実行環境にインストール。
 
 ![image-20250616021842028](../../../assets/img/post/2025-06-16-jsmin-by-github-actions/image-20250616021842028.webp)
 
-肝心の js minify の方ですが、そこまで大きな js ファイルを置いていないのが原因じゃないかと推測しています。せいぜい数十～100 行程度のスクリプトファイルでは効果がほぼ得られないのかもしれません。
+肝心の js minify の方ですが、そこまで大きな js ファイルを置いていないのが原因じゃないかと推測しています。せいぜい数十～100 行程度のスクリプトファイルでは効果がほぼ得られないのかもしれません。とはいえやらないよりはマシです。GitHub Actions ならタダで勝手に処理してくれますし、やっておいて損はないでしょう。
