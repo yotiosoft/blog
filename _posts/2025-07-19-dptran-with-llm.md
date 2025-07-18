@@ -19,7 +19,7 @@ excerpt_separator: <!--more-->
 
 - [dptran - crates.io: Rust Package Registry](https://crates.io/crates/dptran/2.3.2)
 
-そもそも dptran とはなんぞや？という方はこちら ↓ をご覧ください。
+そもそも dptran とはなんぞや？という方はこちら ↓ をご覧ください。一言でいうと、DeepL API をコマンドライン上で利用できるようにした Rust 製 CLI ツール＆ライブラリです。
 
 - [コマンドラインDeepL翻訳ツール「dptran」を公開しました \| 為せばnull](https://blog.yotio.jp/2023/12/02/dptran.html){:target=_blank}
 - [dptran/README_JA.md at main · yotiosoft/dptran](https://github.com/yotiosoft/dptran/blob/main/README_JA.md){:target=_blank}
