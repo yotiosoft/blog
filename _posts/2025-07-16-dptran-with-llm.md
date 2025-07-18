@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 自作の DeepL API 向け CLI ツールである「dptran」で、先日のアップデートより任意・自作の翻訳 API を利用できるようになったので、実験としてローカル LLM を利用した翻訳 API を作成し、dptran から LLM 翻訳を実行してみました。
 
-![スクリーンショット 2025-07-07 014546](../assets/img/post/2025-07-13-dptran-with-llm/スクリーンショット 2025-07-07 014546.png)
+![スクリーンショット 2025-07-07 014546](../../../assets/img/post/2025-07-13-dptran-with-llm/スクリーンショット 2025-07-07 014546.webp)
 
 今回は作成方法からプロンプト、そして実行結果までを共有したいと思います。
 
@@ -423,7 +423,7 @@ dptran api -l http://localhost:8000/pro/v2/languages
 
 以降、普通に dptran で翻訳を実行させると、逐一サーバ側のコンソールでクエリとレスポンスが表示されるはずです。
 
-![image-20250718234514559](../assets/img/post/2025-07-13-dptran-with-llm/image-20250718234514559.png)
+![image-20250718234514559](../../../assets/img/post/2025-07-13-dptran-with-llm/image-20250718234514559.webp)
 
 ## 普通に翻訳させてみる
 
