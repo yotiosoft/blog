@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "無駄に肥大化したDockerイメージを縮小する"
-tags: [docker, WSL2, ollama]
+tags: [Docker, WSL2, Ollama]
 excerpt_separator: <!--more-->
 ---
 
