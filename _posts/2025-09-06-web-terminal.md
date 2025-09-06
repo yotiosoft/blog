@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Webブラウザ上でDockerコンテナにアクセスできるターミナルを作る"
+thumbnail: "/assets/img/thumbnails/feature-img/250906.webp"
 tags: [JavaScript, Docker, Linux]
 excerpt_separator: <!--more-->
 ---
