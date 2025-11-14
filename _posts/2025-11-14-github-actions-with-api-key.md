@@ -93,7 +93,7 @@ jobs:
 
     environment: test_api_key
     env:
-      TEST_API_KEY: ${{ secrets.TEST_API_KEY }}
+      TEST_API_KEY: ${{{{ secrets.TEST_API_KEY }}}}
 
     steps:
     - uses: actions/checkout@v4
