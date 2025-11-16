@@ -9,7 +9,9 @@ excerpt_separator: <!--more-->
 
 - [NAS用の外付けHDDをLVM化してついでに暗号化もする \| 為せばnull](https://blog.yotio.jp/2025/08/17/lvm-crypt.html)
 
-しかし困ったことに、アップロードはうまくいったのに対し、**ダウンロードがうまくいきません。**ダウンロードエラーとなり、途中で中断されてしまいます。
+しかし困ったことに、アップロードはうまくいったのに対し、**ダウンロードがうまくいきません。**
+
+ダウンロードエラーとなり、途中で中断されてしまいます。
 
 ![image-20251116172313492](../../../assets/img/post/2025-11-16-google-colab-file-split/image-20251116172313492.webp)
 
@@ -25,9 +27,7 @@ Google Drive からファイルをダウンロードする方法は、ブラウ�
 
 ## wget
 
-ダウンロードリンクを使って `wget` でダウンロードする方法。
-
-ただ、こちらは大きいファイルのウイルススキャンが通らず、`Google Drive can't scan this file for viruses.` といったエラーが出て失敗してしまいます。ブラウザならウイルススキャンを回避できるのですが、`wget` ではできません。
+ダウンロードリンクを使って `wget` でダウンロードする方法。ただ、こちらは大きいファイルのウイルススキャンが通らず、`Google Drive can't scan this file for viruses.` といったエラーが出て失敗してしまいます。ブラウザならウイルススキャンを回避できるのですが、`wget` ではできません。
 
 一方で、今回は試してはいないんですが、こんな回避策もあるようです。
 
@@ -65,7 +65,7 @@ gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded
 
 ただ、いずれにせよ gdown は Beautiful soup を使っているようなので、動作はおそらく Web ブラウザから普通にダウンロードするのと変わらないでしょう。
 
-# 今回の方針：Google Colaboratory を使おう
+# 今回の方針：Google Colaboratory でファイル分割しよう
 
 今回は、Google が機械学習用に無料公開している Google Colaboratory を使って、ブラウザでも問題なくダウンロードできるサイズに Google Drive 上のファイルを分割するアプローチで行きたいと思います。
 
@@ -73,7 +73,7 @@ gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded
 
 Google Colaboratory は、Google のサーバ上で Jupyter Notebook を実行できるプラットフォームです。
 
-基本的には機械学習環境の提供を目的としていて、リソース制限はあるものの、ある程度無料で GPU や TPU を利用できます。（自分も以前、機械学習や推論でお世話になったことがあります）
+基本的には機械学習環境の提供を目的としていて、リソース制限はあるものの、ある程度無料で GPU や TPU を利用できます。自分も以前、機械学習や推論でお世話になったことがあります。
 
 機械学習用ではあるんですが、基本は Jupyter Notebook です。Python がメインではありますが、通常の Linux コマンドもサーバ上で実行できますし、今回は使いませんがネットワークからファイルをダウンロードしたりアップロードすることもできます（しかも Google の爆速ネットワークで！）。
 
