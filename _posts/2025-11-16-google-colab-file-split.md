@@ -228,7 +228,7 @@ Pixel7_1.bin  Pixel7_11.bin  Pixel7_3.bin  Pixel7_5.bin  Pixel7_7.bin  Pixel7_9.
 ちなみに、下記のように実行すると、結合のファイルサイズに対してもう1つ分の空き容量が必要になります。なぜなら、分割パートファイルが削除されないまま結合後のファイルが生成されるからですね。
 
 ```bash
-$ cat Pixel7_0.bin  Pixel7_1.bin  Pixel7_2.bin  >> Pixel7.tar.bz2
+$ cat Pixel7_0.bin  Pixel7_1.bin  Pixel7_2.bin ... Pixel7_11.bin >> Pixel7.tar.bz2
 ```
 
 空き容量を節約したい場合は、パートファイルごとに追記モードで順次結合していきましょう。結合が済んだファイルはその都度削除します。こうすると、分割サイズ分だけ空き容量があれば済みます。
