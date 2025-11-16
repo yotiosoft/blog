@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google Drive上のクソデカ圧縮ファイルを分割してダウンロードする"
+title: "Google Drive上のクソデカファイルを分割してダウンロードする"
 tags: [Google Colab, Python, Linux]
 excerpt_separator: <!--more-->
 ---
