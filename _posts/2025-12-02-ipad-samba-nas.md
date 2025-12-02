@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 自宅の Raspberry Pi サーバで samba で NAS を運用しているんですが、iPad からだけなぜか**「読み取り専用」となってしまって書き込めない**問題が起きていました。Windows からでも macOS からでも普通に書き込めるのに、iPad だけ書き込めません。
 
-<img src="../../../assets/img/post/2025-11-24-ipad-samba-nas/IMG_3423.webp" alt="IMG_3423" style="zoom:50%;" />
+<img src="../../../assets/img/post/2025-11-24-ipad-samba-nas/IMG_3423.webp" alt="IMG_3423" style="zoom:20%;" />
 
 というわけで、今回はこれをサクッと解決しましょう。
 
@@ -72,7 +72,7 @@ $ sudo smbcontrol all reload-config
 
 手元の環境でも、iPad からファイル書き込みやディレクトリ作成ができるようになりました。
 
-<img src="../../../assets/img/post/2025-11-24-ipad-samba-nas/IMG_3428.webp" alt="IMG_3428" style="zoom:50%;" />
+<img src="../../../assets/img/post/2025-11-24-ipad-samba-nas/IMG_3428.webp" alt="IMG_3428" style="zoom:40%;" />
 
 # 参考文献
 
