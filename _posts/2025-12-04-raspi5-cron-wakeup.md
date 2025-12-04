@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Raspberry Pi5でも決まった時間に自動起動できるようにする"
+title: "Raspberry Pi 5でもRTCで自動起動できるようにする"
 tags: [Linux, Ubuntu, Raspberry Pi]
 excerpt_separator: <!--more-->
 ---
