@@ -77,5 +77,5 @@ $ sudo smbcontrol all reload-config
 # 参考文献
 
 - [vfs_fruit (samba manpages)](https://www.samba.gr.jp/project/translation/current/htmldocs/manpages/vfs_fruit.8.html){:target="_blank"}
-- [vfs_streams_xattr (samba manpages)](https://www.samba.gr.jp/project/translation/3.6/htmldocs/manpages-3/vfs_streams_xattr.8.html)(https://www.samba.gr.jp/project/translation/current/htmldocs/manpages/vfs_fruit.8.html){:target="_blank"}
+- [vfs_streams_xattr (samba manpages)](https://www.samba.gr.jp/project/translation/3.6/htmldocs/manpages-3/vfs_streams_xattr.8.html){:target="_blank"}
 - [1.13. MacOS クライアント向けの Samba の設定 \| ネットワークファイルサービスの設定および使用 \| Red Hat Enterprise Linux \| 9 \| Red Hat Documentation](https://docs.redhat.com/ja/documentation/red_hat_enterprise_linux/9/html/configuring_and_using_network_file_services/assembly_configuring-samba-for-macos-clients_assembly_using-samba-as-a-server){:target="_blank"}
