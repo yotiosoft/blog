@@ -2,8 +2,8 @@
 url: "https://blog.yotio.jp"
 
 # THEME-SPECIFIC CONFIGURATION
-title: 為せばnull                                        # site's title
-description: "YotioSoftのブログ"       					# used by search engines
+title: 為せばnull                                       # site's title
+description: "yotioのブログ"       			# used by search engines
 avatar: assets/img/blog_logo.png                        # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
