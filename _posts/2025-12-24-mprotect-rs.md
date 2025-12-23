@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "自作のRust向けアクセス権制御ライブラリ「mprotect-rs」の紹介"
+title: "Rust向け自作アクセス権制御ライブラリ「mprotect-rs」の紹介"
 tags: [x86_64, Linux, Ubuntu, Rust, CPU]
 excerpt_separator: <!--more-->
 ---
@@ -22,6 +22,8 @@ excerpt_separator: <!--more-->
 - ユーザ空間アプリケーションのアクセス権制御（read/write アクセス権の設定）を実現したい
 - もし不正なアクセス（read-only なメモリ領域への write アクセスなど）が起きたら、それを未然に防止する仕組みを実現したい
 - 以上の操作を Rust で簡単に実現できるようにしたい
+
+<img src="../../../assets/img/post/2025-12-24-mprotect-rs/rw_251224.svg" alt="rw_251224" style="zoom:50%;" />
 
 # 目的とアプローチ
 
@@ -152,16 +154,18 @@ impl<'a, A: allocator::Allocator<T>, T> DerefMut for GuardRefMut<'a, A, T> {
         }
 ```
 
-こちらのコードでは、read-only アクセスに向けて immutable で取得した参照に対して、unsafe code で無理やり値を書き込もうとしています。コンパイルによる検証が実行されないのでコンパイル自体は通りますが、実行結果は、もちろん Segmentation fault です。不正なアクセスが Intel PKU によって防止できていることが確認できますね。
+こちらのコードでは、read-only アクセスに向けて immutable で取得した参照に対して、unsafe code で無理やり値を書き込もうとしています。
 
 ![image-20251224005614578](../../../assets/img/post/2025-12-24-mprotect-rs/image-20251224005614578.webp)
+
+コンパイルによる検証が実行されないのでコンパイル自体は通りますが、実行結果は、もちろん Segmentation fault です。不正なアクセスが Intel PKU によって防止できていることが確認できますね。
 
 まとめると、
 
 - safe code 内で起きる不正なアクセスはコンパイル段階で検知しよう
 - unsafe code や 外部ライブラリの FFI などで起きうる不正なアクセスは `mprotect()` や Intel PKU に任せよう
 
-という設計です。
+という設計方針です。
 
 ## システムコールを呼び出さないアクセス制御を実現（Intel PKU のみ）
 
@@ -181,16 +185,22 @@ let pkey = PkeyGuard::new(PkeyPermissions::NoAccess).map_err(RuntimeError::Mprot
 // 以降、RegionGuard のアクセス権は Protection Key により制御される
 // 初期状態は NoAccess (-/-). アクセス不可
 let mut associated_region = pkey.associate::<PkeyPermissions::NoAccess>(&mut region).map_err(RuntimeError::MprotectError)?;
+
 ...
+
 // mutable な参照を取得
 // このとき、Protection Key のアクセス権が ReadWrite に変更され、RegionGuard への read/write アクセスが許可される
 let write_guard = associated_region.set_access_rights::<PkeyPermissions::ReadWrite>().map_err(RuntimeError::MprotectError)?;
+
 ...
+
 // immutable な参照を取得
 // 参照を取得
 // このとき、Protection Key のアクセス権が ReadOnly に変更され、RegionGuard への read アクセスのみが許可される
 let read_guard = associated_region.set_access_rights::<PkeyPermissions::ReadOnly>().map_err(RuntimeError::MprotectError)?;
 ```
+
+内部的には、`set_access_rights()` で PKRU レジスタを更新します。
 
 ```rust
 impl<'a, 'p, A: allocator::Allocator<T>, T, Rights> AssociatedRegionHandler<'p, A, T, Rights>
@@ -209,7 +219,27 @@ where
         ...
     }
 }
+
+...
+
+// PKRU レジスタを更新
+pub unsafe fn set_access_rights(&self, access: PkeyAccessRights) -> Result<(), super::MprotectError> {
+    let pkru_value = pkru::rdpkru();
+
+    let new_pkru_bits = match access {
+        PkeyAccessRights::EnableAccessWrite => 0b00,
+        PkeyAccessRights::DisableAccess => 0b01,
+        PkeyAccessRights::DisableWrite => 0b10,
+    } << (self.key * 2);
+
+    let new_pkru_value = pkru_value & !(0b11 << (self.key * 2)) | new_pkru_bits;
+    pkru::wrpkru(new_pkru_value);
+
+    Ok(())
+}
 ```
+
+
 
 ## 入れ子スコープに対応
 
