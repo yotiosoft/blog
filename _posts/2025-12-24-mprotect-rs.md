@@ -257,7 +257,7 @@ pub unsafe fn set_access_rights(&self, access: PkeyAccessRights) -> Result<(), s
         let value = assoc2_r.ref_guard().map_err(RuntimeError::PkeyGuardError)?;
         println!("\tValue read via second associated region deref(): {}", *value);
     }
-	// ここから再び read/write 可
+    // ここから再び read/write 可
     *value = 168;  // ok
 }
 ```
