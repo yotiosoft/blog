@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 
 メモリークリスマス！
-前回に引き続き、今回も Intel MPK/PKU 関連のお話です。
+[前回](/2025/12/14/intel-mpk.html)に引き続き、今回も Intel MPK/PKU 関連のお話です。
 自分はハードウェア支援のメモリ安全性やアクセス制御に興味があり、昨今、Rust 向けにこんなライブラリを試作しています。
 
 - [yotiosoft/mprotect-rs: An implementation of mprotect() and pkey_mprotect() for Rust. This enables Rust to set access rights to each pages, using PTE flags or Intel MPK (Memory Protection Keys).](https://github.com/yotiosoft/mprotect-rs){:target="_blank"}
