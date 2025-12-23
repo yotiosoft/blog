@@ -51,7 +51,7 @@ Intel MPK にはユーザ空間向けの Intel PKU (Protection Keys for Userspac
 
 - [x86_64のメモリ保護機能「Intel MPK」で遊ぼう \| 為せばnull](https://blog.yotio.jp/2025/12/14/intel-mpk.html)
 
-# 設計
+# 実現したこと
 
 ## コンパイラによるアクセス正当性チェックを実現
 
@@ -239,8 +239,6 @@ pub unsafe fn set_access_rights(&self, access: PkeyAccessRights) -> Result<(), s
 }
 ```
 
-
-
 ## 入れ子スコープに対応
 
 スコープごとにアクセス制御できるような設計にしています。つまり、現在のアクセス権は現在のスコープ内でのみ有効であり、スコープから出たらアクセス権は無効になります。
@@ -267,5 +265,7 @@ pub unsafe fn set_access_rights(&self, access: PkeyAccessRights) -> Result<(), s
 # 今後の展望
 
 現状、`mprotect()` を使う場合と Intel PKU を使う場合とで異なるトレイト、異なる API 体系を利用する形になっています。しかし、実際の利用環境を考えると、必ずしもバイナリの配布先が Intel PKU に対応しているという保証はありません。古い Intel CPU で実行されているかもしれませんし、Intel PKU が無効化された環境かもしれませんし、あるいは AMD や Arm、RISC-V かもしれません。
+
 その場合に、Intel PKU の対応チェックを実施し、対応していなければ `mprotect()` を使いたい、というケースもあるでしょう。こういったユースケースに対応するため、`mprotect()` を使う場合と Intel PKU を使う場合とで統一のインターフェイスを利用できるようにしたいと考えています。
 
+まだまだこのライブラリは未完成です。来年中には一旦完成させてリリースしたいなと考えています。
