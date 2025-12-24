@@ -266,6 +266,7 @@ pub unsafe fn set_access_rights(&self, access: PkeyAccessRights) -> Result<(), s
     // ここから再び read/write 可
     *value = 168;  // ok
 }
+// ここからは read も write も不可
 ```
 
 入れ子状態のスコープに対応するために、アクセス権の変遷はメモリ領域ごとにスタックで管理しています。子のスコープから親のスコープに戻ったら、スタックを pull してアクセス権を親スコープの状態に戻すような設計です。
