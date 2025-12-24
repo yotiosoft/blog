@@ -40,14 +40,13 @@ Rust をご存知の方は、こんなことを疑問に思ったかもしれま
 
 `mprotect()` と `mprotect_pkey()` の違いは、前者はカーネルが PTE (Page Table Entry) のアクセス権限を更新することでアクセス制御を実現するのに対し、後者は Intel PKU といった PTE 更新を必要としないハードウェア機能を使ってアクセス制御を実現します。
 Intel x86_64 アーキテクチャの場合、`mprotect_pkey()` には Intel PKU が利用されます。Intel PKU では、ユーザモードで PKRU というレジスタを更新することでアクセス制御を実現します。
-Intel PKU はハードウェア依存で x86_64 の Skylake 世代ですが、アクセス制御にカーネルの介入や PTE 更新が必要ない分、より高速なアクセス制御を実現できます。
+Intel PKU はハードウェア依存で x86_64 の Skylake 世代以降のみ利用可能ですが、アクセス制御にカーネルの介入や PTE 更新が必要ない分、より高速なアクセス制御を実現できます。
 
 ## Intel MPK / Intel PKU とは
 
 Intel x86_64 アーキテクチャで提供されている、ハードウェアレベルのメモリ保護機能です。
 
-Intel MPK にはユーザ空間向けの Intel PKU (Protection Keys for Userspace) とカーネル空間向けの Intel PKS (Protection Keys for supervisor) があり、今回は前者の Intel PKU を扱います。近年の Intel CPU（2015年発売の Skylake 世代移行）であれば基本的に搭載されている機能ですので、実は Intel CPU であれば気軽に遊べます。
-
+Intel MPK にはユーザ空間向けの Intel PKU (Protection Keys for Userspace) とカーネル空間向けの Intel PKS (Protection Keys for supervisor) があり、今回は前者の Intel PKU を扱います。
 詳しくは前回の記事をご覧ください。
 
 - [x86_64のメモリ保護機能「Intel MPK」で遊ぼう \| 為せばnull](https://blog.yotio.jp/2025/12/14/intel-mpk.html)
