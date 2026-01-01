@@ -27,35 +27,43 @@ excerpt_separator: <!--more-->
 
 # 目的とアプローチ
 
-このライブラリの目的は、Linux 環境の Rust 製ユーザアプリケーションに `mprotect()` と Intel PKU をはじめとするハードウェア支援のアクセス制御を容易に導入できるようにし、不正なメモリアクセスを防止することにあります。
+このライブラリの目的は、Linux 環境の Rust 製ユーザアプリケーションに `mprotect()` や `mprotect_pkey()` といったハードウェア支援のアクセス制御を容易に導入できるようにし、不正なメモリアクセスを防止することにあります。
 
 Rust をご存知の方は、こんなことを疑問に思ったかもしれません。「Rust って既にメモリ安全言語じゃないか」と。
 その疑問は正しいです。ただ、Rust のメモリ安全性はあくまでもコンパイル時点でコンパイラによって担保できる範囲内であり、unsafe code やレガシー言語による外部ライブラリなど、rustc による検証が及ばない範囲もあります。
 
-そこで、機密データを置くメモリ領域をあらかじめメモリドメインに設定しておき、仮に unsafe code や外部ライブラリでバグにより脆弱性が発生したとしても、それをハードウェア的に防止するための仕組みが重要になると考えています。
+そこで、機密データを置くメモリ領域をあらかじめ保護メモリドメインに設定しておき、正しい safe code が実行されている間だけアクセスを許可することで、仮に unsafe code や外部ライブラリでバグにより脆弱性が発生したとしても、その脆弱性の悪用、あるいはバグにより意図せず生じる不正なメモリアクセスをハードウェア的に防止するための仕組みが重要になると考えています。
 
 同じような思想は、EuroSys'22 で発表されたこちらの「PKRU-safe」という論文にも現れています。こちらの論文では、レガシーな言語（C など）で書かれた外部ライブラリを Untrusted memory として Trusted memory から切り離してしまおうというアプローチを取っており、その実現に Intel PKS を利用しています。
 
 - [PKRU-safe \| Proceedings of the Seventeenth European Conference on Computer Systems](https://dl.acm.org/doi/10.1145/3492321.3519582){:target="_blank"}
 
-`mprotect()` と Intel PKU の違いは、前者はカーネルが PTE (Page Table Entry) のアクセス権限を更新することでアクセス制御を実現するのに対し、後者はユーザが PKRU というレジスタを更新することでアクセス制御を実現します。
-Intel PKU はハードウェア依存で x86_64 の Skylake 世代でしか利用できませんが、アクセス制御にカーネルの介入が必要ない分、より高速なアクセス制御を実現できます。
+`mprotect()` と `mprotect_pkey()` の違いは、前者はカーネルが PTE (Page Table Entry) のアクセス権限を更新することでアクセス制御を実現するのに対し、後者は Intel PKU といった PTE 更新を必要としないハードウェア機能を使ってアクセス制御を実現します。
+Intel x86_64 アーキテクチャの場合、`mprotect_pkey()` には Intel PKU が利用されます。Intel PKU では、ユーザモードで PKRU というレジスタを更新することでアクセス制御を実現します。
+Intel PKU はハードウェア依存で x86_64 の Skylake 世代以降のみ利用可能ですが、アクセス制御にカーネルの介入や PTE 更新が必要ない分、より高速なアクセス制御を実現できます。
 
 ## Intel MPK / Intel PKU とは
 
 Intel x86_64 アーキテクチャで提供されている、ハードウェアレベルのメモリ保護機能です。
 
-Intel MPK にはユーザ空間向けの Intel PKU (Protection Keys for Userspace) とカーネル空間向けの Intel PKS (Protection Keys for supervisor) があり、今回は前者の Intel PKU を扱います。近年の Intel CPU（2015年発売の Skylake 世代移行）であれば基本的に搭載されている機能ですので、実は Intel CPU であれば気軽に遊べます。
-
+Intel MPK にはユーザ空間向けの Intel PKU (Protection Keys for Userspace) とカーネル空間向けの Intel PKS (Protection Keys for supervisor) があり、今回は前者の Intel PKU を扱います。
 詳しくは前回の記事をご覧ください。
 
 - [x86_64のメモリ保護機能「Intel MPK」で遊ぼう \| 為せばnull](https://blog.yotio.jp/2025/12/14/intel-mpk.html)
+
+## x86_64 以外のアーキテクチャについて
+
+- [Memory Protection Keys — The Linux Kernel documentation](https://docs.kernel.org/core-api/protection-keys.html){:target="_blank"}
+
+によれば、Arm では FEAT_S1POE という機能がバックエンドとして利用されるようです。AMD に関しては future works といったところでしょうか。
+
+今回は x86_64 の Intel PKU 前提で話を進めている点、ご承知おきください。
 
 # 実現したこと
 
 ## コンパイラによるアクセス正当性チェックを実現
 
-別に `mprotect()` や Intel PKU は、ライブラリ無しでも利用できます。前者は Linux システムコールですし、後者は非特権 CPU 命令です。
+別に `mprotect()` や `mprotect_pkey()` (Intel PKU) は、ライブラリ無しでも利用できます。前者は Linux システムコールですし、後者は非特権 CPU 命令です。
 ですが、`mprotect()` や Intel PKU はある意味では安全であり、ある意味では危険です。「安全」な点は、メモリ安全、つまり不正なアクセスをトラップして防止できるという点にありますが、「危険」な点は、実際に不正なアクセスが発生してしまうと、プロセスが Segmentation fault を起こしてクラッシュするという点です。
 
 これはフェイルセーフの観点から正しい動作ではありますが、アプリケーションとしてはクラッシュするのは極力避けたい側面もあります。もしコンパイル段階で静的解析によって safe code 内に不正なアクセス操作があること、例えば、read-only アクセスのメモリ領域に write しようとしているコードがあることが分かっているのであれば、コンパイル段階でコンパイルエラーとして扱った方が嬉しいでしょう。
@@ -258,14 +266,15 @@ pub unsafe fn set_access_rights(&self, access: PkeyAccessRights) -> Result<(), s
     // ここから再び read/write 可
     *value = 168;  // ok
 }
+// ここからは read も write も不可
 ```
 
 入れ子状態のスコープに対応するために、アクセス権の変遷はメモリ領域ごとにスタックで管理しています。子のスコープから親のスコープに戻ったら、スタックを pull してアクセス権を親スコープの状態に戻すような設計です。
 
 # 今後の展望
 
-現状、`mprotect()` を使う場合と Intel PKU を使う場合とで異なるトレイト、異なる API 体系を利用する形になっています。しかし、実際の利用環境を考えると、必ずしもバイナリの配布先が Intel PKU に対応しているという保証はありません。古い Intel CPU で実行されているかもしれませんし、Intel PKU が無効化された環境かもしれませんし、あるいは AMD や Arm、RISC-V かもしれません。
+現状、`mprotect()` を使う場合と `mprotect_pkey()` を使う場合とで異なるトレイト、異なる API 体系を利用する形になっています。しかし、実際の利用環境を考えると、必ずしもバイナリの配布先が Intel PKU をはじめ `mprotect_pkey()` に対応しているという保証はありません。古い Intel CPU で実行されているかもしれませんし、Intel PKU が無効化された環境かもしれませんし、あるいは `mprotect_pkey()` を利用できない別のアーキテクチャかもしれません。
 
-その場合に、Intel PKU の対応チェックを実施し、対応していなければ `mprotect()` を使いたい、というケースもあるでしょう。こういったユースケースに対応するため、`mprotect()` を使う場合と Intel PKU を使う場合とで統一のインターフェイスを利用できるようにしたいと考えています。
+その場合に、`mprotect_pkey()` の対応チェックを実施し、未対応なら `mprotect()` を使いたい、というケースもあるでしょう。こういったユースケースに対応するため、`mprotect()` を使う場合と Intel PKU を使う場合とで統一のインターフェイスを利用できるようにしたいと考えています。
 
 まだまだこのライブラリは未完成です。来年中には一旦完成させてリリースしたいなと考えています。
