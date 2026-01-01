@@ -12,7 +12,7 @@ header_text: "Yotio's Diary"				# Change Blog header text
 header_subtext: "為せばnull 為さねばnullぬ NaNごとも"
 header_feature_image: assets/img/pexels/DSC04166.webp
 footer_text: >
-  © 2021-2025 yotio | Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+  © 2021-2026 yotio | Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
 # Blog
 excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable
