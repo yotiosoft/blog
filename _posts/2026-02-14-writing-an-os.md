@@ -61,6 +61,6 @@ xv6 にあって blog OS にない内容は、思いつく限りだと
 実は Writing an OS in Rust の続きというコンセプトで記事を書いてくださっている方もいまして、これを参考に実装を続けるという手もあります。
 
 - EurailOS
-  - https://github.com/bendudson/EuraliOS
+  - [https://github.com/bendudson/EuraliOS](https://github.com/bendudson/EuraliOS)
 
 しかし、どうせなら自分で実装したいです。xv6 の実装を参考にしつつ、さらに先に進めていければなと思っています。
