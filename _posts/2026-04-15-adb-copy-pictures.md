@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "adbを使ってAndroid端末の写真をLinux端末にバックアップ"
+title: "adbでAndroid端末の写真をLinux端末にバックアップする"
 tags: [Linux, Android]
 excerpt_separator: <!--more-->
 ---
