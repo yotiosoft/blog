@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "adbでAndroid端末の写真をLinux端末にバックアップする"
+title: "adbを使ってAndroid端末の写真をLinux端末にバックアップ"
 tags: [Linux, Android]
 excerpt_separator: <!--more-->
 ---
@@ -92,11 +92,7 @@ $ adb -s 29051■■■■■■766 pull /sdcard/DCIM/Camera /home/ytani/backup/
 
 ```bash
 # !/bin/bash
-#
-# はじめに USB デバッグを ON にすること。
-# ただし、ON にすると銀行系のアプリが利用不可能になるため、
-# 完了したらもとに戻すこと。
-#
+# usage: ./copy_with_dst.sh ${SRC} ${DST}
 
 set -euo pipefail
 
@@ -142,7 +138,7 @@ echo "[OK] Copy completed successfully."
 ```bash
 $ ./copy_with_dst.sh /sdcard/DCIM/Camera /home/ytani/backup/pictures/pixel7
 [*] Detecting adb device...
-[OK] Using device: 29051FDH200766
+[OK] Using device: 29051■■■■■■766
 [*] Creating destination directory:
     .
 [*] Copying files...
