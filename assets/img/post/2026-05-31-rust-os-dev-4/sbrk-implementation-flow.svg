@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1553.8702"
+   height="978.87415"
+   viewBox="0 0 1553.8702 978.87415"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg72"
+   sodipodi:docname="sbrk-implementation-flow.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview72"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0838983"
+     inkscape:cx="879.23378"
+     inkscape:cy="396.71618"
+     inkscape:window-width="2880"
+     inkscape:window-height="1514"
+     inkscape:window-x="5749"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg72" />
+  <title
+     id="title">FerriOS sbrk implementation flow</title>
+  <desc
+     id="desc">Flow diagram for sbrk, including physical frame allocation, page table mapping, deallocation, rollback, and return to user space.</desc>
+  <defs
+     id="defs3">
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="8"
+       markerHeight="8"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,0 10,5 0,10 Z"
+         fill="#2f3a4a"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrow-green"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="8"
+       markerHeight="8"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,0 10,5 0,10 Z"
+         fill="#287a5b"
+         id="path2" />
+    </marker>
+    <marker
+       id="arrow-red"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="8"
+       markerHeight="8"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,0 10,5 0,10 Z"
+         fill="#a53b35"
+         id="path3" />
+    </marker>
+    <style
+       id="style3">
+      .bg { fill: #f7f5ef; }
+      .title { font: 700 34px sans-serif; fill: #222833; }
+      .subtitle { font: 400 17px sans-serif; fill: #5d6675; }
+      .lane-title { font: 700 20px sans-serif; fill: #222833; }
+      .box-title { font: 700 18px sans-serif; fill: #202733; }
+      .box-text { font: 400 15px sans-serif; fill: #3c4656; }
+      .small { font: 400 13px sans-serif; fill: #5a6575; }
+      .code { font: 600 14px monospace; fill: #243041; }
+      .box { fill: #ffffff; stroke: #c9ced8; stroke-width: 1.4; rx: 8; ry: 8; }
+      .user { fill: #eef6ff; stroke: #7ba7d9; }
+      .kernel { fill: #fff8ea; stroke: #d2aa5d; }
+      .alloc { fill: #ecfbf4; stroke: #64a88a; }
+      .free { fill: #fff0ef; stroke: #c87870; }
+      .table { fill: #f3efff; stroke: #907bd1; }
+      .decision { fill: #ffffff; stroke: #8993a3; stroke-width: 1.4; }
+      .arrow { fill: none; stroke: #2f3a4a; stroke-width: 2.2; marker-end: url(#arrow); }
+      .arrow-green { fill: none; stroke: #287a5b; stroke-width: 2.2; marker-end: url(#arrow-green); }
+      .arrow-red { fill: none; stroke: #a53b35; stroke-width: 2.2; marker-end: url(#arrow-red); }
+      .dashed { stroke-dasharray: 7 6; }
+      .lane { fill: rgba(255,255,255,0.45); stroke: #d9d3c6; stroke-width: 1; rx: 10; ry: 10; }
+    </style>
+  </defs>
+  <rect
+     class="bg"
+     x="0"
+     y="0"
+     width="1553.8702"
+     height="978.87415"
+     id="rect3" />
+  <rect
+     class="lane"
+     x="19.156118"
+     y="29.961435"
+     width="324.80624"
+     height="927.58301"
+     id="rect4"
+     style="fill:#e6e6e6" />
+  <rect
+     class="lane"
+     x="368.94748"
+     y="29.961435"
+     width="389.76749"
+     height="927.58301"
+     id="rect5"
+     style="fill:#e6e6e6" />
+  <rect
+     class="lane"
+     x="783.70001"
+     y="29.961435"
+     width="364.78241"
+     height="927.58301"
+     id="rect6"
+     style="fill:#e6e6e6" />
+  <rect
+     class="lane"
+     x="1173.4677"
+     y="29.961435"
+     width="354.78836"
+     height="927.58301"
+     id="rect7"
+     style="fill:#e6e6e6" />
+  <text
+     class="lane-title"
+     x="44.167316"
+     y="64.972633"
+     id="text7"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:20px;line-height:normal;font-family:sans-serif">User process</text>
+  <text
+     class="lane-title"
+     x="394.16733"
+     y="64.972633"
+     id="text8"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:20px;line-height:normal;font-family:sans-serif">Syscall / process state</text>
+  <text
+     class="lane-title"
+     x="809.1673"
+     y="64.972633"
+     id="text9"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:20px;line-height:normal;font-family:sans-serif">User page table</text>
+  <text
+     class="lane-title"
+     x="1199.1674"
+     y="64.972633"
+     id="text10"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:20px;line-height:normal;font-family:sans-serif">Physical frames</text>
+  <rect
+     class="box user"
+     x="54.167316"
+     y="99.972633"
+     width="250"
+     height="90"
+     id="rect10" />
+  <text
+     class="box-title"
+     x="79.16732"
+     y="130.97264"
+     id="text11"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">user/init</text>
+  <text
+     class="code"
+     x="79.16732"
+     y="156.97264"
+     id="text12"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">old = sbrk(n)</text>
+  <text
+     class="small"
+     x="79.16732"
+     y="178.97264"
+     id="text13"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">戻り値は旧 break</text>
+  <rect
+     class="box kernel"
+     x="424.16733"
+     y="99.972633"
+     width="290"
+     height="90"
+     id="rect13" />
+  <text
+     class="box-title"
+     x="449.16733"
+     y="130.97264"
+     id="text14"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">sys_sbrk(n)</text>
+  <text
+     class="box-text"
+     x="449.16733"
+     y="156.97264"
+     id="text15"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:15px;line-height:normal;font-family:sans-serif">引数 n を受け取る</text>
+  <text
+     class="small"
+     x="449.16733"
+     y="178.97264"
+     id="text16"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">失敗時は RET_ERROR</text>
+  <path
+     class="arrow"
+     d="m 304.16732,144.97263 h 120"
+     id="path16" />
+  <rect
+     class="box kernel"
+     x="424.16733"
+     y="234.97264"
+     width="290"
+     height="120"
+     id="rect16" />
+  <text
+     class="box-title"
+     x="449.16733"
+     y="264.97263"
+     id="text17"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">grow_process_heap(n)</text>
+  <text
+     class="code"
+     x="449.16733"
+     y="290.97263"
+     id="text18"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">old = process.heap_size</text>
+  <text
+     class="code"
+     x="449.16733"
+     y="314.97263"
+     id="text19"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">new = old + n</text>
+  <text
+     class="small"
+     x="449.16733"
+     y="336.97263"
+     id="text20"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">成功した時だけ heap_size 更新</text>
+  <path
+     class="arrow"
+     d="m 569.16732,189.97263 v 45"
+     id="path20" />
+  <polygon
+     class="decision"
+     points="465,585 595,505 725,585 595,665 "
+     id="polygon20"
+     transform="translate(-25.832682,-95.027365)" />
+  <text
+     class="box-title"
+     x="519.39954"
+     y="494.73416"
+     id="text21"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif"><tspan
+       sodipodi:role="line"
+       id="tspan73"
+       x="519.39954"
+       y="494.73416">n&gt;0 or n&lt;0?</tspan></text>
+  <path
+     class="arrow"
+     d="m 569.16732,354.97263 v 55"
+     id="path22" />
+  <path
+     class="arrow-green"
+     d="m 699.16732,489.97263 c 60,0 60,-305 120,-305"
+     id="path23" />
+  <text
+     class="small"
+     x="722.1673"
+     y="469.97263"
+     id="text23"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">n &gt; 0</text>
+  <path
+     class="arrow-red"
+     d="m 569.16732,569.97263 c 0,115 195,115 255,115"
+     id="path24" />
+  <text
+     class="small"
+     x="589.1673"
+     y="614.97266"
+     id="text24"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">n &lt; 0</text>
+  <path
+     class="arrow dashed"
+     d="m 439.16732,489.97263 c -65,0 -65,325 10,325"
+     id="path25" />
+  <text
+     class="small"
+     x="374.16733"
+     y="469.97263"
+     id="text25"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">n = 0</text>
+  <rect
+     class="box table"
+     x="824.1673"
+     y="109.97263"
+     width="285"
+     height="150"
+     id="rect25" />
+  <text
+     class="box-title"
+     x="849.1673"
+     y="140.97264"
+     id="text26"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">alloc_uvm(pml4, old, new)</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="167.97264"
+     id="text27"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">addr = PGROUNDUP(old)</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="191.97264"
+     id="text28"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">while addr &lt; new</text>
+  <text
+     class="small"
+     x="849.1673"
+     y="218.97264"
+     id="text29"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">PTE がなければ walk で作る</text>
+  <text
+     class="small"
+     x="849.1673"
+     y="240.97264"
+     id="text30"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">leaf frame を map する</text>
+  <rect
+     class="box alloc"
+     x="1209.1674"
+     y="109.97263"
+     width="280"
+     height="150"
+     id="rect30" />
+  <text
+     class="box-title"
+     x="1234.1674"
+     y="140.97264"
+     id="text31"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">FRAME_ALLOCATOR</text>
+  <text
+     class="code"
+     x="1234.1674"
+     y="167.97264"
+     id="text32"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">allocate_frame()</text>
+  <text
+     class="small"
+     x="1234.1674"
+     y="194.97264"
+     id="text33"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">1. recycled_frames.pop()</text>
+  <text
+     class="small"
+     x="1234.1674"
+     y="218.97264"
+     id="text34"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">2. usable_frames[next]</text>
+  <text
+     class="small"
+     x="1234.1674"
+     y="242.97264"
+     id="text35"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">物理フレームを取得</text>
+  <path
+     class="arrow-green"
+     d="m 1109.1673,184.97263 h 100"
+     id="path35" />
+  <text
+     class="small"
+     x="1128.1674"
+     y="164.97264"
+     id="text36"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">frame 要求</text>
+  <path
+     class="arrow-green"
+     d="m 1209.1673,239.97263 c -45,65 -105,85 -160,85"
+     id="path36" />
+  <text
+     class="small"
+     x="1141.1674"
+     y="294.97263"
+     id="text37"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">frame 返却</text>
+  <rect
+     class="box table"
+     x="824.1673"
+     y="304.97263"
+     width="285"
+     height="145"
+     id="rect37" />
+  <text
+     class="box-title"
+     x="849.1673"
+     y="335.97263"
+     id="text38"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">map leaf page</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="361.97263"
+     id="text39"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">zero frame</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="385.97263"
+     id="text40"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">walk_pagetable(..., true)</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="409.97263"
+     id="text41"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">pte.set_frame(frame, U|W|P)</text>
+  <text
+     class="small"
+     x="849.1673"
+     y="431.97263"
+     id="text42"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">addr += PAGE_SIZE</text>
+  <path
+     class="arrow-green"
+     d="m 966.16732,259.97263 v 45"
+     id="path42" />
+  <rect
+     class="box table"
+     x="824.1673"
+     y="609.97266"
+     width="285"
+     height="145"
+     id="rect42" />
+  <text
+     class="box-title"
+     x="849.1673"
+     y="640.97266"
+     id="text43"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">dealloc_uvm(pml4, old, new)</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="667.97266"
+     id="text44"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">addr = PGROUNDUP(new)</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="691.97266"
+     id="text45"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">while addr &lt; old</text>
+  <text
+     class="small"
+     x="849.1673"
+     y="718.97266"
+     id="text46"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">present な PTE だけ処理</text>
+  <text
+     class="small"
+     x="849.1673"
+     y="740.97266"
+     id="text47"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">page table 階層は残す</text>
+  <rect
+     class="box free"
+     x="824.1673"
+     y="794.97266"
+     width="285"
+     height="130"
+     id="rect47" />
+  <text
+     class="box-title"
+     x="849.1673"
+     y="825.97266"
+     id="text48"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">unmap leaf page</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="851.97266"
+     id="text49"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">frame_from_entry(pte)</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="875.97266"
+     id="text50"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">deallocate_frame(frame)</text>
+  <text
+     class="code"
+     x="849.1673"
+     y="899.97266"
+     id="text51"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">pte.set_unused()</text>
+  <path
+     class="arrow-red"
+     d="m 966.16732,754.97263 v 40"
+     id="path51" />
+  <rect
+     class="box free"
+     x="1209.1674"
+     y="794.97266"
+     width="280"
+     height="130"
+     id="rect51" />
+  <text
+     class="box-title"
+     x="1234.1674"
+     y="825.97266"
+     id="text52"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">frame return</text>
+  <text
+     class="code"
+     x="1234.1674"
+     y="851.97266"
+     id="text53"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">recycled_frames.push(frame)</text>
+  <text
+     class="small"
+     x="1234.1674"
+     y="878.97266"
+     id="text54"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">次回 allocate_frame() で再利用</text>
+  <text
+     class="small"
+     x="1234.1674"
+     y="902.97266"
+     id="text55"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">物理フレームを返却</text>
+  <path
+     class="arrow-red"
+     d="m 1109.1673,859.97263 h 100"
+     id="path55" />
+  <rect
+     class="box free"
+     x="1209.1674"
+     y="474.97263"
+     width="280"
+     height="145"
+     id="rect55" />
+  <text
+     class="box-title"
+     x="1234.1674"
+     y="505.97263"
+     id="text56"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">alloc failure rollback</text>
+  <text
+     class="small"
+     x="1234.1674"
+     y="532.97266"
+     id="text57"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">途中で frame / page table 確保に失敗</text>
+  <text
+     class="code"
+     x="1234.1674"
+     y="559.97266"
+     id="text58"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">rollback_alloc_uvm()</text>
+  <text
+     class="small"
+     x="1234.1674"
+     y="586.97266"
+     id="text59"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">確保済み leaf frame を返却</text>
+  <path
+     class="arrow-red dashed"
+     d="m 1014.1673,449.97263 c 70,65 125,97 195,97"
+     id="path59" />
+  <text
+     class="small"
+     x="1069.1674"
+     y="496.97263"
+     id="text60"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">error path</text>
+  <path
+     class="arrow-red dashed"
+     d="m 1349.1673,619.97263 v 175"
+     id="path60" />
+  <rect
+     class="box kernel"
+     x="424.16733"
+     y="749.97266"
+     width="290"
+     height="130"
+     id="rect60" />
+  <text
+     class="box-title"
+     x="449.16733"
+     y="780.97266"
+     id="text61"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">commit process state</text>
+  <text
+     class="code"
+     x="449.16733"
+     y="806.97266"
+     id="text62"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">process.heap_size = new</text>
+  <text
+     class="code"
+     x="449.16733"
+     y="830.97266"
+     id="text63"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">reload CR3 / invlpg</text>
+  <text
+     class="small"
+     x="449.16733"
+     y="856.97266"
+     id="text64"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">xv6 の switchuvm(proc) 相当</text>
+  <path
+     class="arrow-green"
+     d="m 966.16732,449.97263 c 0,85 -252,235 -352,300"
+     id="path64" />
+  <path
+     class="arrow-red"
+     d="m 824.16732,859.97263 c -75,0 -105,-45 -110,-45"
+     id="path65" />
+  <path
+     class="arrow"
+     d="m 439.16732,814.97263 h -15"
+     id="path66" />
+  <rect
+     class="box user"
+     x="54.167316"
+     y="749.97266"
+     width="250"
+     height="130"
+     id="rect66" />
+  <text
+     class="box-title"
+     x="79.16732"
+     y="780.97266"
+     id="text66"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:sans-serif">return to user</text>
+  <text
+     class="code"
+     x="79.16732"
+     y="806.97266"
+     id="text67"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:monospace">return old break</text>
+  <text
+     class="small"
+     x="79.16732"
+     y="832.97266"
+     id="text68"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">old as usize as *mut T</text>
+  <text
+     class="small"
+     x="79.16732"
+     y="856.97266"
+     id="text69"
+     style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">新しい範囲を user が利用</text>
+  <path
+     class="arrow"
+     d="m 424.16732,814.97263 h -120"
+     id="path69" />
+  <metadata
+     id="metadata74">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>FerriOS sbrk implementation flow</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
