@@ -19,6 +19,27 @@
     <loc>https://blog.yotio.jp/tags/</loc>
   </url>
   <url>
+    <loc>https://blog.yotio.jp/2026/02/23/rust-os-dev-1.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2026/02/14/writing-an-os.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2026/01/03/new-year.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/12/24/mprotect-rs.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/12/14/intel-mpk.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/12/04/raspi5-cron-wakeup.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/12/02/ipad-samba-nas.html</loc>
+  </url>
+  <url>
     <loc>https://blog.yotio.jp/2025/11/16/google-colab-file-split.html</loc>
   </url>
   <url>
@@ -26,27 +47,6 @@
   </url>
   <url>
     <loc>https://blog.yotio.jp/2025/10/19/linux-cron-rtcwake.html</loc>
-  </url>
-  <url>
-    <loc>https://blog.yotio.jp/2025/09/06/web-terminal.html</loc>
-  </url>
-  <url>
-    <loc>https://blog.yotio.jp/2025/08/17/lvm-crypt.html</loc>
-  </url>
-  <url>
-    <loc>https://blog.yotio.jp/2025/08/03/docker-optimize.html</loc>
-  </url>
-  <url>
-    <loc>https://blog.yotio.jp/2025/07/19/dptran-with-llm.html</loc>
-  </url>
-  <url>
-    <loc>https://blog.yotio.jp/2025/06/16/jsmin-by-github-actions.html</loc>
-  </url>
-  <url>
-    <loc>https://blog.yotio.jp/2025/05/13/rusimg.html</loc>
-  </url>
-  <url>
-    <loc>https://blog.yotio.jp/2025/05/01/rtl-sdr-rec.html</loc>
   </url>
   <url>
     <loc>https://blog.yotio.jp/feed.xml</loc>
@@ -139,7 +139,16 @@
     <loc>https://blog.yotio.jp/2024/02/12/cf_workers_python.html</loc>
   </url>
   <url>
+    <loc>https://blog.yotio.jp/2025/09/06/web-terminal.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/08/03/docker-optimize.html</loc>
+  </url>
+  <url>
     <loc>https://blog.yotio.jp/2023/11/19/docker_container_move.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/06/16/jsmin-by-github-actions.html</loc>
   </url>
   <url>
     <loc>https://blog.yotio.jp/2023/03/23/AP%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92Heroku%E3%81%8B%E3%82%89Render%E3%81%AB%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%9F.html</loc>
@@ -224,6 +233,15 @@
   </url>
   <url>
     <loc>https://blog.yotio.jp/2024/09/23/mes.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/07/19/dptran-with-llm.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/08/17/lvm-crypt.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/05/01/rtl-sdr-rec.html</loc>
   </url>
   <url>
     <loc>https://blog.yotio.jp/2025/04/20/grub-saved_entry.html</loc>
@@ -311,6 +329,9 @@
   </url>
   <url>
     <loc>https://blog.yotio.jp/2024/03/24/raspberry-pi-5.html</loc>
+  </url>
+  <url>
+    <loc>https://blog.yotio.jp/2025/05/13/rusimg.html</loc>
   </url>
   <url>
     <loc>https://blog.yotio.jp/2025/03/02/winprocinfo.html</loc>

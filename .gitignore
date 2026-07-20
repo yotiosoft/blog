@@ -37,3 +37,5 @@ test/*
 writing_posts/*
 writing_posts
 writing_post/.git
+
+sitemap_generator/
