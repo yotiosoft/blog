@@ -6,6 +6,18 @@
     {% if author.avatar  %}
       <img alt="Author's avatar" src="{{ author.avatar | relative_url }}">
     {% endif %}
+
+    <!-- Google Adsense -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-5605897321593790"
+        data-ad-slot="1321947803"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
     <p class="meta">
       {% if author.name %}{{ author.name }} - {% endif %}
       {% assign x = date | date: "%m" | minus: 1 %}
