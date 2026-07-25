@@ -13,14 +13,16 @@ layout: default
     </div>
   </header>
 
-  <!-- Google Adsense -->
-  {% include adsense.html %}
-
   <section class="post-content">
   {% if page.bootstrap %}
     <div class="bootstrap-iso">
     {% endif %}
-      {{ content }}
+      {% capture more_ad %}
+      <!--more-->
+      <!-- Google Adsense -->
+      {% include adsense.html %}
+      {% endcapture %}
+      {{ content | replace: '<!--more-->', more_ad }}
     {% if page.bootstrap %}
     </div>
   {% endif %}
@@ -28,9 +30,6 @@ layout: default
 
   <!-- Social media shares -->
   {% include share_buttons.html %}
-
-  <!-- Google Adsense -->
-  {% include adsense.html %}
 
    <!-- Tag list -->
   {% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
