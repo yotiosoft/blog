@@ -45,6 +45,15 @@
 
 /* --- Post listing --- */
 .posts {
+  .blog-ad {
+    text-align: center;
+
+    .adsbygoogle {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
   .post-teaser {
     @extend %padding-post;
     width: 100%;
