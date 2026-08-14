@@ -33,8 +33,22 @@
       </span>
     </div>
 
-    <!-- Google Adsense -->
-    {% include adsense.html %}
+    <template class="blog-ad-template">
+      {% include adsense.html %}
+    </template>
+    <script>
+      (() => {
+        const template = document.currentScript.previousElementSibling;
+
+        if (Math.random() < 0.5) {
+          const ad = template.content.querySelector('.adsbygoogle').cloneNode(true);
+          template.replaceWith(ad);
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } else {
+          template.remove();
+        }
+      })();
+    </script>
     
     {% endfor %}
 </div>
