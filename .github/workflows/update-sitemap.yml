@@ -28,6 +28,11 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
+      # The tracked sitemap.xml is a static source file.  Move it away while
+      # building so it cannot overwrite jekyll-sitemap's generated page.
+      - name: Temporarily remove the previous sitemap
+        run: mv sitemap.xml "$RUNNER_TEMP/sitemap.xml.previous"
+
       - name: Build the Jekyll site
         env:
           JEKYLL_ENV: production
@@ -35,7 +40,9 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Copy generated sitemap
-        run: cp _site/sitemap.xml sitemap.xml
+        run: |
+          test -f _site/sitemap.xml
+          cp _site/sitemap.xml sitemap.xml
 
       - name: Commit sitemap when it changed
         run: |
