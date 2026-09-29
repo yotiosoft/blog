@@ -35,6 +35,30 @@ A free and open-source [Jekyll](https://jekyllrb.com) theme. Based on Rohan Chan
 
 ## Usage
 
+### GitHub repository cards
+
+After running `bundle install`, embed a repository card in a post with:
+
+```liquid
+{% raw %}{% github jekyll/jekyll %}{% endraw %}
+```
+
+Replace `jekyll/jekyll` with `owner/repository` (without quotes or a URL).
+Cards display the owner/repository name, description, language, stars, and forks.
+Statistics are fetched at build time and refresh when the site is rebuilt.
+The plugin generates `/assets/css/github-card.css`; local adjustments in
+`assets/css/github-card-theme.css` follow the blog's light/dark theme.
+
+### Deploy this blog with GitHub Actions
+
+In the repository's **Settings → Pages → Build and deployment**, select
+**GitHub Actions** as the source. Push to `master`, or manually run
+**Deploy Jekyll to GitHub Pages** from the Actions tab.
+The workflow builds with Ruby 3.3 and publishes `_site`, including custom plugins.
+Both build workflows use the automatically provided `GITHUB_TOKEN` for GitHub
+API requests; no personal access token is required for public repository cards.
+The existing sitemap workflow continues to update the tracked `sitemap.xml`.
+
 ### As a ruby gem 💎
 
 Check out this tutorial: [Use as Ruby Gem](https://github.com/Sylhare/Type-on-Strap#use-as-ruby-gem)

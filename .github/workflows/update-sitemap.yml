@@ -29,6 +29,9 @@ jobs:
           bundler-cache: true
 
       - name: Build the Jekyll site
+        env:
+          JEKYLL_ENV: production
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec jekyll build
 
       - name: Copy generated sitemap

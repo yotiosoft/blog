@@ -17,6 +17,8 @@ excerpt_separator: <!--more-->
 
 ![HLQfUeeaQAAr26F](../../../assets/img/post/2026-08-14-cities-box-cpp-17/HLQfUeeaQAAr26F.jpg)
 
+{% github yotiosoft/Cities-Box.cpp %}
+
 <!--more-->
 
 # Rust 移行への道のり
