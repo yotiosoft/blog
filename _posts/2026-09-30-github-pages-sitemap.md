@@ -22,7 +22,7 @@ GitHub Pages でなくても、Jekyll を利用しているのであれば同様
 
 `jekyll-sitemap` という Jekyll プラグインを使います。
 
-{% github jekyll/jekyll-sitemap % }
+{% github jekyll/jekyll-sitemap %}
 
 
 
